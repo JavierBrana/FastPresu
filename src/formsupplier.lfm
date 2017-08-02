@@ -1,0 +1,1594 @@
+inherited Supplier: TSupplier
+  Left = 491
+  Height = 714
+  Top = 169
+  Width = 831
+  Caption = 'Proveedor'
+  ClientHeight = 714
+  ClientWidth = 831
+  FormStyle = fsStayOnTop
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDeactivate = FormDeactivate
+  inherited ToolBar: TBCPanel
+    Width = 831
+    TabOrder = 1
+    inherited bSave: TBCButton
+      OnClick = bSaveClick
+    end
+    inherited bClose: TBCButton
+      Left = 791
+    end
+  end
+  object pcAll: TPageControl[1]
+    Left = 3
+    Height = 470
+    Top = 241
+    Width = 825
+    ActivePage = tsGeneral
+    Align = alClient
+    BorderSpacing.Around = 3
+    TabIndex = 0
+    TabOrder = 0
+    Options = [nboHidePageListPopup]
+    object tsGeneral: TTabSheet
+      Caption = 'General'
+      ClientHeight = 437
+      ClientWidth = 817
+      object gbNormalDirection: TGroupBox
+        Left = 16
+        Height = 360
+        Top = 24
+        Width = 377
+        Caption = 'Dirección'
+        ClientHeight = 338
+        ClientWidth = 373
+        TabOrder = 0
+        object Label1: TLabel
+          Left = 11
+          Height = 20
+          Top = 16
+          Width = 63
+          Caption = 'Contacto:'
+          ParentColor = False
+        end
+        object Label2: TLabel
+          AnchorSideLeft.Control = Label1
+          Left = 11
+          Height = 20
+          Top = 48
+          Width = 66
+          Caption = 'Dirección:'
+          ParentColor = False
+        end
+        object edDir2: TDBEdit
+          AnchorSideLeft.Control = edDir1
+          AnchorSideRight.Control = edDir1
+          Left = 120
+          Height = 28
+          Top = 72
+          Width = 240
+          DataField = 'ADDRESS2'
+          DataSource = dsSupplier
+          CharCase = ecNormal
+          MaxLength = 160
+          TabOrder = 2
+          OnKeyDown = edCodeKeyDown
+        end
+        object edDir1: TDBEdit
+          AnchorSideLeft.Control = eDirContact
+          AnchorSideRight.Control = eDirContact
+          Left = 120
+          Height = 28
+          Top = 40
+          Width = 240
+          DataField = 'ADDRESS1'
+          DataSource = dsSupplier
+          CharCase = ecNormal
+          MaxLength = 160
+          TabOrder = 1
+          OnKeyDown = edCodeKeyDown
+        end
+        object Label3: TLabel
+          AnchorSideLeft.Control = Label2
+          Left = 11
+          Height = 20
+          Top = 111
+          Width = 100
+          Caption = 'CP / Población:'
+          ParentColor = False
+        end
+        object edPobla: TDBEdit
+          AnchorSideRight.Control = eDirContact
+          AnchorSideRight.Side = asrBottom
+          Left = 208
+          Height = 28
+          Top = 103
+          Width = 152
+          DataField = 'CITY'
+          DataSource = dsSupplier
+          Anchors = [akTop, akLeft, akRight]
+          CharCase = ecNormal
+          MaxLength = 320
+          TabOrder = 6
+          OnKeyDown = edCodeKeyDown
+        end
+        object Label4: TLabel
+          AnchorSideLeft.Control = Label3
+          Left = 11
+          Height = 20
+          Top = 144
+          Width = 63
+          Caption = 'Provincia:'
+          ParentColor = False
+        end
+        object edProvincia: TDBEdit
+          AnchorSideLeft.Control = edDir2
+          AnchorSideRight.Control = edDir2
+          Left = 120
+          Height = 28
+          Top = 136
+          Width = 240
+          DataField = 'PROVINCE'
+          DataSource = dsSupplier
+          CharCase = ecNormal
+          MaxLength = 320
+          TabOrder = 7
+          OnKeyDown = edCodeKeyDown
+        end
+        object Label6: TLabel
+          AnchorSideLeft.Control = Label4
+          Left = 11
+          Height = 20
+          Top = 176
+          Width = 29
+          Caption = 'Pais:'
+          ParentColor = False
+        end
+        object edPais: TDBEdit
+          AnchorSideRight.Control = edPobla
+          AnchorSideRight.Side = asrBottom
+          Left = 208
+          Height = 28
+          Top = 168
+          Width = 152
+          DataField = 'COUNTRY'
+          DataSource = dsSupplier
+          ReadOnly = True
+          Anchors = [akTop, akLeft, akRight]
+          CharCase = ecNormal
+          MaxLength = 320
+          TabOrder = 4
+          OnKeyDown = edCodeKeyDown
+        end
+        object Label5: TLabel
+          AnchorSideLeft.Control = Label6
+          Left = 11
+          Height = 20
+          Top = 208
+          Width = 62
+          Caption = 'Teléfono:'
+          ParentColor = False
+        end
+        object edTel: TDBEdit
+          AnchorSideLeft.Control = edProvincia
+          AnchorSideRight.Control = edProvincia
+          Left = 120
+          Height = 28
+          Top = 200
+          Width = 240
+          DataField = 'PHONE'
+          DataSource = dsSupplier
+          CharCase = ecNormal
+          MaxLength = 80
+          TabOrder = 8
+          OnKeyDown = edCodeKeyDown
+        end
+        object Label7: TLabel
+          AnchorSideLeft.Control = Label5
+          Left = 11
+          Height = 20
+          Top = 240
+          Width = 60
+          Caption = 'Tf. móvil:'
+          ParentColor = False
+        end
+        object edMovil: TDBEdit
+          AnchorSideLeft.Control = edTel
+          AnchorSideRight.Control = edTel
+          Left = 120
+          Height = 28
+          Top = 232
+          Width = 240
+          DataField = 'MOBILE'
+          DataSource = dsSupplier
+          CharCase = ecNormal
+          MaxLength = 80
+          TabOrder = 9
+          OnKeyDown = edCodeKeyDown
+        end
+        object Label8: TLabel
+          AnchorSideLeft.Control = Label7
+          Left = 11
+          Height = 20
+          Top = 272
+          Width = 25
+          Caption = 'Fax:'
+          ParentColor = False
+        end
+        object edFax: TDBEdit
+          AnchorSideLeft.Control = edMovil
+          AnchorSideRight.Control = edMovil
+          Left = 120
+          Height = 28
+          Top = 264
+          Width = 240
+          DataField = 'FAX'
+          DataSource = dsSupplier
+          CharCase = ecNormal
+          MaxLength = 80
+          TabOrder = 10
+          OnKeyDown = edCodeKeyDown
+        end
+        object Label9: TLabel
+          AnchorSideLeft.Control = Label8
+          Left = 11
+          Height = 20
+          Top = 304
+          Width = 46
+          Caption = 'E-Mail:'
+          ParentColor = False
+        end
+        object edEMail: TDBEdit
+          AnchorSideLeft.Control = eDirCountryID
+          Left = 120
+          Height = 28
+          Top = 296
+          Width = 216
+          DataField = 'EMAIL'
+          DataSource = dsSupplier
+          CharCase = ecNormal
+          MaxLength = 240
+          TabOrder = 11
+          OnKeyDown = edCodeKeyDown
+        end
+        object eDirContact: TDBLookupComboBox
+          AnchorSideRight.Side = asrBottom
+          Left = 120
+          Height = 28
+          Top = 8
+          Width = 240
+          Anchors = [akTop, akLeft, akRight]
+          DataField = 'CONTACT'
+          DataSource = dsSupplier
+          ListFieldIndex = 0
+          LookupCache = False
+          OnKeyDown = edCodeKeyDown
+          TabOrder = 0
+        end
+        object eDirCP: TDBLookupComboBox
+          AnchorSideLeft.Control = eDirContact
+          Left = 120
+          Height = 28
+          Top = 104
+          Width = 80
+          DataField = 'POSTCODE'
+          DataSource = dsSupplier
+          ListFieldIndex = 0
+          LookupCache = False
+          OnKeyDown = edCodeKeyDown
+          TabOrder = 5
+        end
+        object eDirCountryID: TDBLookupComboBox
+          AnchorSideLeft.Control = eDirCP
+          Left = 120
+          Height = 28
+          Top = 168
+          Width = 81
+          DataField = 'COUNTRY_ID'
+          DataSource = dsSupplier
+          ListFieldIndex = 0
+          LookupCache = False
+          OnKeyDown = edCodeKeyDown
+          TabOrder = 3
+        end
+        object BitBtn1: TBitBtn
+          AnchorSideLeft.Control = edEMail
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = edEMail
+          AnchorSideBottom.Control = edEMail
+          AnchorSideBottom.Side = asrBottom
+          Left = 336
+          Height = 28
+          Top = 296
+          Width = 25
+          TabOrder = 12
+        end
+      end
+      object Label24: TLabel
+        Left = 32
+        Height = 20
+        Top = 408
+        Width = 34
+        Caption = 'Web:'
+        ParentColor = False
+      end
+      object edWeb: TDBEdit
+        Left = 136
+        Height = 28
+        Top = 400
+        Width = 632
+        DataField = 'WEB'
+        DataSource = dsSupplier
+        CharCase = ecNormal
+        MaxLength = 80
+        TabOrder = 1
+        OnKeyDown = edCodeKeyDown
+      end
+      object BitBtn2: TBitBtn
+        AnchorSideLeft.Control = edWeb
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = edWeb
+        AnchorSideBottom.Control = edWeb
+        AnchorSideBottom.Side = asrBottom
+        Left = 768
+        Height = 28
+        Top = 400
+        Width = 25
+        Anchors = [akTop, akLeft, akBottom]
+        TabOrder = 2
+      end
+      object BitBtn4: TBitBtn
+        Left = 400
+        Height = 353
+        Top = 32
+        Width = 23
+        Glyph.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          2000000000000004000064000000640000000000000000000000FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00216324B81D5E2006FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF002A702F38256929F7216324D9FFFFFF00FFFFFF00FFFFFF00FFFFFF0061BE
+          6DFF5DB868FF58B162FF53A95CFF4DA156FF47994FFF419149FF3B8842FF3580
+          3BFF3F8845FF59A15EFF448B49FF216324CFFFFFFF00FFFFFF00FFFFFF0065C3
+          71FFA0D7A9FF9CD5A5FF98D3A1FF94D09DFF90CE98FF8BCB93FF87C98EFF82C6
+          89FF7EC384FF7AC180FF76BE7CFF458C4AFF216324C4FFFFFF00FFFFFF0068C7
+          74FFA5DAAEFFA2D8ABFF9ED6A7FF9AD4A3FF96D29FFF93CF9AFF8ECC95FF89CA
+          90FF85C78BFF81C587FF7DC282FF4A9150FF256929C9FFFFFF00FFFFFF0068C7
+          74FF68C774FF65C371FF61BE6DFF5DB868FF58B162FF53A95CFF4DA156FF4799
+          4FFF419149FF5AA362FF559D5CFF2F7835D1FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00419149F73B8842DBFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF0047994FBB41914906FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+        }
+        OnClick = BitBtn4Click
+        Spacing = 0
+        TabOrder = 3
+      end
+      object gbNormalDirection1: TGroupBox
+        Left = 432
+        Height = 361
+        Top = 24
+        Width = 377
+        Caption = 'Facturación'
+        ClientHeight = 339
+        ClientWidth = 373
+        TabOrder = 4
+        object Label10: TLabel
+          AnchorSideBottom.Control = Label11
+          Left = 11
+          Height = 20
+          Top = 16
+          Width = 63
+          Caption = 'Contacto:'
+          ParentColor = False
+        end
+        object Label11: TLabel
+          AnchorSideLeft.Control = Label10
+          AnchorSideBottom.Control = Label12
+          Left = 11
+          Height = 20
+          Top = 48
+          Width = 66
+          Anchors = [akLeft]
+          Caption = 'Dirección:'
+          ParentColor = False
+        end
+        object edDir3: TDBEdit
+          AnchorSideLeft.Control = eDirContact1
+          AnchorSideTop.Control = edDir4
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = eDirContact1
+          AnchorSideRight.Side = asrBottom
+          Left = 120
+          Height = 28
+          Top = 72
+          Width = 240
+          DataField = 'BILLING_ADDRESS2'
+          DataSource = dsSupplier
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Top = 4
+          CharCase = ecNormal
+          MaxLength = 160
+          TabOrder = 2
+          OnKeyDown = edCodeKeyDown
+        end
+        object edDir4: TDBEdit
+          AnchorSideLeft.Control = eDirContact1
+          AnchorSideTop.Control = eDirContact1
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = eDirContact1
+          AnchorSideRight.Side = asrBottom
+          Left = 120
+          Height = 28
+          Top = 40
+          Width = 240
+          DataField = 'BILLING_ADDRESS1'
+          DataSource = dsSupplier
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Top = 4
+          CharCase = ecNormal
+          MaxLength = 160
+          TabOrder = 1
+          OnKeyDown = edCodeKeyDown
+        end
+        object Label12: TLabel
+          AnchorSideLeft.Control = Label10
+          AnchorSideBottom.Control = eDirCP1
+          Left = 11
+          Height = 20
+          Top = 111
+          Width = 100
+          Anchors = [akLeft]
+          Caption = 'CP / Población:'
+          ParentColor = False
+        end
+        object edPobla1: TDBEdit
+          AnchorSideLeft.Control = eDirCP1
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = edDir3
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = eDirContact1
+          AnchorSideRight.Side = asrBottom
+          Left = 208
+          Height = 28
+          Top = 104
+          Width = 152
+          DataField = 'BILLING_CITY'
+          DataSource = dsSupplier
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Left = 8
+          BorderSpacing.Top = 4
+          CharCase = ecNormal
+          MaxLength = 320
+          TabOrder = 6
+          OnKeyDown = edCodeKeyDown
+        end
+        object Label13: TLabel
+          AnchorSideLeft.Control = Label10
+          AnchorSideBottom.Control = Label11
+          Left = 11
+          Height = 20
+          Top = 144
+          Width = 63
+          Anchors = [akLeft]
+          Caption = 'Provincia:'
+          ParentColor = False
+        end
+        object edProvincia1: TDBEdit
+          AnchorSideLeft.Control = eDirContact1
+          AnchorSideTop.Control = eDirCP1
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = eDirContact1
+          AnchorSideRight.Side = asrBottom
+          Left = 120
+          Height = 28
+          Top = 136
+          Width = 240
+          DataField = 'BILLING_PROVINCE'
+          DataSource = dsSupplier
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Top = 4
+          CharCase = ecNormal
+          MaxLength = 320
+          TabOrder = 7
+          OnKeyDown = edCodeKeyDown
+        end
+        object Label14: TLabel
+          AnchorSideLeft.Control = Label10
+          AnchorSideBottom.Control = Label18
+          Left = 11
+          Height = 20
+          Top = 176
+          Width = 29
+          Anchors = [akLeft]
+          Caption = 'Pais:'
+          ParentColor = False
+        end
+        object edPais1: TDBEdit
+          AnchorSideLeft.Control = eDirCountryID1
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = edProvincia1
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = eDirContact1
+          AnchorSideRight.Side = asrBottom
+          Left = 208
+          Height = 28
+          Top = 168
+          Width = 152
+          DataField = 'BILLING_COUNTRY'
+          DataSource = dsSupplier
+          ReadOnly = True
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Left = 7
+          BorderSpacing.Top = 4
+          CharCase = ecNormal
+          MaxLength = 320
+          TabOrder = 4
+          OnKeyDown = edCodeKeyDown
+        end
+        object Label15: TLabel
+          AnchorSideLeft.Control = Label10
+          AnchorSideBottom.Control = Label11
+          Left = 11
+          Height = 20
+          Top = 208
+          Width = 62
+          Anchors = [akLeft]
+          Caption = 'Teléfono:'
+          ParentColor = False
+        end
+        object edTel1: TDBEdit
+          AnchorSideLeft.Control = eDirContact1
+          AnchorSideTop.Control = edPais1
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = eDirContact1
+          AnchorSideRight.Side = asrBottom
+          Left = 120
+          Height = 28
+          Top = 200
+          Width = 240
+          DataField = 'BILLING_PHONE'
+          DataSource = dsSupplier
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Top = 4
+          CharCase = ecNormal
+          MaxLength = 80
+          TabOrder = 8
+          OnKeyDown = edCodeKeyDown
+        end
+        object Label16: TLabel
+          AnchorSideLeft.Control = Label10
+          AnchorSideBottom.Control = Label15
+          Left = 11
+          Height = 20
+          Top = 240
+          Width = 60
+          Anchors = [akLeft]
+          Caption = 'Tf. móvil:'
+          ParentColor = False
+        end
+        object edMovil1: TDBEdit
+          AnchorSideLeft.Control = eDirContact1
+          AnchorSideTop.Control = edTel1
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = eDirContact1
+          AnchorSideRight.Side = asrBottom
+          Left = 120
+          Height = 28
+          Top = 232
+          Width = 240
+          DataField = 'BILLING_MOBILE'
+          DataSource = dsSupplier
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Top = 4
+          CharCase = ecNormal
+          MaxLength = 80
+          TabOrder = 9
+          OnKeyDown = edCodeKeyDown
+        end
+        object Label17: TLabel
+          AnchorSideLeft.Control = Label10
+          AnchorSideBottom.Control = Label14
+          Left = 11
+          Height = 20
+          Top = 272
+          Width = 25
+          Anchors = [akLeft]
+          Caption = 'Fax:'
+          ParentColor = False
+        end
+        object edFax1: TDBEdit
+          AnchorSideLeft.Control = eDirContact1
+          AnchorSideTop.Control = edMovil1
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = eDirContact1
+          AnchorSideRight.Side = asrBottom
+          Left = 120
+          Height = 28
+          Top = 264
+          Width = 240
+          DataField = 'BILLING_FAX'
+          DataSource = dsSupplier
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Top = 4
+          CharCase = ecNormal
+          MaxLength = 80
+          TabOrder = 10
+          OnKeyDown = edCodeKeyDown
+        end
+        object Label18: TLabel
+          AnchorSideLeft.Control = Label10
+          AnchorSideBottom.Control = Label16
+          Left = 11
+          Height = 20
+          Top = 304
+          Width = 46
+          Anchors = [akLeft]
+          Caption = 'E-Mail:'
+          ParentColor = False
+        end
+        object edEMail1: TDBEdit
+          AnchorSideLeft.Control = eDirContact1
+          AnchorSideTop.Control = edFax1
+          AnchorSideTop.Side = asrBottom
+          AnchorSideBottom.Control = edFax1
+          Left = 120
+          Height = 28
+          Top = 296
+          Width = 216
+          DataField = 'BILLING_EMAIL'
+          DataSource = dsSupplier
+          BorderSpacing.Top = 4
+          CharCase = ecNormal
+          MaxLength = 240
+          TabOrder = 11
+          OnKeyDown = edCodeKeyDown
+        end
+        object eDirContact1: TDBLookupComboBox
+          Left = 120
+          Height = 28
+          Top = 8
+          Width = 240
+          DataField = 'BILLING_CONTACT'
+          DataSource = dsSupplier
+          ListFieldIndex = 0
+          LookupCache = False
+          OnKeyDown = edCodeKeyDown
+          TabOrder = 0
+        end
+        object eDirCP1: TDBLookupComboBox
+          AnchorSideLeft.Control = eDirContact1
+          AnchorSideTop.Control = edDir3
+          AnchorSideTop.Side = asrBottom
+          AnchorSideBottom.Control = eDirCountryID1
+          Left = 120
+          Height = 28
+          Top = 104
+          Width = 80
+          BorderSpacing.Top = 4
+          DataField = 'BILLING_POSTCODE'
+          DataSource = dsSupplier
+          ListFieldIndex = 0
+          LookupCache = False
+          OnKeyDown = edCodeKeyDown
+          TabOrder = 5
+        end
+        object eDirCountryID1: TDBLookupComboBox
+          AnchorSideLeft.Control = eDirContact1
+          AnchorSideTop.Control = edProvincia1
+          AnchorSideTop.Side = asrBottom
+          AnchorSideBottom.Control = edEMail1
+          Left = 120
+          Height = 28
+          Top = 168
+          Width = 81
+          BorderSpacing.Top = 4
+          DataField = 'BILLING_COUNTRY_ID'
+          DataSource = dsSupplier
+          ListFieldIndex = 0
+          LookupCache = False
+          OnKeyDown = edCodeKeyDown
+          TabOrder = 3
+        end
+        object BitBtn3: TBitBtn
+          AnchorSideLeft.Control = edEMail1
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = edEMail1
+          AnchorSideBottom.Control = edEMail1
+          AnchorSideBottom.Side = asrBottom
+          Left = 336
+          Height = 28
+          Top = 296
+          Width = 25
+          TabOrder = 12
+        end
+      end
+    end
+    object tsBancData: TTabSheet
+      Caption = 'Banca'
+      ClientHeight = 437
+      ClientWidth = 817
+      object GroupBox2: TGroupBox
+        Left = 8
+        Height = 160
+        Top = 8
+        Width = 331
+        Caption = 'Banco'
+        ClientHeight = 138
+        ClientWidth = 327
+        TabOrder = 0
+        object Label25: TLabel
+          Left = 15
+          Height = 20
+          Top = 16
+          Width = 58
+          Caption = 'Nombre:'
+          FocusControl = DBEdit10
+          ParentColor = False
+        end
+        object Label26: TLabel
+          Left = 15
+          Height = 20
+          Top = 43
+          Width = 66
+          Caption = 'Dirección:'
+          FocusControl = DBEdit11
+          ParentColor = False
+        end
+        object Label33: TLabel
+          Left = 15
+          Height = 20
+          Top = 112
+          Width = 72
+          Caption = 'BIC/SWIFT:'
+          FocusControl = DBEdit17
+          ParentColor = False
+        end
+        object Label32: TLabel
+          Left = 15
+          Height = 20
+          Top = 80
+          Width = 37
+          Caption = 'IBAN:'
+          FocusControl = DBEdit16
+          ParentColor = False
+        end
+        object DBEdit10: TDBEdit
+          Left = 112
+          Height = 28
+          Top = 8
+          Width = 200
+          DataField = 'BANK_NAME_0'
+          DataSource = dsSupplier
+          CharCase = ecNormal
+          MaxLength = 240
+          TabOrder = 0
+        end
+        object DBEdit11: TDBEdit
+          Left = 112
+          Height = 28
+          Top = 40
+          Width = 200
+          DataField = 'BANK_ADDRESS_0'
+          DataSource = dsSupplier
+          CharCase = ecNormal
+          MaxLength = 240
+          TabOrder = 1
+        end
+        object DBEdit16: TDBEdit
+          Left = 112
+          Height = 28
+          Top = 72
+          Width = 200
+          DataField = 'IBAN_0'
+          DataSource = dsSupplier
+          CharCase = ecNormal
+          MaxLength = 112
+          TabOrder = 2
+        end
+        object DBEdit17: TDBEdit
+          Left = 112
+          Height = 28
+          Top = 104
+          Width = 200
+          DataField = 'BIC_SWIFT_0'
+          DataSource = dsSupplier
+          CharCase = ecNormal
+          MaxLength = 44
+          TabOrder = 3
+        end
+      end
+    end
+    object tsDocuments: TTabSheet
+      Caption = 'Documentos'
+      ClientHeight = 437
+      ClientWidth = 817
+      object Grid: TDBGrid
+        Left = 2
+        Height = 433
+        Top = 2
+        Width = 813
+        Align = alClient
+        AutoAdvance = aaDown
+        AutoEdit = False
+        BorderSpacing.Around = 2
+        Color = clWindow
+        Columns = <        
+          item
+            Title.Caption = 'Código'
+            FieldName = 'dvdoID'
+          end        
+          item
+            Title.Caption = 'Título'
+            Width = 53
+            FieldName = 'dvdoDes'
+          end        
+          item
+            Title.Caption = 'Cliente'
+            Width = 61
+            FieldName = 'dvclNom'
+          end        
+          item
+            Title.Caption = 'Proyecto ID'
+            Width = 92
+            FieldName = 'dvpyID'
+          end        
+          item
+            Title.Caption = 'Creación'
+            Width = 73
+            FieldName = 'dvDateCre'
+          end        
+          item
+            Title.Caption = 'Válido'
+            Width = 0
+            Visible = False
+            FieldName = 'dvDateVal'
+          end        
+          item
+            Title.Caption = 'Expedición'
+            Width = 88
+            FieldName = 'dvDateExp'
+          end        
+          item
+            Title.Caption = 'P. Venta'
+            Width = 68
+            FieldName = 'dvPVP'
+          end        
+          item
+            Title.Caption = 'Estado'
+            Width = 60
+            FieldName = 'dvEstado'
+          end>
+        DataSource = dsSaleDocs
+        DefaultRowHeight = 18
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgMultiselect, dgHeaderHotTracking, dgHeaderPushedLook, dgAutoSizeColumns, dgDisableInsert, dgCellEllipsis, dgThumbTracking]
+        ReadOnly = True
+        TabOrder = 0
+        TitleStyle = tsNative
+        UseXORFeatures = True
+        OnDblClick = GridDblClick
+      end
+    end
+  end
+  object BCPanel2: TBCPanel[2]
+    Left = 0
+    Height = 208
+    Top = 30
+    Width = 831
+    Align = alTop
+    Background.Color = clBtnFace
+    Background.ColorOpacity = 255
+    Background.Gradient1.StartColor = 16184563
+    Background.Gradient1.StartColorOpacity = 255
+    Background.Gradient1.DrawMode = dmSet
+    Background.Gradient1.EndColor = 15000289
+    Background.Gradient1.EndColorOpacity = 255
+    Background.Gradient1.ColorCorrection = True
+    Background.Gradient1.GradientType = gtLinear
+    Background.Gradient1.Point1XPercent = 0
+    Background.Gradient1.Point1YPercent = 0
+    Background.Gradient1.Point2XPercent = 0
+    Background.Gradient1.Point2YPercent = 90
+    Background.Gradient1.Sinus = False
+    Background.Gradient2.StartColor = 16049884
+    Background.Gradient2.StartColorOpacity = 255
+    Background.Gradient2.DrawMode = dmSet
+    Background.Gradient2.EndColor = 16247261
+    Background.Gradient2.EndColorOpacity = 255
+    Background.Gradient2.ColorCorrection = True
+    Background.Gradient2.GradientType = gtLinear
+    Background.Gradient2.Point1XPercent = 0
+    Background.Gradient2.Point1YPercent = 0
+    Background.Gradient2.Point2XPercent = 0
+    Background.Gradient2.Point2YPercent = 100
+    Background.Gradient2.Sinus = False
+    Background.Gradient1EndPercent = 100
+    Background.Style = bbsGradient
+    BevelInner = bvNone
+    BevelOuter = bvNone
+    BevelWidth = 1
+    Border.Color = 7433834
+    Border.ColorOpacity = 200
+    Border.LightColor = clWhite
+    Border.LightOpacity = 200
+    Border.LightWidth = 1
+    Border.Style = bboSolid
+    Border.Width = 1
+    BorderBCStyle = bpsBorder
+    FontEx.Color = clDefault
+    FontEx.EndEllipsis = False
+    FontEx.FontQuality = fqSystemClearType
+    FontEx.Height = 0
+    FontEx.SingleLine = True
+    FontEx.Shadow = False
+    FontEx.ShadowColor = clBlack
+    FontEx.ShadowColorOpacity = 255
+    FontEx.ShadowRadius = 5
+    FontEx.ShadowOffsetX = 5
+    FontEx.ShadowOffsetY = 5
+    FontEx.Style = []
+    FontEx.TextAlignment = bcaCenter
+    FontEx.WordBreak = False
+    Rounding.RoundX = 4
+    Rounding.RoundY = 4
+    Rounding.RoundOptions = []
+    TabOrder = 2
+    object edCode: TDBEdit
+      AnchorSideTop.Side = asrBottom
+      Left = 408
+      Height = 28
+      Top = 16
+      Width = 182
+      DataField = 'CODE'
+      DataSource = dsSupplier
+      ReadOnly = True
+      AutoSize = False
+      BorderSpacing.Top = 4
+      CharCase = ecNormal
+      MaxLength = 40
+      TabOrder = 0
+      OnKeyDown = edCodeKeyDown
+    end
+    object Label19: TLabel
+      Left = 328
+      Height = 20
+      Top = 24
+      Width = 18
+      Caption = 'ID:'
+      ParentColor = False
+    end
+    object Label20: TLabel
+      Left = 328
+      Height = 20
+      Top = 56
+      Width = 58
+      Caption = 'Nombre:'
+      ParentColor = False
+    end
+    object Label21: TLabel
+      Left = 616
+      Height = 20
+      Top = 24
+      Width = 45
+      Caption = 'Forma:'
+      ParentColor = False
+    end
+    object DBLookupComboBox1: TDBLookupComboBox
+      Left = 696
+      Height = 28
+      Top = 16
+      Width = 120
+      AutoDropDown = True
+      DataField = 'FORM'
+      DataSource = dsSupplier
+      ListFieldIndex = 0
+      ListSource = dsForm
+      LookupCache = False
+      OnKeyDown = edCodeKeyDown
+      TabOrder = 1
+    end
+    object Label22: TLabel
+      Left = 616
+      Height = 20
+      Top = 88
+      Width = 51
+      Caption = 'Familia:'
+      ParentColor = False
+    end
+    object DBLookupComboBox2: TDBLookupComboBox
+      Left = 696
+      Height = 28
+      Top = 80
+      Width = 120
+      AutoDropDown = True
+      DataField = 'FAMILY'
+      DataSource = dsSupplier
+      KeyField = 'ID'
+      ListField = 'ID'
+      ListFieldIndex = 0
+      ListSource = dcFamily
+      LookupCache = False
+      OnKeyDown = edCodeKeyDown
+      TabOrder = 2
+    end
+    object Label23: TLabel
+      Left = 328
+      Height = 20
+      Top = 88
+      Width = 23
+      Caption = 'CIF:'
+      ParentColor = False
+    end
+    object edNombre: TDBEdit
+      AnchorSideLeft.Control = edCode
+      AnchorSideTop.Control = edCode
+      AnchorSideTop.Side = asrBottom
+      Left = 408
+      Height = 28
+      Top = 48
+      Width = 408
+      DataField = 'NAME'
+      DataSource = dsSupplier
+      AutoSize = False
+      BorderSpacing.Top = 4
+      CharCase = ecNormal
+      MaxLength = 240
+      TabOrder = 3
+      OnKeyDown = edCodeKeyDown
+    end
+    object edNIF: TDBEdit
+      AnchorSideLeft.Control = edNombre
+      AnchorSideTop.Side = asrBottom
+      Left = 408
+      Height = 28
+      Top = 80
+      Width = 182
+      DataField = 'ID_NUMBER'
+      DataSource = dsSupplier
+      AutoSize = False
+      BorderSpacing.Top = 4
+      CharCase = ecNormal
+      MaxLength = 36
+      TabOrder = 4
+      OnKeyDown = edCodeKeyDown
+    end
+    object Panel4: TPanel
+      Left = 7
+      Height = 192
+      Top = 8
+      Width = 296
+      BorderSpacing.Around = 4
+      BevelOuter = bvNone
+      BorderStyle = bsSingle
+      ClientHeight = 188
+      ClientWidth = 292
+      Color = clWhite
+      ParentColor = False
+      TabOrder = 5
+      object DBImage: TDBImage
+        Left = 1
+        Height = 186
+        Top = 1
+        Width = 290
+        Align = alClient
+        BorderSpacing.Around = 1
+        Center = True
+        DataField = 'LOGO'
+        DataSource = dsSupplier
+        OnDblClick = DBImageDblClick
+        Proportional = True
+        Stretch = True
+      end
+      object bLoadImage: TBCButton
+        Left = 0
+        Height = 20
+        Top = 168
+        Width = 20
+        Anchors = [akTop, akRight]
+        StateClicked.Background.Color = clBlack
+        StateClicked.Background.ColorOpacity = 255
+        StateClicked.Background.Gradient1.StartColor = 7726591
+        StateClicked.Background.Gradient1.StartColorOpacity = 255
+        StateClicked.Background.Gradient1.DrawMode = dmSet
+        StateClicked.Background.Gradient1.EndColor = 7067903
+        StateClicked.Background.Gradient1.EndColorOpacity = 255
+        StateClicked.Background.Gradient1.ColorCorrection = True
+        StateClicked.Background.Gradient1.GradientType = gtLinear
+        StateClicked.Background.Gradient1.Point1XPercent = 0
+        StateClicked.Background.Gradient1.Point1YPercent = 0
+        StateClicked.Background.Gradient1.Point2XPercent = 0
+        StateClicked.Background.Gradient1.Point2YPercent = 100
+        StateClicked.Background.Gradient1.Sinus = False
+        StateClicked.Background.Gradient2.StartColor = 7067903
+        StateClicked.Background.Gradient2.StartColorOpacity = 255
+        StateClicked.Background.Gradient2.DrawMode = dmSet
+        StateClicked.Background.Gradient2.EndColor = 8515583
+        StateClicked.Background.Gradient2.EndColorOpacity = 255
+        StateClicked.Background.Gradient2.ColorCorrection = True
+        StateClicked.Background.Gradient2.GradientType = gtLinear
+        StateClicked.Background.Gradient2.Point1XPercent = 0
+        StateClicked.Background.Gradient2.Point1YPercent = 0
+        StateClicked.Background.Gradient2.Point2XPercent = 0
+        StateClicked.Background.Gradient2.Point2YPercent = 100
+        StateClicked.Background.Gradient2.Sinus = False
+        StateClicked.Background.Gradient1EndPercent = 50
+        StateClicked.Background.Style = bbsGradient
+        StateClicked.Border.Color = 4170178
+        StateClicked.Border.ColorOpacity = 255
+        StateClicked.Border.LightColor = clGray
+        StateClicked.Border.LightOpacity = 100
+        StateClicked.Border.LightWidth = 1
+        StateClicked.Border.Style = bboSolid
+        StateClicked.Border.Width = 1
+        StateClicked.FontEx.Color = clBlack
+        StateClicked.FontEx.EndEllipsis = False
+        StateClicked.FontEx.FontQuality = fqSystemClearType
+        StateClicked.FontEx.Height = 0
+        StateClicked.FontEx.SingleLine = True
+        StateClicked.FontEx.Shadow = False
+        StateClicked.FontEx.ShadowColor = clBlack
+        StateClicked.FontEx.ShadowColorOpacity = 255
+        StateClicked.FontEx.ShadowRadius = 5
+        StateClicked.FontEx.ShadowOffsetX = 5
+        StateClicked.FontEx.ShadowOffsetY = 5
+        StateClicked.FontEx.Style = []
+        StateClicked.FontEx.TextAlignment = bcaCenter
+        StateClicked.FontEx.WordBreak = False
+        StateHover.Background.Color = clBlack
+        StateHover.Background.ColorOpacity = 255
+        StateHover.Background.Gradient1.StartColor = 12448254
+        StateHover.Background.Gradient1.StartColorOpacity = 255
+        StateHover.Background.Gradient1.DrawMode = dmSet
+        StateHover.Background.Gradient1.EndColor = 8840446
+        StateHover.Background.Gradient1.EndColorOpacity = 255
+        StateHover.Background.Gradient1.ColorCorrection = True
+        StateHover.Background.Gradient1.GradientType = gtLinear
+        StateHover.Background.Gradient1.Point1XPercent = 0
+        StateHover.Background.Gradient1.Point1YPercent = 0
+        StateHover.Background.Gradient1.Point2XPercent = 0
+        StateHover.Background.Gradient1.Point2YPercent = 100
+        StateHover.Background.Gradient1.Sinus = False
+        StateHover.Background.Gradient2.StartColor = 8840446
+        StateHover.Background.Gradient2.StartColorOpacity = 255
+        StateHover.Background.Gradient2.DrawMode = dmSet
+        StateHover.Background.Gradient2.EndColor = 12908798
+        StateHover.Background.Gradient2.EndColorOpacity = 255
+        StateHover.Background.Gradient2.ColorCorrection = True
+        StateHover.Background.Gradient2.GradientType = gtLinear
+        StateHover.Background.Gradient2.Point1XPercent = 0
+        StateHover.Background.Gradient2.Point1YPercent = 0
+        StateHover.Background.Gradient2.Point2XPercent = 0
+        StateHover.Background.Gradient2.Point2YPercent = 100
+        StateHover.Background.Gradient2.Sinus = False
+        StateHover.Background.Gradient1EndPercent = 50
+        StateHover.Background.Style = bbsGradient
+        StateHover.Border.Color = 5362420
+        StateHover.Border.ColorOpacity = 255
+        StateHover.Border.LightColor = clWhite
+        StateHover.Border.LightOpacity = 200
+        StateHover.Border.LightWidth = 1
+        StateHover.Border.Style = bboSolid
+        StateHover.Border.Width = 1
+        StateHover.FontEx.Color = clBlack
+        StateHover.FontEx.EndEllipsis = False
+        StateHover.FontEx.FontQuality = fqSystemClearType
+        StateHover.FontEx.Height = 0
+        StateHover.FontEx.SingleLine = True
+        StateHover.FontEx.Shadow = False
+        StateHover.FontEx.ShadowColor = clBlack
+        StateHover.FontEx.ShadowColorOpacity = 255
+        StateHover.FontEx.ShadowRadius = 5
+        StateHover.FontEx.ShadowOffsetX = 5
+        StateHover.FontEx.ShadowOffsetY = 5
+        StateHover.FontEx.Style = []
+        StateHover.FontEx.TextAlignment = bcaCenter
+        StateHover.FontEx.WordBreak = False
+        StateNormal.Background.Color = clBlack
+        StateNormal.Background.ColorOpacity = 255
+        StateNormal.Background.Gradient1.StartColor = clWhite
+        StateNormal.Background.Gradient1.StartColorOpacity = 255
+        StateNormal.Background.Gradient1.DrawMode = dmSet
+        StateNormal.Background.Gradient1.EndColor = 15855597
+        StateNormal.Background.Gradient1.EndColorOpacity = 255
+        StateNormal.Background.Gradient1.ColorCorrection = True
+        StateNormal.Background.Gradient1.GradientType = gtLinear
+        StateNormal.Background.Gradient1.Point1XPercent = 0
+        StateNormal.Background.Gradient1.Point1YPercent = 0
+        StateNormal.Background.Gradient1.Point2XPercent = 0
+        StateNormal.Background.Gradient1.Point2YPercent = 100
+        StateNormal.Background.Gradient1.Sinus = False
+        StateNormal.Background.Gradient2.StartColor = 13137169
+        StateNormal.Background.Gradient2.StartColorOpacity = 255
+        StateNormal.Background.Gradient2.DrawMode = dmSet
+        StateNormal.Background.Gradient2.EndColor = 15722194
+        StateNormal.Background.Gradient2.EndColorOpacity = 255
+        StateNormal.Background.Gradient2.ColorCorrection = True
+        StateNormal.Background.Gradient2.GradientType = gtLinear
+        StateNormal.Background.Gradient2.Point1XPercent = 0
+        StateNormal.Background.Gradient2.Point1YPercent = 0
+        StateNormal.Background.Gradient2.Point2XPercent = 0
+        StateNormal.Background.Gradient2.Point2YPercent = 100
+        StateNormal.Background.Gradient2.Sinus = False
+        StateNormal.Background.Gradient1EndPercent = 100
+        StateNormal.Background.Style = bbsClear
+        StateNormal.Border.Color = 13816015
+        StateNormal.Border.ColorOpacity = 255
+        StateNormal.Border.LightColor = clWhite
+        StateNormal.Border.LightOpacity = 255
+        StateNormal.Border.LightWidth = 1
+        StateNormal.Border.Style = bboNone
+        StateNormal.Border.Width = 1
+        StateNormal.FontEx.Color = clBlack
+        StateNormal.FontEx.EndEllipsis = False
+        StateNormal.FontEx.FontQuality = fqSystemClearType
+        StateNormal.FontEx.Height = 0
+        StateNormal.FontEx.SingleLine = True
+        StateNormal.FontEx.Shadow = False
+        StateNormal.FontEx.ShadowColor = clBlack
+        StateNormal.FontEx.ShadowColorOpacity = 255
+        StateNormal.FontEx.ShadowRadius = 5
+        StateNormal.FontEx.ShadowOffsetX = 5
+        StateNormal.FontEx.ShadowOffsetY = 5
+        StateNormal.FontEx.Style = []
+        StateNormal.FontEx.TextAlignment = bcaCenter
+        StateNormal.FontEx.WordBreak = False
+        Caption = '-'
+        Color = clNone
+        DropDownWidth = 16
+        DropDownArrowSize = 8
+        GlobalOpacity = 255
+        Glyph.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          2000000000000004000064000000640000000000000000000000FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFC00FFFFF700806D5EFF7B604BFF7D624DFF806D
+          5EFFFFFFF700FFFFFC00FDFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFB00FFFFF2007C614CFFECCEB5FFECCEB5FF7C61
+          4CFFFFFFF200FFFFFB00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFC00FFFFFB00FFFFF500FFFFED00856346FFEFCFB2FFCBAB8EFF8563
+          46FFFFFFEB00FFFFF500FFFFFB00FFFFFC00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFF800FFFFF200FFFFED00FFFFE6008E6342FFF6D0AEFFD2AC8AFF8E63
+          42FFFFFFE600FFFFED00FFFFF200FFFFF700FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00806D5EFF7C614DFF836248FF8A6343FF8E6342FFD2AC8AFFD4AB8AFF9063
+          41FF8E6342FF876246FF7E624AFF826D5EFFFFFFFF00FFFFFF00FFFFFF00FFFF
+          FF007C614CFFE6CCB4FFD3B59CFFD4B497FFD5B395FFD4B294FFCFAC8BFFCFA9
+          89FFCCA688FFC6A487FFDCBEA3FF7E614CFFFFFFFF00FFFFFF00FFFFFF00FFFF
+          FF007C614CFFEED4BCFFEFD2B7FFF2D2B5FFF1CFB2FFEDCFB2FFEFCFB2FFF5CF
+          B1FFF4CEB0FFEFCDB0FFEBCDB2FF7F634BFFFFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00806D5EFF7A624CFF836248FF8A6343FF8A6343FFEDCFB4FFEDCFB4FF8C63
+          43FF8C6342FF856346FF7F634BFF816F5EFFFFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFF700FFFFF200FFFFEB00FFFFE6008A6245FFECCEB5FFECCEB5FF8A62
+          45FFFFFFE600FFFFEB00FFFFF100FFFFF700FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFC00FFFFFB00FFFFF500FFFFED00836248FFEACEB6FFEACEB6FF8362
+          48FFFFFFEB00FFFFF500FFFFF900FFFFFC00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFB00FFFFF2007C614CFFE8CDB8FFE8CDB8FF7C61
+          4CFFFFFFF200FFFFFA00FFFFFF00FFFFFE00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFC00FFFFF700806D5EFF7C614CFF7C614CFF806D
+          5EFFFFFFF700FFFFFC00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+        }
+        GlyphMargin = 0
+        OnClick = bLoadImageClick
+        ParentColor = False
+        Rounding.RoundX = 2
+        Rounding.RoundY = 2
+        Rounding.RoundOptions = []
+        RoundingDropDown.RoundX = 1
+        RoundingDropDown.RoundY = 1
+        RoundingDropDown.RoundOptions = []
+        TextApplyGlobalOpacity = False
+        ShowCaption = False
+      end
+      object bClearImage: TBCButton
+        Left = 272
+        Height = 20
+        Top = 167
+        Width = 20
+        Anchors = [akTop, akRight]
+        StateClicked.Background.Color = clBlack
+        StateClicked.Background.ColorOpacity = 255
+        StateClicked.Background.Gradient1.StartColor = 7726591
+        StateClicked.Background.Gradient1.StartColorOpacity = 255
+        StateClicked.Background.Gradient1.DrawMode = dmSet
+        StateClicked.Background.Gradient1.EndColor = 7067903
+        StateClicked.Background.Gradient1.EndColorOpacity = 255
+        StateClicked.Background.Gradient1.ColorCorrection = True
+        StateClicked.Background.Gradient1.GradientType = gtLinear
+        StateClicked.Background.Gradient1.Point1XPercent = 0
+        StateClicked.Background.Gradient1.Point1YPercent = 0
+        StateClicked.Background.Gradient1.Point2XPercent = 0
+        StateClicked.Background.Gradient1.Point2YPercent = 100
+        StateClicked.Background.Gradient1.Sinus = False
+        StateClicked.Background.Gradient2.StartColor = 7067903
+        StateClicked.Background.Gradient2.StartColorOpacity = 255
+        StateClicked.Background.Gradient2.DrawMode = dmSet
+        StateClicked.Background.Gradient2.EndColor = 8515583
+        StateClicked.Background.Gradient2.EndColorOpacity = 255
+        StateClicked.Background.Gradient2.ColorCorrection = True
+        StateClicked.Background.Gradient2.GradientType = gtLinear
+        StateClicked.Background.Gradient2.Point1XPercent = 0
+        StateClicked.Background.Gradient2.Point1YPercent = 0
+        StateClicked.Background.Gradient2.Point2XPercent = 0
+        StateClicked.Background.Gradient2.Point2YPercent = 100
+        StateClicked.Background.Gradient2.Sinus = False
+        StateClicked.Background.Gradient1EndPercent = 50
+        StateClicked.Background.Style = bbsGradient
+        StateClicked.Border.Color = 4170178
+        StateClicked.Border.ColorOpacity = 255
+        StateClicked.Border.LightColor = clGray
+        StateClicked.Border.LightOpacity = 100
+        StateClicked.Border.LightWidth = 1
+        StateClicked.Border.Style = bboSolid
+        StateClicked.Border.Width = 1
+        StateClicked.FontEx.Color = clBlack
+        StateClicked.FontEx.EndEllipsis = False
+        StateClicked.FontEx.FontQuality = fqSystemClearType
+        StateClicked.FontEx.Height = 0
+        StateClicked.FontEx.SingleLine = True
+        StateClicked.FontEx.Shadow = False
+        StateClicked.FontEx.ShadowColor = clBlack
+        StateClicked.FontEx.ShadowColorOpacity = 255
+        StateClicked.FontEx.ShadowRadius = 5
+        StateClicked.FontEx.ShadowOffsetX = 5
+        StateClicked.FontEx.ShadowOffsetY = 5
+        StateClicked.FontEx.Style = []
+        StateClicked.FontEx.TextAlignment = bcaCenter
+        StateClicked.FontEx.WordBreak = False
+        StateHover.Background.Color = clBlack
+        StateHover.Background.ColorOpacity = 255
+        StateHover.Background.Gradient1.StartColor = 12448254
+        StateHover.Background.Gradient1.StartColorOpacity = 255
+        StateHover.Background.Gradient1.DrawMode = dmSet
+        StateHover.Background.Gradient1.EndColor = 8840446
+        StateHover.Background.Gradient1.EndColorOpacity = 255
+        StateHover.Background.Gradient1.ColorCorrection = True
+        StateHover.Background.Gradient1.GradientType = gtLinear
+        StateHover.Background.Gradient1.Point1XPercent = 0
+        StateHover.Background.Gradient1.Point1YPercent = 0
+        StateHover.Background.Gradient1.Point2XPercent = 0
+        StateHover.Background.Gradient1.Point2YPercent = 100
+        StateHover.Background.Gradient1.Sinus = False
+        StateHover.Background.Gradient2.StartColor = 8840446
+        StateHover.Background.Gradient2.StartColorOpacity = 255
+        StateHover.Background.Gradient2.DrawMode = dmSet
+        StateHover.Background.Gradient2.EndColor = 12908798
+        StateHover.Background.Gradient2.EndColorOpacity = 255
+        StateHover.Background.Gradient2.ColorCorrection = True
+        StateHover.Background.Gradient2.GradientType = gtLinear
+        StateHover.Background.Gradient2.Point1XPercent = 0
+        StateHover.Background.Gradient2.Point1YPercent = 0
+        StateHover.Background.Gradient2.Point2XPercent = 0
+        StateHover.Background.Gradient2.Point2YPercent = 100
+        StateHover.Background.Gradient2.Sinus = False
+        StateHover.Background.Gradient1EndPercent = 50
+        StateHover.Background.Style = bbsGradient
+        StateHover.Border.Color = 5362420
+        StateHover.Border.ColorOpacity = 255
+        StateHover.Border.LightColor = clWhite
+        StateHover.Border.LightOpacity = 200
+        StateHover.Border.LightWidth = 1
+        StateHover.Border.Style = bboSolid
+        StateHover.Border.Width = 1
+        StateHover.FontEx.Color = clBlack
+        StateHover.FontEx.EndEllipsis = False
+        StateHover.FontEx.FontQuality = fqSystemClearType
+        StateHover.FontEx.Height = 0
+        StateHover.FontEx.SingleLine = True
+        StateHover.FontEx.Shadow = False
+        StateHover.FontEx.ShadowColor = clBlack
+        StateHover.FontEx.ShadowColorOpacity = 255
+        StateHover.FontEx.ShadowRadius = 5
+        StateHover.FontEx.ShadowOffsetX = 5
+        StateHover.FontEx.ShadowOffsetY = 5
+        StateHover.FontEx.Style = []
+        StateHover.FontEx.TextAlignment = bcaCenter
+        StateHover.FontEx.WordBreak = False
+        StateNormal.Background.Color = clBlack
+        StateNormal.Background.ColorOpacity = 255
+        StateNormal.Background.Gradient1.StartColor = clWhite
+        StateNormal.Background.Gradient1.StartColorOpacity = 255
+        StateNormal.Background.Gradient1.DrawMode = dmSet
+        StateNormal.Background.Gradient1.EndColor = 15855597
+        StateNormal.Background.Gradient1.EndColorOpacity = 255
+        StateNormal.Background.Gradient1.ColorCorrection = True
+        StateNormal.Background.Gradient1.GradientType = gtLinear
+        StateNormal.Background.Gradient1.Point1XPercent = 0
+        StateNormal.Background.Gradient1.Point1YPercent = 0
+        StateNormal.Background.Gradient1.Point2XPercent = 0
+        StateNormal.Background.Gradient1.Point2YPercent = 100
+        StateNormal.Background.Gradient1.Sinus = False
+        StateNormal.Background.Gradient2.StartColor = 13137169
+        StateNormal.Background.Gradient2.StartColorOpacity = 255
+        StateNormal.Background.Gradient2.DrawMode = dmSet
+        StateNormal.Background.Gradient2.EndColor = 15722194
+        StateNormal.Background.Gradient2.EndColorOpacity = 255
+        StateNormal.Background.Gradient2.ColorCorrection = True
+        StateNormal.Background.Gradient2.GradientType = gtLinear
+        StateNormal.Background.Gradient2.Point1XPercent = 0
+        StateNormal.Background.Gradient2.Point1YPercent = 0
+        StateNormal.Background.Gradient2.Point2XPercent = 0
+        StateNormal.Background.Gradient2.Point2YPercent = 100
+        StateNormal.Background.Gradient2.Sinus = False
+        StateNormal.Background.Gradient1EndPercent = 100
+        StateNormal.Background.Style = bbsClear
+        StateNormal.Border.Color = 13816015
+        StateNormal.Border.ColorOpacity = 255
+        StateNormal.Border.LightColor = clWhite
+        StateNormal.Border.LightOpacity = 255
+        StateNormal.Border.LightWidth = 1
+        StateNormal.Border.Style = bboNone
+        StateNormal.Border.Width = 1
+        StateNormal.FontEx.Color = clBlack
+        StateNormal.FontEx.EndEllipsis = False
+        StateNormal.FontEx.FontQuality = fqSystemClearType
+        StateNormal.FontEx.Height = 0
+        StateNormal.FontEx.SingleLine = True
+        StateNormal.FontEx.Shadow = False
+        StateNormal.FontEx.ShadowColor = clBlack
+        StateNormal.FontEx.ShadowColorOpacity = 255
+        StateNormal.FontEx.ShadowRadius = 5
+        StateNormal.FontEx.ShadowOffsetX = 5
+        StateNormal.FontEx.ShadowOffsetY = 5
+        StateNormal.FontEx.Style = []
+        StateNormal.FontEx.TextAlignment = bcaCenter
+        StateNormal.FontEx.WordBreak = False
+        Caption = '-'
+        Color = clNone
+        DropDownWidth = 16
+        DropDownArrowSize = 8
+        GlobalOpacity = 255
+        Glyph.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          2000000000000004000064000000640000000000000000000000FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00008B9C1F008C9DED008D9EEC008D
+          9E9E008B9C21FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00008B9C13008D9EE24FC3D2FD5BD3E1FF30B5
+          C6FA0890A1F6008D9FA9008B9C14FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00008E9FC536B5C5FA5FD8E7FF26CADFFF4ED4
+          E5FF6DD9E7FF32B4C5FB008D9EE6008B9C26FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00008B9C431A9BABF66CDAE8FF10C5DCFF03C2DAFF03C2
+          DAFF15C6DCFF5BD7E7FF56C8D6FE058FA0F1008B9C3FFFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00018EA0D45ECFDDFF46DAEDFF18D0E7FF11CBE3FF07C4
+          DCFF03C2DAFF03C2DAFF4CD3E4FF58CDDCFF048E9FF4008B9C1CFFFFFF00FFFF
+          FF00FFFFFF00008B9C1A1194A5F78BEDFBFF3CE5FCFF37E4FBFF2FDEF6FF23D7
+          EEFF14CDE5FF04C3DBFF03C2DAFF56D6E6FF33B6C6FB008E9FA8FFFFFF00FFFF
+          FF00FFFFFF00007F9C5F2FB0C0F58AEFFDFF5FEAFDFF61EBFDFF52E9FDFF3CE6
+          FDFF2ADBF3FF18D0E7FF10C6DCFF49D2E4FF67D4E2FF018D9FE9FFFFFF00FFFF
+          FF00008B9C070024A1D71342ADFC84EAFBFF6BECFDFF84EFFDFF6DECFDFF52E9
+          FDFF44E5FBFF65E3F3FF77DDEBFF49C1CFFE1B9EAEF3008C9DEAFFFFFF00008B
+          9C5F008D9EEB29A5BBF6284ABBFF1D38B8FF61D8F6FF63EAFDFF6CEBFDFF7DEE
+          FDFF88EAF8FF45BECDFA058F9FF7008E9FA3008B9C40008B9C02FFFFFF00008B
+          9C5A018D9EF64FC8D8FF68DCECFF336DC8FF0D1BABFF62B1D7FF72DCEAFF43BD
+          CCF70990A2F6018E9F9F008B9C1BFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF000064878100889CFE41BDCDFF77DEEBFF1769B0F70036A0E4018FA0D2008C
+          9D77008B9C15FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0000487802004A
+          7B95014E80F40B76B2FF0188A1FF32AEBEFE1DA0B1F2008B9C3DFFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000049796F0352
+          86F40F7ABCFF107DC1FF015284F200859ACE008B9CFF008B9C29FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00004A7BED0C72
+          B2FF107DC1FF0A6BA9FF004A7BDA00698A02008B9C82008B9C13FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00004A7BE50A69
+          A6FF0B6DABFF004A7BF500487844FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000048783B004B
+          7CDA004A7BE300487847FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+        }
+        GlyphMargin = 0
+        OnClick = bClearImageClick
+        ParentColor = False
+        Rounding.RoundX = 2
+        Rounding.RoundY = 2
+        Rounding.RoundOptions = []
+        RoundingDropDown.RoundX = 1
+        RoundingDropDown.RoundY = 1
+        RoundingDropDown.RoundOptions = []
+        TextApplyGlobalOpacity = False
+        ShowCaption = False
+      end
+    end
+    object Label27: TLabel
+      Left = 328
+      Height = 20
+      Top = 120
+      Width = 48
+      Caption = 'Estado:'
+      ParentColor = False
+    end
+    object DBComboBox1: TDBComboBox
+      AnchorSideLeft.Control = edNIF
+      AnchorSideTop.Control = edNIF
+      AnchorSideTop.Side = asrBottom
+      Left = 408
+      Height = 28
+      Top = 112
+      Width = 182
+      BorderSpacing.Top = 4
+      DataSource = dsSupplier
+      ItemHeight = 20
+      Items.Strings = (
+        'Activo'
+        'Inactivo'
+        'Parcialmente Bloqueado'
+        'Totalmente Bloqueado'
+      )
+      MaxLength = 0
+      TabOrder = 6
+    end
+  end
+  object zqSupplier: TZQuery[3]
+    Connection = MainWindow.zcMainConnection
+    SQL.Strings = (
+      'SELECT * FROM SUPPLIER WHERE ID = -1 LIMIT 1'
+    )
+    Params = <>
+    left = 104
+    top = 80
+  end
+  object dsSupplier: TDataSource[4]
+    DataSet = zqSupplier
+    OnDataChange = dsSupplierDataChange
+    left = 104
+    top = 144
+  end
+  object ztFamily: TZTable[5]
+    Connection = MainWindow.zcMainConnection
+    TableName = 'CUSTOMERFAMILIES'
+    left = 162
+    top = 80
+  end
+  object ztForm: TZTable[6]
+    Connection = MainWindow.zcMainConnection
+    TableName = 'FORM'
+    left = 218
+    top = 80
+  end
+  object dcFamily: TDataSource[7]
+    DataSet = ztFamily
+    left = 162
+    top = 144
+  end
+  object dsForm: TDataSource[8]
+    DataSet = ztForm
+    left = 218
+    top = 144
+  end
+  object dsSaleDocs: TDataSource[9]
+    left = 48
+    top = 144
+  end
+  object ztSaleDocs: TZQuery[10]
+    Connection = MainWindow.zcMainConnection
+    SQL.Strings = (
+      'SELECT * FROM  BUYDOCUMENT WHERE ID = -1 LIMIT 1'
+    )
+    Params = <>
+    left = 48
+    top = 80
+  end
+end

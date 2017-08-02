@@ -1,0 +1,678 @@
+object CreateCompanyWizard: TCreateCompanyWizard
+  Left = 541
+  Height = 368
+  Top = 299
+  Width = 602
+  BorderIcons = []
+  BorderStyle = bsToolWindow
+  Caption = 'Crear Empresa'
+  ClientHeight = 368
+  ClientWidth = 602
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poMainFormCenter
+  LCLVersion = '1.6.2.0'
+  object pHeader: TPanel
+    Left = 0
+    Height = 56
+    Top = 0
+    Width = 602
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 56
+    ClientWidth = 602
+    Color = clWhite
+    ParentColor = False
+    TabOrder = 0
+    object lTitle: TLabel
+      Left = 6
+      Height = 17
+      Top = 6
+      Width = 590
+      Align = alTop
+      BorderSpacing.Around = 6
+      Caption = 'lTitle'
+      Font.Height = -13
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object lDescription: TLabel
+      Left = 6
+      Height = 21
+      Top = 29
+      Width = 590
+      Align = alClient
+      BorderSpacing.Around = 6
+      Caption = 'lDescription'
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+  object PC: TNotebook
+    Left = 0
+    Height = 262
+    Top = 56
+    Width = 602
+    PageIndex = 0
+    Align = alClient
+    TabOrder = 1
+    TabStop = True
+    object Page1: TPage
+      OnBeforeShow = PageBeforeShow
+      object laNombre: TLabel
+        Left = 24
+        Height = 20
+        Top = 16
+        Width = 58
+        Caption = 'Nombre:'
+        ParentColor = False
+        ParentFont = False
+      end
+      object edNombre: TEdit
+        Left = 152
+        Height = 28
+        Top = 8
+        Width = 424
+        MaxLength = 100
+        OnKeyDown = EditKeyDown
+        TabOrder = 0
+      end
+    end
+    object Page2: TPage
+      OnBeforeShow = PageBeforeShow
+      object Label10: TLabel
+        Left = 24
+        Height = 20
+        Top = 208
+        Width = 34
+        Caption = 'Web:'
+        ParentColor = False
+      end
+      object Label2: TLabel
+        Left = 24
+        Height = 20
+        Top = 16
+        Width = 66
+        Caption = 'Dirección:'
+        ParentColor = False
+      end
+      object Label3: TLabel
+        Left = 24
+        Height = 20
+        Top = 80
+        Width = 100
+        Caption = 'CP / Población:'
+        ParentColor = False
+      end
+      object Label4: TLabel
+        Left = 24
+        Height = 20
+        Top = 112
+        Width = 95
+        Caption = 'Provincia/Pais:'
+        ParentColor = False
+      end
+      object Label5: TLabel
+        Left = 24
+        Height = 20
+        Top = 144
+        Width = 97
+        Caption = 'Tel./Fax/Móvil:'
+        ParentColor = False
+      end
+      object Label9: TLabel
+        Left = 24
+        Height = 20
+        Top = 176
+        Width = 46
+        Caption = 'E-mail:'
+        ParentColor = False
+      end
+      object edDir1: TEdit
+        Left = 152
+        Height = 28
+        Top = 8
+        Width = 424
+        MaxLength = 40
+        OnKeyDown = EditKeyDown
+        TabOrder = 0
+      end
+      object edDir2: TEdit
+        AnchorSideLeft.Control = edDir1
+        AnchorSideRight.Control = edDir1
+        AnchorSideRight.Side = asrBottom
+        Left = 152
+        Height = 28
+        Top = 40
+        Width = 424
+        Anchors = [akTop, akLeft, akRight]
+        MaxLength = 40
+        OnKeyDown = EditKeyDown
+        TabOrder = 1
+      end
+      object edCP: TEdit
+        AnchorSideLeft.Control = edDir2
+        AnchorSideRight.Control = edDir2
+        AnchorSideRight.Side = asrBottom
+        Left = 152
+        Height = 28
+        Top = 72
+        Width = 112
+        BorderSpacing.Right = 13
+        OnKeyDown = EditKeyDown
+        TabOrder = 2
+      end
+      object edPobla: TEdit
+        AnchorSideRight.Control = edDir1
+        AnchorSideRight.Side = asrBottom
+        Left = 272
+        Height = 28
+        Top = 72
+        Width = 304
+        Anchors = [akTop, akLeft, akRight]
+        OnKeyDown = EditKeyDown
+        TabOrder = 3
+      end
+      object edProvincia: TEdit
+        AnchorSideLeft.Control = edCP
+        Left = 152
+        Height = 28
+        Top = 104
+        Width = 200
+        OnKeyDown = EditKeyDown
+        TabOrder = 4
+      end
+      object edPais: TEdit
+        AnchorSideRight.Control = edDir1
+        AnchorSideRight.Side = asrBottom
+        Left = 360
+        Height = 28
+        Top = 104
+        Width = 216
+        Anchors = [akTop, akLeft, akRight]
+        OnKeyDown = EditKeyDown
+        TabOrder = 5
+      end
+      object edTel: TEdit
+        AnchorSideLeft.Control = edProvincia
+        Left = 152
+        Height = 28
+        Top = 136
+        Width = 136
+        OnKeyDown = EditKeyDown
+        TabOrder = 6
+      end
+      object edFax: TEdit
+        Left = 296
+        Height = 28
+        Top = 136
+        Width = 144
+        OnKeyDown = EditKeyDown
+        TabOrder = 7
+      end
+      object edMovil: TEdit
+        AnchorSideRight.Control = edDir1
+        AnchorSideRight.Side = asrBottom
+        Left = 448
+        Height = 28
+        Top = 136
+        Width = 128
+        Anchors = [akTop, akLeft, akRight]
+        OnKeyDown = EditKeyDown
+        TabOrder = 8
+      end
+      object edMail: TEdit
+        AnchorSideLeft.Control = edTel
+        AnchorSideRight.Control = edDir1
+        AnchorSideRight.Side = asrBottom
+        Left = 152
+        Height = 28
+        Top = 168
+        Width = 424
+        Anchors = [akTop, akLeft, akRight]
+        OnKeyDown = EditKeyDown
+        TabOrder = 9
+      end
+      object edWeb: TEdit
+        AnchorSideLeft.Control = edMail
+        AnchorSideRight.Control = edDir1
+        AnchorSideRight.Side = asrBottom
+        Left = 152
+        Height = 28
+        Top = 200
+        Width = 424
+        Anchors = [akTop, akLeft, akRight]
+        OnKeyDown = EditKeyDown
+        TabOrder = 10
+      end
+    end
+    object Page3: TPage
+      OnBeforeShow = PageBeforeShow
+      object laCIFC: TLabel
+        Left = 24
+        Height = 15
+        Top = 48
+        Width = 90
+        Caption = 'CIF Comunitario:'
+        ParentColor = False
+      end
+      object laCNAE: TLabel
+        Left = 24
+        Height = 15
+        Top = 112
+        Width = 46
+        Caption = 'C.N.A.E.:'
+        ParentColor = False
+      end
+      object laDCNAE: TLabel
+        Left = 24
+        Height = 15
+        Top = 144
+        Width = 77
+        Caption = 'Desc. C.N.A.E.:'
+        ParentColor = False
+      end
+      object laIAE: TLabel
+        Left = 24
+        Height = 15
+        Top = 80
+        Width = 20
+        Caption = 'IAE:'
+        ParentColor = False
+      end
+      object laNIF: TLabel
+        Left = 24
+        Height = 15
+        Top = 16
+        Width = 27
+        Caption = 'N.I.F.'
+        ParentColor = False
+      end
+      object edNIF: TEdit
+        Left = 152
+        Height = 28
+        Top = 8
+        Width = 424
+        OnKeyDown = EditKeyDown
+        TabOrder = 0
+      end
+      object edCIFCom: TEdit
+        Left = 152
+        Height = 28
+        Top = 40
+        Width = 424
+        OnKeyDown = EditKeyDown
+        TabOrder = 1
+      end
+      object edIAE: TEdit
+        Left = 152
+        Height = 28
+        Top = 72
+        Width = 424
+        OnKeyDown = EditKeyDown
+        TabOrder = 2
+      end
+      object edCNAE: TEdit
+        Left = 152
+        Height = 28
+        Top = 104
+        Width = 424
+        OnKeyDown = EditKeyDown
+        TabOrder = 3
+      end
+      object edDCNAE: TEdit
+        Left = 152
+        Height = 28
+        Top = 136
+        Width = 424
+        OnKeyDown = EditKeyDown
+        TabOrder = 4
+      end
+    end
+    object Page4: TPage
+      OnBeforeShow = PageBeforeShow
+      object laBanco: TLabel
+        Left = 24
+        Height = 15
+        Top = 16
+        Width = 36
+        Caption = 'Banco:'
+        ParentColor = False
+      end
+      object laBICSWIFT: TLabel
+        Left = 24
+        Height = 15
+        Top = 80
+        Width = 59
+        Caption = 'BIC/SWIFT:'
+        ParentColor = False
+      end
+      object laIBAN: TLabel
+        Left = 24
+        Height = 15
+        Top = 48
+        Width = 30
+        Caption = 'IBAN:'
+        ParentColor = False
+      end
+      object edBanco: TEdit
+        Left = 152
+        Height = 28
+        Top = 8
+        Width = 424
+        OnKeyDown = EditKeyDown
+        TabOrder = 0
+      end
+      object edIBAN: TEdit
+        Left = 152
+        Height = 28
+        Top = 40
+        Width = 424
+        OnKeyDown = EditKeyDown
+        TabOrder = 1
+      end
+      object edBICSWIFT: TEdit
+        Left = 152
+        Height = 28
+        Top = 72
+        Width = 424
+        OnKeyDown = EditKeyDown
+        TabOrder = 2
+      end
+    end
+    object Page5: TPage
+      OnBeforeShow = PageBeforeShow
+      object Button1: TButton
+        Left = 56
+        Height = 25
+        Top = 224
+        Width = 75
+        Caption = 'Cargar'
+        OnClick = OpenLogosClick
+        TabOrder = 0
+      end
+      object Button2: TButton
+        Tag = 1
+        Left = 248
+        Height = 25
+        Top = 224
+        Width = 75
+        Caption = 'Cargar'
+        OnClick = OpenLogosClick
+        TabOrder = 1
+      end
+      object Button3: TButton
+        Tag = 2
+        Left = 432
+        Height = 25
+        Top = 224
+        Width = 75
+        Caption = 'Cargar'
+        OnClick = OpenLogosClick
+        TabOrder = 2
+      end
+      object Label15: TLabel
+        Left = 3
+        Height = 13
+        Top = 200
+        Width = 182
+        Alignment = taCenter
+        AutoSize = False
+        Caption = 'Logo1'
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label17: TLabel
+        Left = 191
+        Height = 13
+        Top = 199
+        Width = 182
+        Alignment = taCenter
+        AutoSize = False
+        Caption = 'Logo2'
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label21: TLabel
+        Left = 379
+        Height = 13
+        Top = 199
+        Width = 182
+        Alignment = taCenter
+        AutoSize = False
+        Caption = 'Logo3'
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Panel1: TPanel
+        Left = 3
+        Height = 185
+        Top = 8
+        Width = 182
+        BevelOuter = bvNone
+        BorderStyle = bsSingle
+        ClientHeight = 185
+        ClientWidth = 182
+        TabOrder = 3
+        object iLogo1: TImage
+          Left = 2
+          Height = 177
+          Top = 2
+          Width = 174
+          Align = alClient
+          BorderSpacing.Around = 2
+          Proportional = True
+          Stretch = True
+        end
+      end
+      object Panel2: TPanel
+        Left = 191
+        Height = 185
+        Top = 8
+        Width = 182
+        BevelOuter = bvNone
+        BorderStyle = bsSingle
+        ClientHeight = 185
+        ClientWidth = 182
+        TabOrder = 4
+        object iLogo2: TImage
+          Left = 2
+          Height = 177
+          Top = 2
+          Width = 174
+          Align = alClient
+          BorderSpacing.Around = 2
+          Proportional = True
+          Stretch = True
+        end
+      end
+      object Panel3: TPanel
+        Left = 379
+        Height = 185
+        Top = 8
+        Width = 182
+        BevelOuter = bvNone
+        BorderStyle = bsSingle
+        ClientHeight = 185
+        ClientWidth = 182
+        TabOrder = 5
+        object iLogo3: TImage
+          Left = 2
+          Height = 177
+          Top = 2
+          Width = 174
+          Align = alClient
+          BorderSpacing.Around = 2
+          Proportional = True
+          Stretch = True
+        end
+      end
+    end
+    object Page6: TPage
+      OnBeforeShow = PageBeforeShow
+      object ListBox1: TListBox
+        Left = 6
+        Height = 261
+        Top = 6
+        Width = 561
+        Align = alClient
+        BorderSpacing.Around = 6
+        ItemHeight = 0
+        TabOrder = 0
+      end
+    end
+  end
+  object Panel4: TPanel
+    Left = 0
+    Height = 50
+    Top = 318
+    Width = 602
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 50
+    ClientWidth = 602
+    TabOrder = 2
+    object bBack: TBitBtn
+      Left = 152
+      Height = 50
+      Top = 0
+      Width = 150
+      Align = alRight
+      Caption = '< A&nterior'
+      OnClick = bBackClick
+      TabOrder = 2
+      Visible = False
+    end
+    object bCancel: TBitBtn
+      Left = 0
+      Height = 50
+      Top = 0
+      Width = 150
+      Align = alLeft
+      Cancel = True
+      Caption = '&Cancelar'
+      Kind = bkCancel
+      ModalResult = 2
+      TabOrder = 3
+    end
+    object bNext: TBitBtn
+      Left = 302
+      Height = 50
+      Top = 0
+      Width = 150
+      Align = alRight
+      Caption = '&Siguiente >'
+      OnClick = bNextClick
+      TabOrder = 1
+    end
+    object bAccept: TBitBtn
+      Left = 452
+      Height = 50
+      Top = 0
+      Width = 150
+      Align = alRight
+      DefaultCaption = True
+      Kind = bkOK
+      ModalResult = 1
+      TabOrder = 0
+      Visible = False
+    end
+  end
+  object pError: TBCPanel
+    Left = 0
+    Height = 0
+    Top = 56
+    Width = 602
+    Align = alTop
+    Background.Color = clBtnFace
+    Background.ColorOpacity = 255
+    Background.Gradient1.StartColor = 5395137
+    Background.Gradient1.StartColorOpacity = 255
+    Background.Gradient1.DrawMode = dmSet
+    Background.Gradient1.EndColor = 5855709
+    Background.Gradient1.EndColorOpacity = 255
+    Background.Gradient1.ColorCorrection = True
+    Background.Gradient1.GradientType = gtRadial
+    Background.Gradient1.Point1XPercent = 0
+    Background.Gradient1.Point1YPercent = 0
+    Background.Gradient1.Point2XPercent = 0
+    Background.Gradient1.Point2YPercent = 100
+    Background.Gradient1.Sinus = False
+    Background.Gradient2.StartColor = clWhite
+    Background.Gradient2.StartColorOpacity = 255
+    Background.Gradient2.DrawMode = dmSet
+    Background.Gradient2.EndColor = clBlack
+    Background.Gradient2.EndColorOpacity = 255
+    Background.Gradient2.ColorCorrection = True
+    Background.Gradient2.GradientType = gtLinear
+    Background.Gradient2.Point1XPercent = 0
+    Background.Gradient2.Point1YPercent = 0
+    Background.Gradient2.Point2XPercent = 0
+    Background.Gradient2.Point2YPercent = 100
+    Background.Gradient2.Sinus = False
+    Background.Gradient1EndPercent = 199
+    Background.Style = bbsGradient
+    BevelInner = bvNone
+    BevelOuter = bvNone
+    BevelWidth = 1
+    Border.Color = 5395137
+    Border.ColorOpacity = 255
+    Border.LightColor = clWhite
+    Border.LightOpacity = 255
+    Border.LightWidth = 1
+    Border.Style = bboNone
+    Border.Width = 1
+    BorderBCStyle = bpsBorder
+    FontEx.Color = clWhite
+    FontEx.EndEllipsis = False
+    FontEx.FontQuality = fqSystemClearType
+    FontEx.Height = 0
+    FontEx.SingleLine = True
+    FontEx.Shadow = True
+    FontEx.ShadowColor = 2037553
+    FontEx.ShadowColorOpacity = 255
+    FontEx.ShadowRadius = 5
+    FontEx.ShadowOffsetX = 5
+    FontEx.ShadowOffsetY = 5
+    FontEx.Style = [fsBold]
+    FontEx.TextAlignment = bcaCenter
+    FontEx.WordBreak = False
+    Rounding.RoundX = 1
+    Rounding.RoundY = 1
+    Rounding.RoundOptions = []
+    TabOrder = 3
+  end
+  object ZQuery: TZQuery
+    Params = <>
+    left = 544
+    top = 8
+  end
+  object Timer1: TTimer
+    Enabled = False
+    Interval = 10
+    OnTimer = Timer1Timer
+    left = 573
+    top = 8
+  end
+  object Timer2: TTimer
+    Enabled = False
+    Interval = 5000
+    OnTimer = Timer2Timer
+    left = 544
+    top = 37
+  end
+end

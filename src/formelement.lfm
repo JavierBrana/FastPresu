@@ -1,0 +1,3506 @@
+inherited Element: TElement
+  Left = 768
+  Height = 745
+  Top = 148
+  Width = 976
+  Caption = 'Elemento'
+  ClientHeight = 745
+  ClientWidth = 976
+  FormStyle = fsStayOnTop
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Visible = True
+  inherited ToolBar: TBCPanel
+    Width = 976
+    TabOrder = 2
+    inherited bSave: TBCButton
+      OnClick = bSaveClick
+    end
+    inherited bClose: TBCButton
+      Left = 935
+    end
+    object ToolBarComposite: TBCPanel[4]
+      Tag = 1
+      Left = 88
+      Height = 28
+      Top = 1
+      Width = 127
+      Align = alLeft
+      AutoSize = True
+      BorderSpacing.Top = 1
+      BorderSpacing.Bottom = 1
+      Background.Color = clBtnFace
+      Background.ColorOpacity = 255
+      Background.Gradient1.StartColor = 16184563
+      Background.Gradient1.StartColorOpacity = 255
+      Background.Gradient1.DrawMode = dmSet
+      Background.Gradient1.EndColor = 15000289
+      Background.Gradient1.EndColorOpacity = 255
+      Background.Gradient1.ColorCorrection = True
+      Background.Gradient1.GradientType = gtLinear
+      Background.Gradient1.Point1XPercent = 0
+      Background.Gradient1.Point1YPercent = 0
+      Background.Gradient1.Point2XPercent = 0
+      Background.Gradient1.Point2YPercent = 90
+      Background.Gradient1.Sinus = False
+      Background.Gradient2.StartColor = 16049884
+      Background.Gradient2.StartColorOpacity = 255
+      Background.Gradient2.DrawMode = dmSet
+      Background.Gradient2.EndColor = 16247261
+      Background.Gradient2.EndColorOpacity = 255
+      Background.Gradient2.ColorCorrection = True
+      Background.Gradient2.GradientType = gtLinear
+      Background.Gradient2.Point1XPercent = 0
+      Background.Gradient2.Point1YPercent = 0
+      Background.Gradient2.Point2XPercent = 0
+      Background.Gradient2.Point2YPercent = 100
+      Background.Gradient2.Sinus = False
+      Background.Gradient1EndPercent = 100
+      Background.Style = bbsGradient
+      BevelInner = bvNone
+      BevelOuter = bvNone
+      BevelWidth = 1
+      Border.Color = 7433834
+      Border.ColorOpacity = 200
+      Border.LightColor = clWhite
+      Border.LightOpacity = 200
+      Border.LightWidth = 1
+      Border.Style = bboNone
+      Border.Width = 1
+      BorderBCStyle = bpsBorder
+      FontEx.Color = clDefault
+      FontEx.EndEllipsis = False
+      FontEx.FontQuality = fqSystemClearType
+      FontEx.Height = 0
+      FontEx.SingleLine = True
+      FontEx.Shadow = False
+      FontEx.ShadowColor = clBlack
+      FontEx.ShadowColorOpacity = 255
+      FontEx.ShadowRadius = 5
+      FontEx.ShadowOffsetX = 5
+      FontEx.ShadowOffsetY = 5
+      FontEx.Style = []
+      FontEx.TextAlignment = bcaCenter
+      FontEx.WordBreak = False
+      Rounding.RoundX = 4
+      Rounding.RoundY = 4
+      Rounding.RoundOptions = [rrTopLeftSquare, rrTopRightSquare, rrBottomRightSquare, rrBottomLeftSquare]
+      TabOrder = 0
+      Visible = False
+      object SeparatorBevel1: TBevel
+        Left = 2
+        Height = 24
+        Top = 2
+        Width = 5
+        Align = alLeft
+        BorderSpacing.Left = 2
+        BorderSpacing.Top = 2
+        BorderSpacing.Bottom = 2
+        Shape = bsLeftLine
+      end
+      object bDeleteLine: TBCButton
+        Left = 7
+        Height = 26
+        Top = 1
+        Width = 40
+        Align = alLeft
+        StateClicked.Background.Color = clBlack
+        StateClicked.Background.ColorOpacity = 255
+        StateClicked.Background.Gradient1.StartColor = 16116962
+        StateClicked.Background.Gradient1.StartColorOpacity = 255
+        StateClicked.Background.Gradient1.DrawMode = dmSet
+        StateClicked.Background.Gradient1.EndColor = 15852760
+        StateClicked.Background.Gradient1.EndColorOpacity = 255
+        StateClicked.Background.Gradient1.ColorCorrection = True
+        StateClicked.Background.Gradient1.GradientType = gtLinear
+        StateClicked.Background.Gradient1.Point1XPercent = 0
+        StateClicked.Background.Gradient1.Point1YPercent = 0
+        StateClicked.Background.Gradient1.Point2XPercent = 0
+        StateClicked.Background.Gradient1.Point2YPercent = 100
+        StateClicked.Background.Gradient1.Sinus = False
+        StateClicked.Background.Gradient2.StartColor = 15522767
+        StateClicked.Background.Gradient2.StartColorOpacity = 255
+        StateClicked.Background.Gradient2.DrawMode = dmSet
+        StateClicked.Background.Gradient2.EndColor = 15588559
+        StateClicked.Background.Gradient2.EndColorOpacity = 255
+        StateClicked.Background.Gradient2.ColorCorrection = True
+        StateClicked.Background.Gradient2.GradientType = gtLinear
+        StateClicked.Background.Gradient2.Point1XPercent = 0
+        StateClicked.Background.Gradient2.Point1YPercent = 0
+        StateClicked.Background.Gradient2.Point2XPercent = 0
+        StateClicked.Background.Gradient2.Point2YPercent = 100
+        StateClicked.Background.Gradient2.Sinus = False
+        StateClicked.Background.Gradient1EndPercent = 50
+        StateClicked.Background.Style = bbsGradient
+        StateClicked.Border.Color = 14404283
+        StateClicked.Border.ColorOpacity = 255
+        StateClicked.Border.LightColor = clSilver
+        StateClicked.Border.LightOpacity = 100
+        StateClicked.Border.LightWidth = 1
+        StateClicked.Border.Style = bboSolid
+        StateClicked.Border.Width = 1
+        StateClicked.FontEx.Color = clBlack
+        StateClicked.FontEx.EndEllipsis = False
+        StateClicked.FontEx.FontQuality = fqSystemClearType
+        StateClicked.FontEx.Height = 0
+        StateClicked.FontEx.SingleLine = True
+        StateClicked.FontEx.Shadow = False
+        StateClicked.FontEx.ShadowColor = clBlack
+        StateClicked.FontEx.ShadowColorOpacity = 255
+        StateClicked.FontEx.ShadowRadius = 5
+        StateClicked.FontEx.ShadowOffsetX = 5
+        StateClicked.FontEx.ShadowOffsetY = 5
+        StateClicked.FontEx.Style = []
+        StateClicked.FontEx.TextAlignment = bcaCenter
+        StateClicked.FontEx.WordBreak = False
+        StateHover.Background.Color = clBlack
+        StateHover.Background.ColorOpacity = 255
+        StateHover.Background.Gradient1.StartColor = 16710648
+        StateHover.Background.Gradient1.StartColorOpacity = 255
+        StateHover.Background.Gradient1.DrawMode = dmSet
+        StateHover.Background.Gradient1.EndColor = 16446189
+        StateHover.Background.Gradient1.EndColorOpacity = 255
+        StateHover.Background.Gradient1.ColorCorrection = True
+        StateHover.Background.Gradient1.GradientType = gtLinear
+        StateHover.Background.Gradient1.Point1XPercent = 0
+        StateHover.Background.Gradient1.Point1YPercent = 0
+        StateHover.Background.Gradient1.Point2XPercent = 0
+        StateHover.Background.Gradient1.Point2YPercent = 100
+        StateHover.Background.Gradient1.Sinus = False
+        StateHover.Background.Gradient2.StartColor = 16049367
+        StateHover.Background.Gradient2.StartColorOpacity = 255
+        StateHover.Background.Gradient2.DrawMode = dmSet
+        StateHover.Background.Gradient2.EndColor = 15258305
+        StateHover.Background.Gradient2.EndColorOpacity = 255
+        StateHover.Background.Gradient2.ColorCorrection = True
+        StateHover.Background.Gradient2.GradientType = gtLinear
+        StateHover.Background.Gradient2.Point1XPercent = 0
+        StateHover.Background.Gradient2.Point1YPercent = 0
+        StateHover.Background.Gradient2.Point2XPercent = 0
+        StateHover.Background.Gradient2.Point2YPercent = 100
+        StateHover.Background.Gradient2.Sinus = False
+        StateHover.Background.Gradient1EndPercent = 50
+        StateHover.Background.Style = bbsGradient
+        StateHover.Border.Color = 14404283
+        StateHover.Border.ColorOpacity = 255
+        StateHover.Border.LightColor = clWhite
+        StateHover.Border.LightOpacity = 200
+        StateHover.Border.LightWidth = 1
+        StateHover.Border.Style = bboSolid
+        StateHover.Border.Width = 1
+        StateHover.FontEx.Color = clBlack
+        StateHover.FontEx.EndEllipsis = False
+        StateHover.FontEx.FontQuality = fqSystemClearType
+        StateHover.FontEx.Height = 0
+        StateHover.FontEx.SingleLine = True
+        StateHover.FontEx.Shadow = False
+        StateHover.FontEx.ShadowColor = clBlack
+        StateHover.FontEx.ShadowColorOpacity = 255
+        StateHover.FontEx.ShadowRadius = 5
+        StateHover.FontEx.ShadowOffsetX = 5
+        StateHover.FontEx.ShadowOffsetY = 5
+        StateHover.FontEx.Style = []
+        StateHover.FontEx.TextAlignment = bcaCenter
+        StateHover.FontEx.WordBreak = False
+        StateNormal.Background.Color = clBlack
+        StateNormal.Background.ColorOpacity = 255
+        StateNormal.Background.Gradient1.StartColor = 15722194
+        StateNormal.Background.Gradient1.StartColorOpacity = 255
+        StateNormal.Background.Gradient1.DrawMode = dmSet
+        StateNormal.Background.Gradient1.EndColor = 13137169
+        StateNormal.Background.Gradient1.EndColorOpacity = 255
+        StateNormal.Background.Gradient1.ColorCorrection = True
+        StateNormal.Background.Gradient1.GradientType = gtLinear
+        StateNormal.Background.Gradient1.Point1XPercent = 0
+        StateNormal.Background.Gradient1.Point1YPercent = 0
+        StateNormal.Background.Gradient1.Point2XPercent = 0
+        StateNormal.Background.Gradient1.Point2YPercent = 100
+        StateNormal.Background.Gradient1.Sinus = False
+        StateNormal.Background.Gradient2.StartColor = 13137169
+        StateNormal.Background.Gradient2.StartColorOpacity = 255
+        StateNormal.Background.Gradient2.DrawMode = dmSet
+        StateNormal.Background.Gradient2.EndColor = 15722194
+        StateNormal.Background.Gradient2.EndColorOpacity = 255
+        StateNormal.Background.Gradient2.ColorCorrection = True
+        StateNormal.Background.Gradient2.GradientType = gtLinear
+        StateNormal.Background.Gradient2.Point1XPercent = 0
+        StateNormal.Background.Gradient2.Point1YPercent = 0
+        StateNormal.Background.Gradient2.Point2XPercent = 0
+        StateNormal.Background.Gradient2.Point2YPercent = 100
+        StateNormal.Background.Gradient2.Sinus = False
+        StateNormal.Background.Gradient1EndPercent = 35
+        StateNormal.Background.Style = bbsClear
+        StateNormal.Border.Color = 11235643
+        StateNormal.Border.ColorOpacity = 255
+        StateNormal.Border.LightColor = clWhite
+        StateNormal.Border.LightOpacity = 255
+        StateNormal.Border.LightWidth = 0
+        StateNormal.Border.Style = bboNone
+        StateNormal.Border.Width = 1
+        StateNormal.FontEx.Color = clBlack
+        StateNormal.FontEx.EndEllipsis = False
+        StateNormal.FontEx.FontQuality = fqSystemClearType
+        StateNormal.FontEx.Height = 0
+        StateNormal.FontEx.SingleLine = True
+        StateNormal.FontEx.Shadow = False
+        StateNormal.FontEx.ShadowColor = clBlack
+        StateNormal.FontEx.ShadowColorOpacity = 255
+        StateNormal.FontEx.ShadowRadius = 5
+        StateNormal.FontEx.ShadowOffsetX = 5
+        StateNormal.FontEx.ShadowOffsetY = 5
+        StateNormal.FontEx.Style = []
+        StateNormal.FontEx.TextAlignment = bcaCenter
+        StateNormal.FontEx.WordBreak = False
+        BorderSpacing.Top = 1
+        BorderSpacing.Bottom = 1
+        Color = clNone
+        DropDownWidth = 16
+        DropDownArrowSize = 8
+        GlobalOpacity = 255
+        OnClick = miDeleteLineClick
+        ParentColor = False
+        Rounding.RoundX = 2
+        Rounding.RoundY = 2
+        Rounding.RoundOptions = []
+        RoundingDropDown.RoundX = 1
+        RoundingDropDown.RoundY = 1
+        RoundingDropDown.RoundOptions = []
+        TextApplyGlobalOpacity = False
+        Images = MainWindow.General_16
+        ImageIndex = 2
+        ShowCaption = False
+      end
+      object bAddLine: TBCButton
+        Left = 47
+        Height = 26
+        Top = 1
+        Width = 40
+        Align = alLeft
+        StateClicked.Background.Color = clBlack
+        StateClicked.Background.ColorOpacity = 255
+        StateClicked.Background.Gradient1.StartColor = 16116962
+        StateClicked.Background.Gradient1.StartColorOpacity = 255
+        StateClicked.Background.Gradient1.DrawMode = dmSet
+        StateClicked.Background.Gradient1.EndColor = 15852760
+        StateClicked.Background.Gradient1.EndColorOpacity = 255
+        StateClicked.Background.Gradient1.ColorCorrection = True
+        StateClicked.Background.Gradient1.GradientType = gtLinear
+        StateClicked.Background.Gradient1.Point1XPercent = 0
+        StateClicked.Background.Gradient1.Point1YPercent = 0
+        StateClicked.Background.Gradient1.Point2XPercent = 0
+        StateClicked.Background.Gradient1.Point2YPercent = 100
+        StateClicked.Background.Gradient1.Sinus = False
+        StateClicked.Background.Gradient2.StartColor = 15522767
+        StateClicked.Background.Gradient2.StartColorOpacity = 255
+        StateClicked.Background.Gradient2.DrawMode = dmSet
+        StateClicked.Background.Gradient2.EndColor = 15588559
+        StateClicked.Background.Gradient2.EndColorOpacity = 255
+        StateClicked.Background.Gradient2.ColorCorrection = True
+        StateClicked.Background.Gradient2.GradientType = gtLinear
+        StateClicked.Background.Gradient2.Point1XPercent = 0
+        StateClicked.Background.Gradient2.Point1YPercent = 0
+        StateClicked.Background.Gradient2.Point2XPercent = 0
+        StateClicked.Background.Gradient2.Point2YPercent = 100
+        StateClicked.Background.Gradient2.Sinus = False
+        StateClicked.Background.Gradient1EndPercent = 50
+        StateClicked.Background.Style = bbsGradient
+        StateClicked.Border.Color = 14404283
+        StateClicked.Border.ColorOpacity = 255
+        StateClicked.Border.LightColor = clSilver
+        StateClicked.Border.LightOpacity = 100
+        StateClicked.Border.LightWidth = 1
+        StateClicked.Border.Style = bboSolid
+        StateClicked.Border.Width = 1
+        StateClicked.FontEx.Color = clBlack
+        StateClicked.FontEx.EndEllipsis = False
+        StateClicked.FontEx.FontQuality = fqSystemClearType
+        StateClicked.FontEx.Height = 0
+        StateClicked.FontEx.SingleLine = True
+        StateClicked.FontEx.Shadow = False
+        StateClicked.FontEx.ShadowColor = clBlack
+        StateClicked.FontEx.ShadowColorOpacity = 255
+        StateClicked.FontEx.ShadowRadius = 5
+        StateClicked.FontEx.ShadowOffsetX = 5
+        StateClicked.FontEx.ShadowOffsetY = 5
+        StateClicked.FontEx.Style = []
+        StateClicked.FontEx.TextAlignment = bcaCenter
+        StateClicked.FontEx.WordBreak = False
+        StateHover.Background.Color = clBlack
+        StateHover.Background.ColorOpacity = 255
+        StateHover.Background.Gradient1.StartColor = 16710648
+        StateHover.Background.Gradient1.StartColorOpacity = 255
+        StateHover.Background.Gradient1.DrawMode = dmSet
+        StateHover.Background.Gradient1.EndColor = 16446189
+        StateHover.Background.Gradient1.EndColorOpacity = 255
+        StateHover.Background.Gradient1.ColorCorrection = True
+        StateHover.Background.Gradient1.GradientType = gtLinear
+        StateHover.Background.Gradient1.Point1XPercent = 0
+        StateHover.Background.Gradient1.Point1YPercent = 0
+        StateHover.Background.Gradient1.Point2XPercent = 0
+        StateHover.Background.Gradient1.Point2YPercent = 100
+        StateHover.Background.Gradient1.Sinus = False
+        StateHover.Background.Gradient2.StartColor = 16049367
+        StateHover.Background.Gradient2.StartColorOpacity = 255
+        StateHover.Background.Gradient2.DrawMode = dmSet
+        StateHover.Background.Gradient2.EndColor = 15258305
+        StateHover.Background.Gradient2.EndColorOpacity = 255
+        StateHover.Background.Gradient2.ColorCorrection = True
+        StateHover.Background.Gradient2.GradientType = gtLinear
+        StateHover.Background.Gradient2.Point1XPercent = 0
+        StateHover.Background.Gradient2.Point1YPercent = 0
+        StateHover.Background.Gradient2.Point2XPercent = 0
+        StateHover.Background.Gradient2.Point2YPercent = 100
+        StateHover.Background.Gradient2.Sinus = False
+        StateHover.Background.Gradient1EndPercent = 50
+        StateHover.Background.Style = bbsGradient
+        StateHover.Border.Color = 14404283
+        StateHover.Border.ColorOpacity = 255
+        StateHover.Border.LightColor = clWhite
+        StateHover.Border.LightOpacity = 200
+        StateHover.Border.LightWidth = 1
+        StateHover.Border.Style = bboSolid
+        StateHover.Border.Width = 1
+        StateHover.FontEx.Color = clBlack
+        StateHover.FontEx.EndEllipsis = False
+        StateHover.FontEx.FontQuality = fqSystemClearType
+        StateHover.FontEx.Height = 0
+        StateHover.FontEx.SingleLine = True
+        StateHover.FontEx.Shadow = False
+        StateHover.FontEx.ShadowColor = clBlack
+        StateHover.FontEx.ShadowColorOpacity = 255
+        StateHover.FontEx.ShadowRadius = 5
+        StateHover.FontEx.ShadowOffsetX = 5
+        StateHover.FontEx.ShadowOffsetY = 5
+        StateHover.FontEx.Style = []
+        StateHover.FontEx.TextAlignment = bcaCenter
+        StateHover.FontEx.WordBreak = False
+        StateNormal.Background.Color = clBlack
+        StateNormal.Background.ColorOpacity = 255
+        StateNormal.Background.Gradient1.StartColor = 15722194
+        StateNormal.Background.Gradient1.StartColorOpacity = 255
+        StateNormal.Background.Gradient1.DrawMode = dmSet
+        StateNormal.Background.Gradient1.EndColor = 13137169
+        StateNormal.Background.Gradient1.EndColorOpacity = 255
+        StateNormal.Background.Gradient1.ColorCorrection = True
+        StateNormal.Background.Gradient1.GradientType = gtLinear
+        StateNormal.Background.Gradient1.Point1XPercent = 0
+        StateNormal.Background.Gradient1.Point1YPercent = 0
+        StateNormal.Background.Gradient1.Point2XPercent = 0
+        StateNormal.Background.Gradient1.Point2YPercent = 100
+        StateNormal.Background.Gradient1.Sinus = False
+        StateNormal.Background.Gradient2.StartColor = 13137169
+        StateNormal.Background.Gradient2.StartColorOpacity = 255
+        StateNormal.Background.Gradient2.DrawMode = dmSet
+        StateNormal.Background.Gradient2.EndColor = 15722194
+        StateNormal.Background.Gradient2.EndColorOpacity = 255
+        StateNormal.Background.Gradient2.ColorCorrection = True
+        StateNormal.Background.Gradient2.GradientType = gtLinear
+        StateNormal.Background.Gradient2.Point1XPercent = 0
+        StateNormal.Background.Gradient2.Point1YPercent = 0
+        StateNormal.Background.Gradient2.Point2XPercent = 0
+        StateNormal.Background.Gradient2.Point2YPercent = 100
+        StateNormal.Background.Gradient2.Sinus = False
+        StateNormal.Background.Gradient1EndPercent = 35
+        StateNormal.Background.Style = bbsClear
+        StateNormal.Border.Color = 11235643
+        StateNormal.Border.ColorOpacity = 255
+        StateNormal.Border.LightColor = clWhite
+        StateNormal.Border.LightOpacity = 255
+        StateNormal.Border.LightWidth = 0
+        StateNormal.Border.Style = bboNone
+        StateNormal.Border.Width = 1
+        StateNormal.FontEx.Color = clBlack
+        StateNormal.FontEx.EndEllipsis = False
+        StateNormal.FontEx.FontQuality = fqSystemClearType
+        StateNormal.FontEx.Height = 0
+        StateNormal.FontEx.SingleLine = True
+        StateNormal.FontEx.Shadow = False
+        StateNormal.FontEx.ShadowColor = clBlack
+        StateNormal.FontEx.ShadowColorOpacity = 255
+        StateNormal.FontEx.ShadowRadius = 5
+        StateNormal.FontEx.ShadowOffsetX = 5
+        StateNormal.FontEx.ShadowOffsetY = 5
+        StateNormal.FontEx.Style = []
+        StateNormal.FontEx.TextAlignment = bcaCenter
+        StateNormal.FontEx.WordBreak = False
+        BorderSpacing.Top = 1
+        BorderSpacing.Bottom = 1
+        Color = clNone
+        DropDownWidth = 16
+        DropDownArrowSize = 8
+        GlobalOpacity = 255
+        OnClick = miAddLineClick
+        ParentColor = False
+        Rounding.RoundX = 2
+        Rounding.RoundY = 2
+        Rounding.RoundOptions = []
+        RoundingDropDown.RoundX = 1
+        RoundingDropDown.RoundY = 1
+        RoundingDropDown.RoundOptions = []
+        TextApplyGlobalOpacity = False
+        Images = MainWindow.General_16
+        ImageIndex = 20
+        ShowCaption = False
+      end
+      object bInsertLine: TBCButton
+        Left = 87
+        Height = 26
+        Top = 1
+        Width = 40
+        Align = alLeft
+        StateClicked.Background.Color = clBlack
+        StateClicked.Background.ColorOpacity = 255
+        StateClicked.Background.Gradient1.StartColor = 16116962
+        StateClicked.Background.Gradient1.StartColorOpacity = 255
+        StateClicked.Background.Gradient1.DrawMode = dmSet
+        StateClicked.Background.Gradient1.EndColor = 15852760
+        StateClicked.Background.Gradient1.EndColorOpacity = 255
+        StateClicked.Background.Gradient1.ColorCorrection = True
+        StateClicked.Background.Gradient1.GradientType = gtLinear
+        StateClicked.Background.Gradient1.Point1XPercent = 0
+        StateClicked.Background.Gradient1.Point1YPercent = 0
+        StateClicked.Background.Gradient1.Point2XPercent = 0
+        StateClicked.Background.Gradient1.Point2YPercent = 100
+        StateClicked.Background.Gradient1.Sinus = False
+        StateClicked.Background.Gradient2.StartColor = 15522767
+        StateClicked.Background.Gradient2.StartColorOpacity = 255
+        StateClicked.Background.Gradient2.DrawMode = dmSet
+        StateClicked.Background.Gradient2.EndColor = 15588559
+        StateClicked.Background.Gradient2.EndColorOpacity = 255
+        StateClicked.Background.Gradient2.ColorCorrection = True
+        StateClicked.Background.Gradient2.GradientType = gtLinear
+        StateClicked.Background.Gradient2.Point1XPercent = 0
+        StateClicked.Background.Gradient2.Point1YPercent = 0
+        StateClicked.Background.Gradient2.Point2XPercent = 0
+        StateClicked.Background.Gradient2.Point2YPercent = 100
+        StateClicked.Background.Gradient2.Sinus = False
+        StateClicked.Background.Gradient1EndPercent = 50
+        StateClicked.Background.Style = bbsGradient
+        StateClicked.Border.Color = 14404283
+        StateClicked.Border.ColorOpacity = 255
+        StateClicked.Border.LightColor = clSilver
+        StateClicked.Border.LightOpacity = 100
+        StateClicked.Border.LightWidth = 1
+        StateClicked.Border.Style = bboSolid
+        StateClicked.Border.Width = 1
+        StateClicked.FontEx.Color = clBlack
+        StateClicked.FontEx.EndEllipsis = False
+        StateClicked.FontEx.FontQuality = fqSystemClearType
+        StateClicked.FontEx.Height = 0
+        StateClicked.FontEx.SingleLine = True
+        StateClicked.FontEx.Shadow = False
+        StateClicked.FontEx.ShadowColor = clBlack
+        StateClicked.FontEx.ShadowColorOpacity = 255
+        StateClicked.FontEx.ShadowRadius = 5
+        StateClicked.FontEx.ShadowOffsetX = 5
+        StateClicked.FontEx.ShadowOffsetY = 5
+        StateClicked.FontEx.Style = []
+        StateClicked.FontEx.TextAlignment = bcaCenter
+        StateClicked.FontEx.WordBreak = False
+        StateHover.Background.Color = clBlack
+        StateHover.Background.ColorOpacity = 255
+        StateHover.Background.Gradient1.StartColor = 16710648
+        StateHover.Background.Gradient1.StartColorOpacity = 255
+        StateHover.Background.Gradient1.DrawMode = dmSet
+        StateHover.Background.Gradient1.EndColor = 16446189
+        StateHover.Background.Gradient1.EndColorOpacity = 255
+        StateHover.Background.Gradient1.ColorCorrection = True
+        StateHover.Background.Gradient1.GradientType = gtLinear
+        StateHover.Background.Gradient1.Point1XPercent = 0
+        StateHover.Background.Gradient1.Point1YPercent = 0
+        StateHover.Background.Gradient1.Point2XPercent = 0
+        StateHover.Background.Gradient1.Point2YPercent = 100
+        StateHover.Background.Gradient1.Sinus = False
+        StateHover.Background.Gradient2.StartColor = 16049367
+        StateHover.Background.Gradient2.StartColorOpacity = 255
+        StateHover.Background.Gradient2.DrawMode = dmSet
+        StateHover.Background.Gradient2.EndColor = 15258305
+        StateHover.Background.Gradient2.EndColorOpacity = 255
+        StateHover.Background.Gradient2.ColorCorrection = True
+        StateHover.Background.Gradient2.GradientType = gtLinear
+        StateHover.Background.Gradient2.Point1XPercent = 0
+        StateHover.Background.Gradient2.Point1YPercent = 0
+        StateHover.Background.Gradient2.Point2XPercent = 0
+        StateHover.Background.Gradient2.Point2YPercent = 100
+        StateHover.Background.Gradient2.Sinus = False
+        StateHover.Background.Gradient1EndPercent = 50
+        StateHover.Background.Style = bbsGradient
+        StateHover.Border.Color = 14404283
+        StateHover.Border.ColorOpacity = 255
+        StateHover.Border.LightColor = clWhite
+        StateHover.Border.LightOpacity = 200
+        StateHover.Border.LightWidth = 1
+        StateHover.Border.Style = bboSolid
+        StateHover.Border.Width = 1
+        StateHover.FontEx.Color = clBlack
+        StateHover.FontEx.EndEllipsis = False
+        StateHover.FontEx.FontQuality = fqSystemClearType
+        StateHover.FontEx.Height = 0
+        StateHover.FontEx.SingleLine = True
+        StateHover.FontEx.Shadow = False
+        StateHover.FontEx.ShadowColor = clBlack
+        StateHover.FontEx.ShadowColorOpacity = 255
+        StateHover.FontEx.ShadowRadius = 5
+        StateHover.FontEx.ShadowOffsetX = 5
+        StateHover.FontEx.ShadowOffsetY = 5
+        StateHover.FontEx.Style = []
+        StateHover.FontEx.TextAlignment = bcaCenter
+        StateHover.FontEx.WordBreak = False
+        StateNormal.Background.Color = clBlack
+        StateNormal.Background.ColorOpacity = 255
+        StateNormal.Background.Gradient1.StartColor = 15722194
+        StateNormal.Background.Gradient1.StartColorOpacity = 255
+        StateNormal.Background.Gradient1.DrawMode = dmSet
+        StateNormal.Background.Gradient1.EndColor = 13137169
+        StateNormal.Background.Gradient1.EndColorOpacity = 255
+        StateNormal.Background.Gradient1.ColorCorrection = True
+        StateNormal.Background.Gradient1.GradientType = gtLinear
+        StateNormal.Background.Gradient1.Point1XPercent = 0
+        StateNormal.Background.Gradient1.Point1YPercent = 0
+        StateNormal.Background.Gradient1.Point2XPercent = 0
+        StateNormal.Background.Gradient1.Point2YPercent = 100
+        StateNormal.Background.Gradient1.Sinus = False
+        StateNormal.Background.Gradient2.StartColor = 13137169
+        StateNormal.Background.Gradient2.StartColorOpacity = 255
+        StateNormal.Background.Gradient2.DrawMode = dmSet
+        StateNormal.Background.Gradient2.EndColor = 15722194
+        StateNormal.Background.Gradient2.EndColorOpacity = 255
+        StateNormal.Background.Gradient2.ColorCorrection = True
+        StateNormal.Background.Gradient2.GradientType = gtLinear
+        StateNormal.Background.Gradient2.Point1XPercent = 0
+        StateNormal.Background.Gradient2.Point1YPercent = 0
+        StateNormal.Background.Gradient2.Point2XPercent = 0
+        StateNormal.Background.Gradient2.Point2YPercent = 100
+        StateNormal.Background.Gradient2.Sinus = False
+        StateNormal.Background.Gradient1EndPercent = 35
+        StateNormal.Background.Style = bbsClear
+        StateNormal.Border.Color = 11235643
+        StateNormal.Border.ColorOpacity = 255
+        StateNormal.Border.LightColor = clWhite
+        StateNormal.Border.LightOpacity = 255
+        StateNormal.Border.LightWidth = 0
+        StateNormal.Border.Style = bboNone
+        StateNormal.Border.Width = 1
+        StateNormal.FontEx.Color = clBlack
+        StateNormal.FontEx.EndEllipsis = False
+        StateNormal.FontEx.FontQuality = fqSystemClearType
+        StateNormal.FontEx.Height = 0
+        StateNormal.FontEx.SingleLine = True
+        StateNormal.FontEx.Shadow = False
+        StateNormal.FontEx.ShadowColor = clBlack
+        StateNormal.FontEx.ShadowColorOpacity = 255
+        StateNormal.FontEx.ShadowRadius = 5
+        StateNormal.FontEx.ShadowOffsetX = 5
+        StateNormal.FontEx.ShadowOffsetY = 5
+        StateNormal.FontEx.Style = []
+        StateNormal.FontEx.TextAlignment = bcaCenter
+        StateNormal.FontEx.WordBreak = False
+        BorderSpacing.Top = 1
+        BorderSpacing.Bottom = 1
+        Color = clNone
+        DropDownWidth = 16
+        DropDownArrowSize = 8
+        GlobalOpacity = 255
+        OnClick = miInsertLineClick
+        ParentColor = False
+        Rounding.RoundX = 2
+        Rounding.RoundY = 2
+        Rounding.RoundOptions = []
+        RoundingDropDown.RoundX = 1
+        RoundingDropDown.RoundY = 1
+        RoundingDropDown.RoundOptions = []
+        TextApplyGlobalOpacity = False
+        Images = MainWindow.General_16
+        ImageIndex = 21
+        ShowCaption = False
+      end
+    end
+  end
+  object pcAll: TPageControl[1]
+    Left = 3
+    Height = 635
+    Top = 107
+    Width = 970
+    ActivePage = tsComposition
+    Align = alClient
+    BorderSpacing.Around = 3
+    TabIndex = 1
+    TabOrder = 1
+    OnChange = pcAllChange
+    Options = [nboHidePageListPopup]
+    object tsGeneral: TTabSheet
+      Caption = 'General'
+      ClientHeight = 602
+      ClientWidth = 962
+      object ScrollBox1: TScrollBox
+        Left = 2
+        Height = 406
+        Top = 2
+        Width = 958
+        HorzScrollBar.Page = 697
+        VertScrollBar.Page = 392
+        Align = alTop
+        BorderSpacing.Around = 2
+        ClientHeight = 402
+        ClientWidth = 954
+        TabOrder = 0
+        object DBEdit1: TDBEdit
+          Left = 144
+          Height = 28
+          Top = 272
+          Width = 202
+          DataField = 'MANUFACTURER'
+          DataSource = dsElement
+          CharCase = ecNormal
+          MaxLength = 160
+          TabOrder = 0
+          OnKeyDown = eIDKeyDown
+        end
+        object DBEdit2: TDBEdit
+          Left = 144
+          Height = 28
+          Top = 304
+          Width = 202
+          DataField = 'GAMMA'
+          DataSource = dsElement
+          CharCase = ecNormal
+          MaxLength = 160
+          TabOrder = 1
+          OnKeyDown = eIDKeyDown
+        end
+        object DBEdit3: TDBEdit
+          Left = 144
+          Height = 28
+          Top = 336
+          Width = 200
+          DataField = 'BARCODE'
+          DataSource = dsElement
+          CharCase = ecNormal
+          MaxLength = 80
+          TabOrder = 2
+          OnKeyDown = eIDKeyDown
+        end
+        object cbCopyCode: TCheckBox
+          Left = 40
+          Height = 24
+          Top = 368
+          Width = 234
+          Caption = 'Mismo código de barras que ID'
+          OnChange = cbCopyCodeChange
+          TabOrder = 3
+        end
+        object Label6: TLabel
+          Left = 16
+          Height = 20
+          Top = 277
+          Width = 71
+          Caption = 'Fabricante:'
+          ParentColor = False
+        end
+        object Label7: TLabel
+          Left = 16
+          Height = 20
+          Top = 309
+          Width = 42
+          Caption = 'Gama:'
+          ParentColor = False
+        end
+        object Label8: TLabel
+          Left = 16
+          Height = 20
+          Top = 341
+          Width = 118
+          Caption = 'Código de Barras:'
+          ParentColor = False
+        end
+        object Panel3: TPanel
+          Left = 8
+          Height = 248
+          Top = 8
+          Width = 338
+          BevelOuter = bvNone
+          BorderStyle = bsSingle
+          ClientHeight = 244
+          ClientWidth = 334
+          TabOrder = 4
+          object DBImage: TDBImage
+            Left = 2
+            Height = 240
+            Top = 2
+            Width = 330
+            Align = alClient
+            BorderSpacing.Around = 2
+            Center = True
+            DataField = 'IMAGE'
+            DataSource = dsElement
+            Proportional = True
+            QuickDraw = False
+            Stretch = True
+          end
+          object bLoadImage: TBCButton
+            Left = 2
+            Height = 20
+            Top = 222
+            Width = 20
+            Anchors = [akTop, akRight]
+            StateClicked.Background.Color = clBlack
+            StateClicked.Background.ColorOpacity = 255
+            StateClicked.Background.Gradient1.StartColor = 7726591
+            StateClicked.Background.Gradient1.StartColorOpacity = 255
+            StateClicked.Background.Gradient1.DrawMode = dmSet
+            StateClicked.Background.Gradient1.EndColor = 7067903
+            StateClicked.Background.Gradient1.EndColorOpacity = 255
+            StateClicked.Background.Gradient1.ColorCorrection = True
+            StateClicked.Background.Gradient1.GradientType = gtLinear
+            StateClicked.Background.Gradient1.Point1XPercent = 0
+            StateClicked.Background.Gradient1.Point1YPercent = 0
+            StateClicked.Background.Gradient1.Point2XPercent = 0
+            StateClicked.Background.Gradient1.Point2YPercent = 100
+            StateClicked.Background.Gradient1.Sinus = False
+            StateClicked.Background.Gradient2.StartColor = 7067903
+            StateClicked.Background.Gradient2.StartColorOpacity = 255
+            StateClicked.Background.Gradient2.DrawMode = dmSet
+            StateClicked.Background.Gradient2.EndColor = 8515583
+            StateClicked.Background.Gradient2.EndColorOpacity = 255
+            StateClicked.Background.Gradient2.ColorCorrection = True
+            StateClicked.Background.Gradient2.GradientType = gtLinear
+            StateClicked.Background.Gradient2.Point1XPercent = 0
+            StateClicked.Background.Gradient2.Point1YPercent = 0
+            StateClicked.Background.Gradient2.Point2XPercent = 0
+            StateClicked.Background.Gradient2.Point2YPercent = 100
+            StateClicked.Background.Gradient2.Sinus = False
+            StateClicked.Background.Gradient1EndPercent = 50
+            StateClicked.Background.Style = bbsGradient
+            StateClicked.Border.Color = 4170178
+            StateClicked.Border.ColorOpacity = 255
+            StateClicked.Border.LightColor = clGray
+            StateClicked.Border.LightOpacity = 100
+            StateClicked.Border.LightWidth = 1
+            StateClicked.Border.Style = bboSolid
+            StateClicked.Border.Width = 1
+            StateClicked.FontEx.Color = clBlack
+            StateClicked.FontEx.EndEllipsis = False
+            StateClicked.FontEx.FontQuality = fqSystemClearType
+            StateClicked.FontEx.Height = 0
+            StateClicked.FontEx.SingleLine = True
+            StateClicked.FontEx.Shadow = False
+            StateClicked.FontEx.ShadowColor = clBlack
+            StateClicked.FontEx.ShadowColorOpacity = 255
+            StateClicked.FontEx.ShadowRadius = 5
+            StateClicked.FontEx.ShadowOffsetX = 5
+            StateClicked.FontEx.ShadowOffsetY = 5
+            StateClicked.FontEx.Style = []
+            StateClicked.FontEx.TextAlignment = bcaCenter
+            StateClicked.FontEx.WordBreak = False
+            StateHover.Background.Color = clBlack
+            StateHover.Background.ColorOpacity = 255
+            StateHover.Background.Gradient1.StartColor = 12448254
+            StateHover.Background.Gradient1.StartColorOpacity = 255
+            StateHover.Background.Gradient1.DrawMode = dmSet
+            StateHover.Background.Gradient1.EndColor = 8840446
+            StateHover.Background.Gradient1.EndColorOpacity = 255
+            StateHover.Background.Gradient1.ColorCorrection = True
+            StateHover.Background.Gradient1.GradientType = gtLinear
+            StateHover.Background.Gradient1.Point1XPercent = 0
+            StateHover.Background.Gradient1.Point1YPercent = 0
+            StateHover.Background.Gradient1.Point2XPercent = 0
+            StateHover.Background.Gradient1.Point2YPercent = 100
+            StateHover.Background.Gradient1.Sinus = False
+            StateHover.Background.Gradient2.StartColor = 8840446
+            StateHover.Background.Gradient2.StartColorOpacity = 255
+            StateHover.Background.Gradient2.DrawMode = dmSet
+            StateHover.Background.Gradient2.EndColor = 12908798
+            StateHover.Background.Gradient2.EndColorOpacity = 255
+            StateHover.Background.Gradient2.ColorCorrection = True
+            StateHover.Background.Gradient2.GradientType = gtLinear
+            StateHover.Background.Gradient2.Point1XPercent = 0
+            StateHover.Background.Gradient2.Point1YPercent = 0
+            StateHover.Background.Gradient2.Point2XPercent = 0
+            StateHover.Background.Gradient2.Point2YPercent = 100
+            StateHover.Background.Gradient2.Sinus = False
+            StateHover.Background.Gradient1EndPercent = 50
+            StateHover.Background.Style = bbsGradient
+            StateHover.Border.Color = 5362420
+            StateHover.Border.ColorOpacity = 255
+            StateHover.Border.LightColor = clWhite
+            StateHover.Border.LightOpacity = 200
+            StateHover.Border.LightWidth = 1
+            StateHover.Border.Style = bboSolid
+            StateHover.Border.Width = 1
+            StateHover.FontEx.Color = clBlack
+            StateHover.FontEx.EndEllipsis = False
+            StateHover.FontEx.FontQuality = fqSystemClearType
+            StateHover.FontEx.Height = 0
+            StateHover.FontEx.SingleLine = True
+            StateHover.FontEx.Shadow = False
+            StateHover.FontEx.ShadowColor = clBlack
+            StateHover.FontEx.ShadowColorOpacity = 255
+            StateHover.FontEx.ShadowRadius = 5
+            StateHover.FontEx.ShadowOffsetX = 5
+            StateHover.FontEx.ShadowOffsetY = 5
+            StateHover.FontEx.Style = []
+            StateHover.FontEx.TextAlignment = bcaCenter
+            StateHover.FontEx.WordBreak = False
+            StateNormal.Background.Color = clBlack
+            StateNormal.Background.ColorOpacity = 255
+            StateNormal.Background.Gradient1.StartColor = clWhite
+            StateNormal.Background.Gradient1.StartColorOpacity = 255
+            StateNormal.Background.Gradient1.DrawMode = dmSet
+            StateNormal.Background.Gradient1.EndColor = 15855597
+            StateNormal.Background.Gradient1.EndColorOpacity = 255
+            StateNormal.Background.Gradient1.ColorCorrection = True
+            StateNormal.Background.Gradient1.GradientType = gtLinear
+            StateNormal.Background.Gradient1.Point1XPercent = 0
+            StateNormal.Background.Gradient1.Point1YPercent = 0
+            StateNormal.Background.Gradient1.Point2XPercent = 0
+            StateNormal.Background.Gradient1.Point2YPercent = 100
+            StateNormal.Background.Gradient1.Sinus = False
+            StateNormal.Background.Gradient2.StartColor = 13137169
+            StateNormal.Background.Gradient2.StartColorOpacity = 255
+            StateNormal.Background.Gradient2.DrawMode = dmSet
+            StateNormal.Background.Gradient2.EndColor = 15722194
+            StateNormal.Background.Gradient2.EndColorOpacity = 255
+            StateNormal.Background.Gradient2.ColorCorrection = True
+            StateNormal.Background.Gradient2.GradientType = gtLinear
+            StateNormal.Background.Gradient2.Point1XPercent = 0
+            StateNormal.Background.Gradient2.Point1YPercent = 0
+            StateNormal.Background.Gradient2.Point2XPercent = 0
+            StateNormal.Background.Gradient2.Point2YPercent = 100
+            StateNormal.Background.Gradient2.Sinus = False
+            StateNormal.Background.Gradient1EndPercent = 100
+            StateNormal.Background.Style = bbsClear
+            StateNormal.Border.Color = 13816015
+            StateNormal.Border.ColorOpacity = 255
+            StateNormal.Border.LightColor = clWhite
+            StateNormal.Border.LightOpacity = 255
+            StateNormal.Border.LightWidth = 1
+            StateNormal.Border.Style = bboNone
+            StateNormal.Border.Width = 1
+            StateNormal.FontEx.Color = clBlack
+            StateNormal.FontEx.EndEllipsis = False
+            StateNormal.FontEx.FontQuality = fqSystemClearType
+            StateNormal.FontEx.Height = 0
+            StateNormal.FontEx.SingleLine = True
+            StateNormal.FontEx.Shadow = False
+            StateNormal.FontEx.ShadowColor = clBlack
+            StateNormal.FontEx.ShadowColorOpacity = 255
+            StateNormal.FontEx.ShadowRadius = 5
+            StateNormal.FontEx.ShadowOffsetX = 5
+            StateNormal.FontEx.ShadowOffsetY = 5
+            StateNormal.FontEx.Style = []
+            StateNormal.FontEx.TextAlignment = bcaCenter
+            StateNormal.FontEx.WordBreak = False
+            Caption = '-'
+            Color = clNone
+            DropDownWidth = 16
+            DropDownArrowSize = 8
+            GlobalOpacity = 255
+            Glyph.Data = {
+              36040000424D3604000000000000360000002800000010000000100000000100
+              2000000000000004000064000000640000000000000000000000FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFC00FFFFF700806D5EFF7B604BFF7D624DFF806D
+              5EFFFFFFF700FFFFFC00FDFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFB00FFFFF2007C614CFFECCEB5FFECCEB5FF7C61
+              4CFFFFFFF200FFFFFB00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFC00FFFFFB00FFFFF500FFFFED00856346FFEFCFB2FFCBAB8EFF8563
+              46FFFFFFEB00FFFFF500FFFFFB00FFFFFC00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFF800FFFFF200FFFFED00FFFFE6008E6342FFF6D0AEFFD2AC8AFF8E63
+              42FFFFFFE600FFFFED00FFFFF200FFFFF700FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00806D5EFF7C614DFF836248FF8A6343FF8E6342FFD2AC8AFFD4AB8AFF9063
+              41FF8E6342FF876246FF7E624AFF826D5EFFFFFFFF00FFFFFF00FFFFFF00FFFF
+              FF007C614CFFE6CCB4FFD3B59CFFD4B497FFD5B395FFD4B294FFCFAC8BFFCFA9
+              89FFCCA688FFC6A487FFDCBEA3FF7E614CFFFFFFFF00FFFFFF00FFFFFF00FFFF
+              FF007C614CFFEED4BCFFEFD2B7FFF2D2B5FFF1CFB2FFEDCFB2FFEFCFB2FFF5CF
+              B1FFF4CEB0FFEFCDB0FFEBCDB2FF7F634BFFFFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00806D5EFF7A624CFF836248FF8A6343FF8A6343FFEDCFB4FFEDCFB4FF8C63
+              43FF8C6342FF856346FF7F634BFF816F5EFFFFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFF700FFFFF200FFFFEB00FFFFE6008A6245FFECCEB5FFECCEB5FF8A62
+              45FFFFFFE600FFFFEB00FFFFF100FFFFF700FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFC00FFFFFB00FFFFF500FFFFED00836248FFEACEB6FFEACEB6FF8362
+              48FFFFFFEB00FFFFF500FFFFF900FFFFFC00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFB00FFFFF2007C614CFFE8CDB8FFE8CDB8FF7C61
+              4CFFFFFFF200FFFFFA00FFFFFF00FFFFFE00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFC00FFFFF700806D5EFF7C614CFF7C614CFF806D
+              5EFFFFFFF700FFFFFC00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+            }
+            GlyphMargin = 0
+            OnClick = bLoadImageClick
+            ParentColor = False
+            Rounding.RoundX = 2
+            Rounding.RoundY = 2
+            Rounding.RoundOptions = []
+            RoundingDropDown.RoundX = 1
+            RoundingDropDown.RoundY = 1
+            RoundingDropDown.RoundOptions = []
+            TextApplyGlobalOpacity = False
+            ShowCaption = False
+          end
+          object bClearImage: TBCButton
+            Left = 312
+            Height = 20
+            Top = 222
+            Width = 20
+            Anchors = [akTop, akRight]
+            StateClicked.Background.Color = clBlack
+            StateClicked.Background.ColorOpacity = 255
+            StateClicked.Background.Gradient1.StartColor = 7726591
+            StateClicked.Background.Gradient1.StartColorOpacity = 255
+            StateClicked.Background.Gradient1.DrawMode = dmSet
+            StateClicked.Background.Gradient1.EndColor = 7067903
+            StateClicked.Background.Gradient1.EndColorOpacity = 255
+            StateClicked.Background.Gradient1.ColorCorrection = True
+            StateClicked.Background.Gradient1.GradientType = gtLinear
+            StateClicked.Background.Gradient1.Point1XPercent = 0
+            StateClicked.Background.Gradient1.Point1YPercent = 0
+            StateClicked.Background.Gradient1.Point2XPercent = 0
+            StateClicked.Background.Gradient1.Point2YPercent = 100
+            StateClicked.Background.Gradient1.Sinus = False
+            StateClicked.Background.Gradient2.StartColor = 7067903
+            StateClicked.Background.Gradient2.StartColorOpacity = 255
+            StateClicked.Background.Gradient2.DrawMode = dmSet
+            StateClicked.Background.Gradient2.EndColor = 8515583
+            StateClicked.Background.Gradient2.EndColorOpacity = 255
+            StateClicked.Background.Gradient2.ColorCorrection = True
+            StateClicked.Background.Gradient2.GradientType = gtLinear
+            StateClicked.Background.Gradient2.Point1XPercent = 0
+            StateClicked.Background.Gradient2.Point1YPercent = 0
+            StateClicked.Background.Gradient2.Point2XPercent = 0
+            StateClicked.Background.Gradient2.Point2YPercent = 100
+            StateClicked.Background.Gradient2.Sinus = False
+            StateClicked.Background.Gradient1EndPercent = 50
+            StateClicked.Background.Style = bbsGradient
+            StateClicked.Border.Color = 4170178
+            StateClicked.Border.ColorOpacity = 255
+            StateClicked.Border.LightColor = clGray
+            StateClicked.Border.LightOpacity = 100
+            StateClicked.Border.LightWidth = 1
+            StateClicked.Border.Style = bboSolid
+            StateClicked.Border.Width = 1
+            StateClicked.FontEx.Color = clBlack
+            StateClicked.FontEx.EndEllipsis = False
+            StateClicked.FontEx.FontQuality = fqSystemClearType
+            StateClicked.FontEx.Height = 0
+            StateClicked.FontEx.SingleLine = True
+            StateClicked.FontEx.Shadow = False
+            StateClicked.FontEx.ShadowColor = clBlack
+            StateClicked.FontEx.ShadowColorOpacity = 255
+            StateClicked.FontEx.ShadowRadius = 5
+            StateClicked.FontEx.ShadowOffsetX = 5
+            StateClicked.FontEx.ShadowOffsetY = 5
+            StateClicked.FontEx.Style = []
+            StateClicked.FontEx.TextAlignment = bcaCenter
+            StateClicked.FontEx.WordBreak = False
+            StateHover.Background.Color = clBlack
+            StateHover.Background.ColorOpacity = 255
+            StateHover.Background.Gradient1.StartColor = 12448254
+            StateHover.Background.Gradient1.StartColorOpacity = 255
+            StateHover.Background.Gradient1.DrawMode = dmSet
+            StateHover.Background.Gradient1.EndColor = 8840446
+            StateHover.Background.Gradient1.EndColorOpacity = 255
+            StateHover.Background.Gradient1.ColorCorrection = True
+            StateHover.Background.Gradient1.GradientType = gtLinear
+            StateHover.Background.Gradient1.Point1XPercent = 0
+            StateHover.Background.Gradient1.Point1YPercent = 0
+            StateHover.Background.Gradient1.Point2XPercent = 0
+            StateHover.Background.Gradient1.Point2YPercent = 100
+            StateHover.Background.Gradient1.Sinus = False
+            StateHover.Background.Gradient2.StartColor = 8840446
+            StateHover.Background.Gradient2.StartColorOpacity = 255
+            StateHover.Background.Gradient2.DrawMode = dmSet
+            StateHover.Background.Gradient2.EndColor = 12908798
+            StateHover.Background.Gradient2.EndColorOpacity = 255
+            StateHover.Background.Gradient2.ColorCorrection = True
+            StateHover.Background.Gradient2.GradientType = gtLinear
+            StateHover.Background.Gradient2.Point1XPercent = 0
+            StateHover.Background.Gradient2.Point1YPercent = 0
+            StateHover.Background.Gradient2.Point2XPercent = 0
+            StateHover.Background.Gradient2.Point2YPercent = 100
+            StateHover.Background.Gradient2.Sinus = False
+            StateHover.Background.Gradient1EndPercent = 50
+            StateHover.Background.Style = bbsGradient
+            StateHover.Border.Color = 5362420
+            StateHover.Border.ColorOpacity = 255
+            StateHover.Border.LightColor = clWhite
+            StateHover.Border.LightOpacity = 200
+            StateHover.Border.LightWidth = 1
+            StateHover.Border.Style = bboSolid
+            StateHover.Border.Width = 1
+            StateHover.FontEx.Color = clBlack
+            StateHover.FontEx.EndEllipsis = False
+            StateHover.FontEx.FontQuality = fqSystemClearType
+            StateHover.FontEx.Height = 0
+            StateHover.FontEx.SingleLine = True
+            StateHover.FontEx.Shadow = False
+            StateHover.FontEx.ShadowColor = clBlack
+            StateHover.FontEx.ShadowColorOpacity = 255
+            StateHover.FontEx.ShadowRadius = 5
+            StateHover.FontEx.ShadowOffsetX = 5
+            StateHover.FontEx.ShadowOffsetY = 5
+            StateHover.FontEx.Style = []
+            StateHover.FontEx.TextAlignment = bcaCenter
+            StateHover.FontEx.WordBreak = False
+            StateNormal.Background.Color = clBlack
+            StateNormal.Background.ColorOpacity = 255
+            StateNormal.Background.Gradient1.StartColor = clWhite
+            StateNormal.Background.Gradient1.StartColorOpacity = 255
+            StateNormal.Background.Gradient1.DrawMode = dmSet
+            StateNormal.Background.Gradient1.EndColor = 15855597
+            StateNormal.Background.Gradient1.EndColorOpacity = 255
+            StateNormal.Background.Gradient1.ColorCorrection = True
+            StateNormal.Background.Gradient1.GradientType = gtLinear
+            StateNormal.Background.Gradient1.Point1XPercent = 0
+            StateNormal.Background.Gradient1.Point1YPercent = 0
+            StateNormal.Background.Gradient1.Point2XPercent = 0
+            StateNormal.Background.Gradient1.Point2YPercent = 100
+            StateNormal.Background.Gradient1.Sinus = False
+            StateNormal.Background.Gradient2.StartColor = 13137169
+            StateNormal.Background.Gradient2.StartColorOpacity = 255
+            StateNormal.Background.Gradient2.DrawMode = dmSet
+            StateNormal.Background.Gradient2.EndColor = 15722194
+            StateNormal.Background.Gradient2.EndColorOpacity = 255
+            StateNormal.Background.Gradient2.ColorCorrection = True
+            StateNormal.Background.Gradient2.GradientType = gtLinear
+            StateNormal.Background.Gradient2.Point1XPercent = 0
+            StateNormal.Background.Gradient2.Point1YPercent = 0
+            StateNormal.Background.Gradient2.Point2XPercent = 0
+            StateNormal.Background.Gradient2.Point2YPercent = 100
+            StateNormal.Background.Gradient2.Sinus = False
+            StateNormal.Background.Gradient1EndPercent = 100
+            StateNormal.Background.Style = bbsClear
+            StateNormal.Border.Color = 13816015
+            StateNormal.Border.ColorOpacity = 255
+            StateNormal.Border.LightColor = clWhite
+            StateNormal.Border.LightOpacity = 255
+            StateNormal.Border.LightWidth = 1
+            StateNormal.Border.Style = bboNone
+            StateNormal.Border.Width = 1
+            StateNormal.FontEx.Color = clBlack
+            StateNormal.FontEx.EndEllipsis = False
+            StateNormal.FontEx.FontQuality = fqSystemClearType
+            StateNormal.FontEx.Height = 0
+            StateNormal.FontEx.SingleLine = True
+            StateNormal.FontEx.Shadow = False
+            StateNormal.FontEx.ShadowColor = clBlack
+            StateNormal.FontEx.ShadowColorOpacity = 255
+            StateNormal.FontEx.ShadowRadius = 5
+            StateNormal.FontEx.ShadowOffsetX = 5
+            StateNormal.FontEx.ShadowOffsetY = 5
+            StateNormal.FontEx.Style = []
+            StateNormal.FontEx.TextAlignment = bcaCenter
+            StateNormal.FontEx.WordBreak = False
+            Caption = '-'
+            Color = clNone
+            DropDownWidth = 16
+            DropDownArrowSize = 8
+            GlobalOpacity = 255
+            Glyph.Data = {
+              36040000424D3604000000000000360000002800000010000000100000000100
+              2000000000000004000064000000640000000000000000000000FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00008B9C1F008C9DED008D9EEC008D
+              9E9E008B9C21FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00008B9C13008D9EE24FC3D2FD5BD3E1FF30B5
+              C6FA0890A1F6008D9FA9008B9C14FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00008E9FC536B5C5FA5FD8E7FF26CADFFF4ED4
+              E5FF6DD9E7FF32B4C5FB008D9EE6008B9C26FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00008B9C431A9BABF66CDAE8FF10C5DCFF03C2DAFF03C2
+              DAFF15C6DCFF5BD7E7FF56C8D6FE058FA0F1008B9C3FFFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00018EA0D45ECFDDFF46DAEDFF18D0E7FF11CBE3FF07C4
+              DCFF03C2DAFF03C2DAFF4CD3E4FF58CDDCFF048E9FF4008B9C1CFFFFFF00FFFF
+              FF00FFFFFF00008B9C1A1194A5F78BEDFBFF3CE5FCFF37E4FBFF2FDEF6FF23D7
+              EEFF14CDE5FF04C3DBFF03C2DAFF56D6E6FF33B6C6FB008E9FA8FFFFFF00FFFF
+              FF00FFFFFF00007F9C5F2FB0C0F58AEFFDFF5FEAFDFF61EBFDFF52E9FDFF3CE6
+              FDFF2ADBF3FF18D0E7FF10C6DCFF49D2E4FF67D4E2FF018D9FE9FFFFFF00FFFF
+              FF00008B9C070024A1D71342ADFC84EAFBFF6BECFDFF84EFFDFF6DECFDFF52E9
+              FDFF44E5FBFF65E3F3FF77DDEBFF49C1CFFE1B9EAEF3008C9DEAFFFFFF00008B
+              9C5F008D9EEB29A5BBF6284ABBFF1D38B8FF61D8F6FF63EAFDFF6CEBFDFF7DEE
+              FDFF88EAF8FF45BECDFA058F9FF7008E9FA3008B9C40008B9C02FFFFFF00008B
+              9C5A018D9EF64FC8D8FF68DCECFF336DC8FF0D1BABFF62B1D7FF72DCEAFF43BD
+              CCF70990A2F6018E9F9F008B9C1BFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF000064878100889CFE41BDCDFF77DEEBFF1769B0F70036A0E4018FA0D2008C
+              9D77008B9C15FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0000487802004A
+              7B95014E80F40B76B2FF0188A1FF32AEBEFE1DA0B1F2008B9C3DFFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000049796F0352
+              86F40F7ABCFF107DC1FF015284F200859ACE008B9CFF008B9C29FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00004A7BED0C72
+              B2FF107DC1FF0A6BA9FF004A7BDA00698A02008B9C82008B9C13FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00004A7BE50A69
+              A6FF0B6DABFF004A7BF500487844FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000048783B004B
+              7CDA004A7BE300487847FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+            }
+            GlyphMargin = 0
+            OnClick = bClearImageClick
+            ParentColor = False
+            Rounding.RoundX = 2
+            Rounding.RoundY = 2
+            Rounding.RoundOptions = []
+            RoundingDropDown.RoundX = 1
+            RoundingDropDown.RoundY = 1
+            RoundingDropDown.RoundOptions = []
+            TextApplyGlobalOpacity = False
+            ShowCaption = False
+          end
+        end
+        object GroupBox1: TGroupBox
+          Left = 376
+          Height = 256
+          Top = 0
+          Width = 321
+          Caption = 'Precio'
+          ClientHeight = 231
+          ClientWidth = 317
+          TabOrder = 5
+          object Label10: TLabel
+            Left = 16
+            Height = 20
+            Top = 15
+            Width = 85
+            Caption = 'PVP Compra:'
+            ParentColor = False
+          end
+          object edPVP: TJDBLabeledFloatEdit
+            Left = 160
+            Height = 28
+            Top = 8
+            Width = 128
+            DataField = 'REAL_PRICE'
+            DataSource = dsElement
+            Decimals = 2
+            Alignment = taRightJustify
+            Anchors = [akTop, akLeft, akRight]
+            AutoSize = False
+            EditLabel.AnchorSideLeft.Control = edPVP
+            EditLabel.AnchorSideLeft.Side = asrBottom
+            EditLabel.AnchorSideTop.Control = edPVP
+            EditLabel.AnchorSideTop.Side = asrCenter
+            EditLabel.AnchorSideRight.Side = asrBottom
+            EditLabel.AnchorSideBottom.Control = edPVP
+            EditLabel.AnchorSideBottom.Side = asrBottom
+            EditLabel.Left = 298
+            EditLabel.Height = 20
+            EditLabel.Top = 12
+            EditLabel.Width = 8
+            EditLabel.Caption = '  '
+            EditLabel.ParentColor = False
+            LabelPosition = lpRight
+            LabelSpacing = 10
+            TabOrder = 0
+            OnExit = edPVPExit
+            OnKeyDown = eIDKeyDown
+          end
+          object Label11: TLabel
+            Left = 16
+            Height = 20
+            Top = 47
+            Width = 73
+            Caption = 'Descuento:'
+            ParentColor = False
+          end
+          object edDes: TJDBLabeledFloatEdit
+            Left = 160
+            Height = 28
+            Top = 40
+            Width = 128
+            DataField = 'DISCOUNT'
+            DataSource = dsElement
+            Decimals = 2
+            Alignment = taRightJustify
+            Anchors = [akTop, akLeft, akRight]
+            AutoSize = False
+            EditLabel.AnchorSideLeft.Control = edDes
+            EditLabel.AnchorSideLeft.Side = asrBottom
+            EditLabel.AnchorSideTop.Control = edDes
+            EditLabel.AnchorSideTop.Side = asrCenter
+            EditLabel.AnchorSideRight.Side = asrBottom
+            EditLabel.AnchorSideBottom.Control = edDes
+            EditLabel.AnchorSideBottom.Side = asrBottom
+            EditLabel.Left = 298
+            EditLabel.Height = 20
+            EditLabel.Top = 44
+            EditLabel.Width = 12
+            EditLabel.Caption = '%'
+            EditLabel.ParentColor = False
+            LabelPosition = lpRight
+            LabelSpacing = 10
+            TabOrder = 1
+            OnExit = edPVPExit
+            OnKeyDown = eIDKeyDown
+          end
+          object Label12: TLabel
+            Left = 16
+            Height = 20
+            Top = 79
+            Width = 122
+            Caption = 'Precio de Compra:'
+            ParentColor = False
+          end
+          object edPCompra: TJDBLabeledFloatEdit
+            Left = 160
+            Height = 28
+            Top = 72
+            Width = 128
+            DataField = 'PURCHASE_PRICE'
+            DataSource = dsElement
+            Decimals = 2
+            Alignment = taRightJustify
+            Anchors = [akTop, akLeft, akRight]
+            AutoSize = False
+            EditLabel.AnchorSideLeft.Control = edPCompra
+            EditLabel.AnchorSideLeft.Side = asrBottom
+            EditLabel.AnchorSideTop.Control = edPCompra
+            EditLabel.AnchorSideTop.Side = asrCenter
+            EditLabel.AnchorSideRight.Side = asrBottom
+            EditLabel.AnchorSideBottom.Control = edPCompra
+            EditLabel.AnchorSideBottom.Side = asrBottom
+            EditLabel.Left = 298
+            EditLabel.Height = 20
+            EditLabel.Top = 76
+            EditLabel.Width = 8
+            EditLabel.Caption = '  '
+            EditLabel.ParentColor = False
+            LabelPosition = lpRight
+            LabelSpacing = 10
+            TabOrder = 2
+            OnExit = edPVPExit
+            OnKeyDown = eIDKeyDown
+          end
+          object Label14: TLabel
+            Left = 16
+            Height = 20
+            Top = 111
+            Width = 25
+            Caption = 'IVA:'
+            ParentColor = False
+          end
+          object edIVA: TJDBLabeledFloatEdit
+            Left = 160
+            Height = 28
+            Top = 104
+            Width = 128
+            DataField = 'TAX'
+            DataSource = dsElement
+            Decimals = 2
+            Alignment = taRightJustify
+            Anchors = [akTop, akLeft, akRight]
+            AutoSize = False
+            EditLabel.AnchorSideLeft.Control = edIVA
+            EditLabel.AnchorSideLeft.Side = asrBottom
+            EditLabel.AnchorSideTop.Control = edIVA
+            EditLabel.AnchorSideTop.Side = asrCenter
+            EditLabel.AnchorSideRight.Side = asrBottom
+            EditLabel.AnchorSideBottom.Control = edIVA
+            EditLabel.AnchorSideBottom.Side = asrBottom
+            EditLabel.Left = 298
+            EditLabel.Height = 20
+            EditLabel.Top = 108
+            EditLabel.Width = 12
+            EditLabel.Caption = '%'
+            EditLabel.ParentColor = False
+            LabelPosition = lpRight
+            LabelSpacing = 10
+            TabOrder = 3
+            OnExit = edPVPExit
+            OnKeyDown = eIDKeyDown
+          end
+          object Label13: TLabel
+            Left = 16
+            Height = 20
+            Top = 159
+            Width = 98
+            Caption = 'Precio con IVA:'
+            ParentColor = False
+          end
+          object Shape1: TShape
+            Left = 8
+            Height = 2
+            Top = 144
+            Width = 296
+            Anchors = [akTop, akLeft, akRight]
+          end
+          object DBEdit6: TDBEdit
+            Left = 160
+            Height = 28
+            Top = 200
+            Width = 128
+            DataField = 'DATE_UPDATE'
+            DataSource = dsElement
+            ReadOnly = True
+            CharCase = ecNormal
+            Enabled = False
+            MaxLength = 0
+            TabOrder = 4
+            OnKeyDown = eIDKeyDown
+          end
+          object Label9: TLabel
+            Left = 16
+            Height = 20
+            Top = 208
+            Width = 134
+            Caption = 'Fecha Actualización:'
+            ParentColor = False
+          end
+          object edPTotal: TLabeledEdit
+            Left = 160
+            Height = 28
+            Top = 155
+            Width = 128
+            Alignment = taRightJustify
+            EditLabel.AnchorSideLeft.Control = edPTotal
+            EditLabel.AnchorSideLeft.Side = asrBottom
+            EditLabel.AnchorSideTop.Control = edPTotal
+            EditLabel.AnchorSideTop.Side = asrCenter
+            EditLabel.AnchorSideRight.Side = asrBottom
+            EditLabel.AnchorSideBottom.Control = edPTotal
+            EditLabel.AnchorSideBottom.Side = asrBottom
+            EditLabel.Left = 298
+            EditLabel.Height = 20
+            EditLabel.Top = 159
+            EditLabel.Width = 8
+            EditLabel.Caption = '  '
+            EditLabel.ParentColor = False
+            LabelPosition = lpRight
+            LabelSpacing = 10
+            TabOrder = 5
+            OnKeyDown = eIDKeyDown
+          end
+        end
+        object GroupBox3: TGroupBox
+          Left = 376
+          Height = 128
+          Top = 264
+          Width = 321
+          Caption = 'Propiedades Físicas'
+          ClientHeight = 103
+          ClientWidth = 317
+          TabOrder = 6
+          object DBEdit5: TDBEdit
+            Left = 24
+            Height = 28
+            Top = 32
+            Width = 88
+            DataField = 'WIDTH'
+            DataSource = dsElement
+            CharCase = ecNormal
+            MaxLength = 160
+            TabOrder = 0
+            OnKeyDown = eIDKeyDown
+          end
+          object DBEdit4: TDBEdit
+            Left = 120
+            Height = 28
+            Top = 32
+            Width = 88
+            DataField = 'HEIGHT'
+            DataSource = dsElement
+            CharCase = ecNormal
+            MaxLength = 160
+            TabOrder = 1
+            OnKeyDown = eIDKeyDown
+          end
+          object DBEdit7: TDBEdit
+            Left = 216
+            Height = 28
+            Top = 32
+            Width = 88
+            DataField = 'LENGHT'
+            DataSource = dsElement
+            CharCase = ecNormal
+            MaxLength = 80
+            TabOrder = 2
+            OnKeyDown = eIDKeyDown
+          end
+          object DBEdit8: TDBEdit
+            Left = 120
+            Height = 28
+            Top = 64
+            Width = 184
+            DataField = 'WEIGHT'
+            DataSource = dsElement
+            CharCase = ecNormal
+            MaxLength = 80
+            TabOrder = 3
+            OnKeyDown = eIDKeyDown
+          end
+          object Label19: TLabel
+            Left = 24
+            Height = 20
+            Top = 72
+            Width = 65
+            Caption = 'Peso (Kg):'
+            ParentColor = False
+          end
+          object Label15: TLabel
+            Left = 120
+            Height = 20
+            Top = 8
+            Width = 71
+            Caption = 'Alto (mm):'
+            ParentColor = False
+          end
+          object Label17: TLabel
+            Left = 24
+            Height = 20
+            Top = 8
+            Width = 85
+            Caption = 'Ancho (mm):'
+            ParentColor = False
+          end
+          object Label18: TLabel
+            Left = 216
+            Height = 20
+            Top = 8
+            Width = 81
+            Caption = 'Largo (mm):'
+            ParentColor = False
+          end
+        end
+      end
+      object Splitter1: TSplitter
+        Cursor = crVSplit
+        Left = 0
+        Height = 5
+        Top = 410
+        Width = 962
+        Align = alTop
+        ResizeAnchor = akTop
+      end
+      object GroupBox2: TGroupBox
+        Left = 0
+        Height = 187
+        Top = 415
+        Width = 962
+        Align = alClient
+        Caption = 'Descripción'
+        ClientHeight = 162
+        ClientWidth = 958
+        TabOrder = 2
+        object DBMemo1: TDBMemo
+          Left = 5
+          Height = 152
+          Top = 5
+          Width = 948
+          Align = alClient
+          BorderSpacing.Around = 5
+          DataField = 'DESCRIPTION'
+          DataSource = dsElement
+          OnChange = DBMemo1Change
+          TabOrder = 0
+        end
+      end
+    end
+    object tsComposition: TTabSheet
+      Caption = 'Composición'
+      ClientHeight = 602
+      ClientWidth = 962
+      object Panel2: TPanel
+        Left = 0
+        Height = 42
+        Top = 560
+        Width = 962
+        Align = alBottom
+        BevelOuter = bvNone
+        ClientHeight = 42
+        ClientWidth = 962
+        ParentColor = False
+        TabOrder = 0
+        object Label16: TLabel
+          Left = 744
+          Height = 20
+          Top = 16
+          Width = 39
+          Anchors = [akRight, akBottom]
+          Caption = 'Total:'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object edTotal: TDBEdit
+          Left = 808
+          Height = 28
+          Top = 8
+          Width = 152
+          DataField = 'PURCHASE_PRICE'
+          DataSource = dsElement
+          ReadOnly = True
+          Anchors = [akRight, akBottom]
+          AutoSize = False
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 0
+        end
+      end
+      object gComposition: TNiceGrid
+        Cursor = crArrow
+        Left = 0
+        Height = 560
+        Top = 0
+        Width = 962
+        ColCount = 8
+        RowCount = 0
+        DefRowHeight = 24
+        HeaderFont.Color = clWindowText
+        HeaderFont.Height = -15
+        HeaderFont.Name = 'Tahoma'
+        FooterFont.Color = clWindowText
+        FooterFont.Height = -11
+        FooterFont.Name = 'Tahoma'
+        MergeCellColor = clWindow
+        MergeFont.Color = clWindowText
+        MergeFont.Height = -11
+        MergeFont.Name = 'Tahoma'
+        Columns = <        
+          item
+            Name = 'cCode'
+            Title = 'ID'
+            Width = 150
+            VertAlign = vaCenter
+            ControlType = ctComboBox
+            ThousandsSeparator = False
+            DateFormat = 0
+            TimeFormat = 0
+          end        
+          item
+            Name = 'cTitle'
+            Title = 'Título'
+            Width = 300
+            VertAlign = vaCenter
+            ControlType = ctMemo
+            ThousandsSeparator = False
+            DateFormat = 0
+            TimeFormat = 0
+            WordBreak = True
+          end        
+          item
+            Name = 'cUnitAmount'
+            Title = 'Cantidad'
+            Width = 80
+            HorzAlign = haRight
+            VertAlign = vaCenter
+            ControlType = ctNumeric
+            ThousandsSeparator = False
+            DateFormat = 0
+            TimeFormat = 0
+          end        
+          item
+            Name = 'cTotalAmount'
+            Title = 'Cantidad Total'
+            Width = 80
+            HorzAlign = haRight
+            VertAlign = vaCenter
+            ControlType = ctNumeric
+            ThousandsSeparator = False
+            DateFormat = 0
+            TimeFormat = 0
+          end        
+          item
+            Name = 'cUnit'
+            Title = 'Unidad'
+            Width = 50
+            VertAlign = vaCenter
+            ControlType = ctComboBox
+            ThousandsSeparator = False
+            DateFormat = 0
+            TimeFormat = 0
+          end        
+          item
+            Name = 'cUnitPrice'
+            Title = 'Precio'
+            Width = 80
+            HorzAlign = haRight
+            VertAlign = vaCenter
+            ControlType = ctNumeric
+            Decimals = 4
+            ThousandsSeparator = True
+            DateFormat = 0
+            TimeFormat = 0
+          end        
+          item
+            Name = 'cTotalPrice'
+            Title = 'Precio Total'
+            Width = 80
+            HorzAlign = haRight
+            VertAlign = vaCenter
+            ControlType = ctNumeric
+            Decimals = 4
+            ThousandsSeparator = True
+            DateFormat = 0
+            TimeFormat = 0
+          end        
+          item
+            Name = 'cType'
+            Title = 'Tipo'
+            Width = 80
+            VertAlign = vaCenter
+            Visible = False
+            ThousandsSeparator = False
+            DateFormat = 0
+            TimeFormat = 0
+            AllowShowHide = False
+          end>
+        GutterKind = gkPointer
+        GutterWidth = 15
+        GutterFont.Color = clWindowText
+        GutterFont.Height = -11
+        GutterFont.Name = 'Tahoma'
+        ShowFooter = False
+        OnDrawCell = gCompositionDrawCell
+        OnGutterClick = gCompositionGutterClick
+        OnCellChange = gCompositionCellChange
+        OnColRowChanged = gCompositionColRowChanged
+        OnCellExit = gCompositionCellExit
+        OnInsertRow = gCompositionInsertRow
+        OnDeleteRow = gCompositionDeleteRow
+        OnBeforeShowEdit = gCompositionBeforeShowEdit
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Default'
+        Align = alClient
+        PopupMenu = pmComposition
+        TabOrder = 1
+        OnDragDrop = gCompositionDragDrop
+        OnDragOver = gCompositionDragOver
+        Images = MainWindow.Elements_16
+        ShowDropDown = True
+        Style = gsStandard
+      end
+    end
+    object tsSupplier: TTabSheet
+      Caption = 'Proveedor'
+      ClientHeight = 602
+      ClientWidth = 962
+      object gProveedor: TNiceGrid
+        Cursor = 101
+        Left = 0
+        Height = 602
+        Top = 0
+        Width = 962
+        ColCount = 9
+        RowCount = 10
+        DefRowHeight = 24
+        HeaderLine = 2
+        HeaderFont.Color = clWindowText
+        HeaderFont.Height = -13
+        HeaderFont.Name = 'Tahoma'
+        FooterFont.Color = clWindowText
+        FooterFont.Height = -11
+        FooterFont.Name = 'Tahoma'
+        MergeCellColor = clWindow
+        MergeFont.Color = clWindowText
+        MergeFont.Height = -11
+        MergeFont.Name = 'Tahoma'
+        FitToWidth = True
+        Columns = <        
+          item
+            Name = 'cUsed'
+            Title = 'Por;Defecto'
+            Width = 50
+            VertAlign = vaCenter
+            CanResize = False
+            ControlType = ctCheckBox
+            ThousandsSeparator = False
+            DateFormat = 0
+            TimeFormat = 0
+          end        
+          item
+            Name = 'cCode'
+            Title = 'Proveedor'
+            Width = 133
+            VertAlign = vaCenter
+            ControlType = ctLookupComboBox
+            ThousandsSeparator = False
+            DateFormat = 0
+            TimeFormat = 0
+          end        
+          item
+            Name = 'cName'
+            Title = 'Nombre'
+            Width = 209
+            VertAlign = vaCenter
+            ThousandsSeparator = False
+            DateFormat = 0
+            TimeFormat = 0
+          end        
+          item
+            Name = 'cReference'
+            Title = 'Referecia; del Proveedor'
+            Width = 128
+            VertAlign = vaCenter
+            ThousandsSeparator = False
+            DateFormat = 0
+            TimeFormat = 0
+          end        
+          item
+            Name = 'cRealPrice'
+            Title = 'Precio;Venta'
+            Width = 86
+            HorzAlign = haRight
+            VertAlign = vaCenter
+            ThousandsSeparator = False
+            DateFormat = 0
+            TimeFormat = 0
+            ShowZero = True
+          end        
+          item
+            Name = 'cDiscount'
+            Title = 'Descuento'
+            Width = 86
+            HorzAlign = haRight
+            VertAlign = vaCenter
+            ThousandsSeparator = False
+            DateFormat = 0
+            TimeFormat = 0
+            ShowZero = True
+          end        
+          item
+            Name = 'cPrice'
+            Title = 'Precio; de Compra'
+            Width = 83
+            HorzAlign = haRight
+            VertAlign = vaCenter
+            ThousandsSeparator = False
+            DateFormat = 0
+            TimeFormat = 0
+            ShowZero = True
+          end        
+          item
+            Name = 'cMinimalAmount'
+            Title = 'Cantidad;Mínima'
+            Width = 83
+            HorzAlign = haRight
+            VertAlign = vaCenter
+            ThousandsSeparator = False
+            DateFormat = 0
+            TimeFormat = 0
+            ShowZero = True
+          end        
+          item
+            Name = 'cUpdate'
+            Title = 'Ültima;Actualización'
+            Width = 82
+            VertAlign = vaCenter
+            ThousandsSeparator = False
+            DateFormat = 0
+            TimeFormat = 0
+          end>
+        GutterKind = gkNumber
+        GutterWidth = 18
+        GutterFont.Color = clWindowText
+        GutterFont.Height = -11
+        GutterFont.Name = 'Tahoma'
+        GutterFont.Style = [fsBold]
+        ShowFooter = False
+        OnCellChange = gProveedorCellChange
+        OnColRowChanged = gProveedorColRowChanged
+        OnCellExit = gProveedorCellExit
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Default'
+        Align = alClient
+        TabOrder = 0
+        OnClick = gProveedorClick
+        OnDragDrop = gProveedorDragDrop
+        OnDragOver = gProveedorDragOver
+        ShowDropDown = False
+        Style = gsStandard
+      end
+    end
+    object tsCounts: TTabSheet
+      Caption = 'tsCounts'
+      TabVisible = False
+    end
+  end
+  object Panel1: TBCPanel[2]
+    Left = 0
+    Height = 74
+    Top = 30
+    Width = 976
+    Align = alTop
+    Background.Color = clBtnFace
+    Background.ColorOpacity = 255
+    Background.Gradient1.StartColor = 16184563
+    Background.Gradient1.StartColorOpacity = 255
+    Background.Gradient1.DrawMode = dmSet
+    Background.Gradient1.EndColor = 15000289
+    Background.Gradient1.EndColorOpacity = 255
+    Background.Gradient1.ColorCorrection = True
+    Background.Gradient1.GradientType = gtLinear
+    Background.Gradient1.Point1XPercent = 0
+    Background.Gradient1.Point1YPercent = 0
+    Background.Gradient1.Point2XPercent = 0
+    Background.Gradient1.Point2YPercent = 90
+    Background.Gradient1.Sinus = False
+    Background.Gradient2.StartColor = 16049884
+    Background.Gradient2.StartColorOpacity = 255
+    Background.Gradient2.DrawMode = dmSet
+    Background.Gradient2.EndColor = 16247261
+    Background.Gradient2.EndColorOpacity = 255
+    Background.Gradient2.ColorCorrection = True
+    Background.Gradient2.GradientType = gtLinear
+    Background.Gradient2.Point1XPercent = 0
+    Background.Gradient2.Point1YPercent = 0
+    Background.Gradient2.Point2XPercent = 0
+    Background.Gradient2.Point2YPercent = 100
+    Background.Gradient2.Sinus = False
+    Background.Gradient1EndPercent = 100
+    Background.Style = bbsGradient
+    BevelInner = bvNone
+    BevelOuter = bvNone
+    BevelWidth = 1
+    Border.Color = 7433834
+    Border.ColorOpacity = 200
+    Border.LightColor = clWhite
+    Border.LightOpacity = 200
+    Border.LightWidth = 1
+    Border.Style = bboSolid
+    Border.Width = 1
+    BorderBCStyle = bpsBorder
+    FontEx.Color = clDefault
+    FontEx.EndEllipsis = False
+    FontEx.FontQuality = fqSystemClearType
+    FontEx.Height = 0
+    FontEx.SingleLine = True
+    FontEx.Shadow = False
+    FontEx.ShadowColor = clBlack
+    FontEx.ShadowColorOpacity = 255
+    FontEx.ShadowRadius = 5
+    FontEx.ShadowOffsetX = 5
+    FontEx.ShadowOffsetY = 5
+    FontEx.Style = []
+    FontEx.TextAlignment = bcaCenter
+    FontEx.WordBreak = False
+    Rounding.RoundX = 4
+    Rounding.RoundY = 4
+    Rounding.RoundOptions = [rrTopLeftSquare, rrTopRightSquare]
+    TabOrder = 0
+    object eID: TDBEdit
+      Left = 72
+      Height = 28
+      Top = 5
+      Width = 136
+      DataField = 'CODE'
+      DataSource = dsElement
+      CharCase = ecNormal
+      MaxLength = 80
+      TabOrder = 0
+      OnChange = eIDChange
+      OnKeyDown = eIDKeyDown
+    end
+    object DBCheckBox1: TDBCheckBox
+      Left = 712
+      Height = 23
+      Top = 5
+      Width = 90
+      Caption = 'Inactivo'
+      DataField = 'STATE'
+      DataSource = dsElement
+      TabOrder = 1
+      ValueChecked = 'True'
+      ValueUnchecked = 'False'
+    end
+    object Label1: TLabel
+      Left = 8
+      Height = 20
+      Top = 8
+      Width = 52
+      Caption = 'Código:'
+      ParentColor = False
+    end
+    object Label2: TLabel
+      Left = 8
+      Height = 20
+      Top = 43
+      Width = 41
+      Caption = 'Título:'
+      ParentColor = False
+    end
+    object Label3: TLabel
+      Left = 216
+      Height = 20
+      Top = 8
+      Width = 33
+      Caption = 'Tipo:'
+      ParentColor = False
+    end
+    object Label4: TLabel
+      Left = 448
+      Height = 20
+      Top = 8
+      Width = 50
+      Caption = 'Familia:'
+      ParentColor = False
+    end
+    object edFamily: TDBLookupComboBox
+      Left = 512
+      Height = 28
+      Top = 5
+      Width = 176
+      DataField = 'FAMILY_ID'
+      DataSource = dsElement
+      KeyField = 'feID'
+      ListField = 'feId'
+      ListFieldIndex = 0
+      LookupCache = False
+      OnKeyDown = eIDKeyDown
+      TabOrder = 2
+    end
+    object Label5: TLabel
+      Left = 448
+      Height = 20
+      Top = 43
+      Width = 51
+      Caption = 'Unidad:'
+      ParentColor = False
+    end
+    object edUnity: TDBLookupComboBox
+      Left = 512
+      Height = 28
+      Top = 40
+      Width = 176
+      AutoComplete = True
+      AutoDropDown = True
+      DataField = 'UNIT_ID'
+      DataSource = dsElement
+      ListFieldIndex = 0
+      ListSource = dsUnity
+      LookupCache = False
+      OnKeyDown = eIDKeyDown
+      ScrollListDataset = True
+      Sorted = True
+      TabOrder = 3
+    end
+    object eNom: TDBEdit
+      Left = 72
+      Height = 28
+      Top = 40
+      Width = 368
+      DataField = 'TITLE'
+      DataSource = dsElement
+      CharCase = ecNormal
+      MaxLength = 400
+      TabOrder = 4
+      OnKeyDown = eIDKeyDown
+    end
+    object eType: TComboBox
+      Left = 256
+      Height = 28
+      Top = 5
+      Width = 184
+      ItemHeight = 20
+      Items.Strings = (
+        'Unidad de Obra'
+        'Material'
+        'Mano de Obra'
+        'Maquinaria'
+        'Diversos '
+      )
+      OnChange = eTypeChange
+      OnKeyDown = eIDKeyDown
+      TabOrder = 5
+    end
+  end
+  object dsElement: TDataSource[3]
+    DataSet = zqElement
+    OnStateChange = dsElementStateChange
+    left = 80
+    top = 273
+  end
+  object zqElement: TZQuery[4]
+    Connection = MainWindow.zcMainConnection
+    SQL.Strings = (
+      'SELECT * FROM ELEMENT'
+    )
+    Params = <>
+    left = 80
+    top = 217
+    object zqElementID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqElementCODE: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'CODE'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 80
+    end
+    object zqElementTYPE: TStringField
+      DisplayWidth = 8
+      FieldKind = fkData
+      FieldName = 'TYPE'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 8
+    end
+    object zqElementTITLE: TStringField
+      DisplayWidth = 400
+      FieldKind = fkData
+      FieldName = 'TITLE'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 400
+    end
+    object zqElementDESCRIPTION: TBlobField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'DESCRIPTION'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqElementFAMILY_ID: TStringField
+      DisplayWidth = 36
+      FieldKind = fkData
+      FieldName = 'FAMILY_ID'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 36
+    end
+    object zqElementUNIT_ID: TStringField
+      DisplayWidth = 36
+      FieldKind = fkData
+      FieldName = 'UNIT_ID'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 36
+    end
+    object zqElementDATE_UPDATE: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'DATE_UPDATE'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqElementREAL_PRICE: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'REAL_PRICE'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '#,##0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementDISCOUNT: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'DISCOUNT'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '#,##0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementPURCHASE_PRICE: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PURCHASE_PRICE'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '#,##0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementBENEFIT: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BENEFIT'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '#,##0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementTAX: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TAX'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '#,##0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementBARCODE: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'BARCODE'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object zqElementIMAGE: TBlobField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'IMAGE'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqElementSTATE: TBooleanField
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'STATE'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayValues = 'True;False'
+    end
+    object zqElementMANUFACTURER: TStringField
+      DisplayWidth = 160
+      FieldKind = fkData
+      FieldName = 'MANUFACTURER'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object zqElementGAMMA: TStringField
+      DisplayWidth = 160
+      FieldKind = fkData
+      FieldName = 'GAMMA'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object zqElementWEIGHT: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'WEIGHT'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '#,##0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementHEIGHT: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'HEIGHT'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '#,##0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementWIDTH: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'WIDTH'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '#,##0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementLENGHT: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'LENGHT'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '#,##0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_ID_0: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_ID_0'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object zqElementSUPPLIER_NAME_0: TStringField
+      DisplayWidth = 240
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_NAME_0'
+      Index = 23
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 240
+    end
+    object zqElementSUPPLIER_REFERENCE_0: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_REFERENCE_0'
+      Index = 24
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object zqElementSUPPLIER_REAL_PRICE_0: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_REAL_PRICE_0'
+      Index = 25
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_DISCOUNT_0: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_DISCOUNT_0'
+      Index = 26
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_PURCHASE_PRICE_0: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_PURCHASE_PRICE_0'
+      Index = 27
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_MINIMUM_AMOUNT_0: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_MINIMUM_AMOUNT_0'
+      Index = 28
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_DATE_UPDATE_0: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_DATE_UPDATE_0'
+      Index = 29
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqElementSUPPLIER_ID_1: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_ID_1'
+      Index = 30
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object zqElementSUPPLIER_NAME_1: TStringField
+      DisplayWidth = 240
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_NAME_1'
+      Index = 31
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 240
+    end
+    object zqElementSUPPLIER_REFERENCE_1: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_REFERENCE_1'
+      Index = 32
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object zqElementSUPPLIER_REAL_PRICE_1: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_REAL_PRICE_1'
+      Index = 33
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_DISCOUNT_1: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_DISCOUNT_1'
+      Index = 34
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_PURCHASE_PRICE_1: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_PURCHASE_PRICE_1'
+      Index = 35
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_MINIMUM_AMOUNT_1: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_MINIMUM_AMOUNT_1'
+      Index = 36
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_DATE_UPDATE_1: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_DATE_UPDATE_1'
+      Index = 37
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqElementSUPPLIER_ID_2: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_ID_2'
+      Index = 38
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object zqElementSUPPLIER_NAME_2: TStringField
+      DisplayWidth = 240
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_NAME_2'
+      Index = 39
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 240
+    end
+    object zqElementSUPPLIER_REFERENCE_2: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_REFERENCE_2'
+      Index = 40
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object zqElementSUPPLIER_REAL_PRICE_2: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_REAL_PRICE_2'
+      Index = 41
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_DISCOUNT_2: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_DISCOUNT_2'
+      Index = 42
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_PURCHASE_PRICE_2: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_PURCHASE_PRICE_2'
+      Index = 43
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_MINIMUM_AMOUNT_2: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_MINIMUM_AMOUNT_2'
+      Index = 44
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_DATE_UPDATE_2: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_DATE_UPDATE_2'
+      Index = 45
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqElementSUPPLIER_ID_3: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_ID_3'
+      Index = 46
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object zqElementSUPPLIER_NAME_3: TStringField
+      DisplayWidth = 240
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_NAME_3'
+      Index = 47
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 240
+    end
+    object zqElementSUPPLIER_REFERENCE_3: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_REFERENCE_3'
+      Index = 48
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object zqElementSUPPLIER_REAL_PRICE_3: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_REAL_PRICE_3'
+      Index = 49
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_DISCOUNT_3: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_DISCOUNT_3'
+      Index = 50
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_PURCHASE_PRICE_3: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_PURCHASE_PRICE_3'
+      Index = 51
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_MINIMUM_AMOUNT_3: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_MINIMUM_AMOUNT_3'
+      Index = 52
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_DATE_UPDATE_3: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_DATE_UPDATE_3'
+      Index = 53
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqElementSUPPLIER_ID_4: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_ID_4'
+      Index = 54
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object zqElementSUPPLIER_NAME_4: TStringField
+      DisplayWidth = 240
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_NAME_4'
+      Index = 55
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 240
+    end
+    object zqElementSUPPLIER_REFERENCE_4: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_REFERENCE_4'
+      Index = 56
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object zqElementSUPPLIER_REAL_PRICE_4: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_REAL_PRICE_4'
+      Index = 57
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_DISCOUNT_4: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_DISCOUNT_4'
+      Index = 58
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_PURCHASE_PRICE_4: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_PURCHASE_PRICE_4'
+      Index = 59
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_MINIMUM_AMOUNT_4: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_MINIMUM_AMOUNT_4'
+      Index = 60
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_DATE_UPDATE_4: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_DATE_UPDATE_4'
+      Index = 61
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqElementSUPPLIER_ID_5: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_ID_5'
+      Index = 62
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object zqElementSUPPLIER_NAME_5: TStringField
+      DisplayWidth = 240
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_NAME_5'
+      Index = 63
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 240
+    end
+    object zqElementSUPPLIER_REFERENCE_5: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_REFERENCE_5'
+      Index = 64
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object zqElementSUPPLIER_REAL_PRICE_5: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_REAL_PRICE_5'
+      Index = 65
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_DISCOUNT_5: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_DISCOUNT_5'
+      Index = 66
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_PURCHASE_PRICE_5: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_PURCHASE_PRICE_5'
+      Index = 67
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_MINIMUM_AMOUNT_5: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_MINIMUM_AMOUNT_5'
+      Index = 68
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_DATE_UPDATE_5: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_DATE_UPDATE_5'
+      Index = 69
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqElementSUPPLIER_ID_6: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_ID_6'
+      Index = 70
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object zqElementSUPPLIER_NAME_6: TStringField
+      DisplayWidth = 240
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_NAME_6'
+      Index = 71
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 240
+    end
+    object zqElementSUPPLIER_REFERENCE_6: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_REFERENCE_6'
+      Index = 72
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object zqElementSUPPLIER_REAL_PRICE_6: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_REAL_PRICE_6'
+      Index = 73
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_DISCOUNT_6: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_DISCOUNT_6'
+      Index = 74
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_PURCHASE_PRICE_6: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_PURCHASE_PRICE_6'
+      Index = 75
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_MINIMUM_AMOUNT_6: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_MINIMUM_AMOUNT_6'
+      Index = 76
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_DATE_UPDATE_6: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_DATE_UPDATE_6'
+      Index = 77
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqElementSUPPLIER_ID_7: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_ID_7'
+      Index = 78
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object zqElementSUPPLIER_NAME_7: TStringField
+      DisplayWidth = 240
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_NAME_7'
+      Index = 79
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 240
+    end
+    object zqElementSUPPLIER_REFERENCE_7: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_REFERENCE_7'
+      Index = 80
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object zqElementSUPPLIER_REAL_PRICE_7: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_REAL_PRICE_7'
+      Index = 81
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_DISCOUNT_7: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_DISCOUNT_7'
+      Index = 82
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_PURCHASE_PRICE_7: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_PURCHASE_PRICE_7'
+      Index = 83
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_MINIMUM_AMOUNT_7: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_MINIMUM_AMOUNT_7'
+      Index = 84
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_DATE_UPDATE_7: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_DATE_UPDATE_7'
+      Index = 85
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqElementSUPPLIER_ID_8: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_ID_8'
+      Index = 86
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object zqElementSUPPLIER_NAME_8: TStringField
+      DisplayWidth = 240
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_NAME_8'
+      Index = 87
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 240
+    end
+    object zqElementSUPPLIER_REFERENCE_8: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_REFERENCE_8'
+      Index = 88
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object zqElementSUPPLIER_REAL_PRICE_8: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_REAL_PRICE_8'
+      Index = 89
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_DISCOUNT_8: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_DISCOUNT_8'
+      Index = 90
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_PURCHASE_PRICE_8: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_PURCHASE_PRICE_8'
+      Index = 91
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_MINIMUM_AMOUNT_8: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_MINIMUM_AMOUNT_8'
+      Index = 92
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_DATE_UPDATE_8: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_DATE_UPDATE_8'
+      Index = 93
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqElementSUPPLIER_ID_9: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_ID_9'
+      Index = 94
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object zqElementSUPPLIER_NAME_9: TStringField
+      DisplayWidth = 240
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_NAME_9'
+      Index = 95
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 240
+    end
+    object zqElementSUPPLIER_REFERENCE_9: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_REFERENCE_9'
+      Index = 96
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object zqElementSUPPLIER_REAL_PRICE_9: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_REAL_PRICE_9'
+      Index = 97
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_DISCOUNT_9: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_DISCOUNT_9'
+      Index = 98
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_PURCHASE_PRICE_9: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_PURCHASE_PRICE_9'
+      Index = 99
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_MINIMUM_AMOUNT_9: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_MINIMUM_AMOUNT_9'
+      Index = 100
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElementSUPPLIER_DATE_UPDATE_9: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_DATE_UPDATE_9'
+      Index = 101
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqElementSUPPLIER_DEFAULT: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUPPLIER_DEFAULT'
+      Index = 102
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqElementCREATEDAT: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CREATEDAT'
+      Index = 103
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqElementCREATEDBY: TStringField
+      DisplayWidth = 400
+      FieldKind = fkData
+      FieldName = 'CREATEDBY'
+      Index = 104
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 400
+    end
+  end
+  object ztFamily: TZTable[5]
+    Connection = MainWindow.zcMainConnection
+    TableName = 'ELEMENTFAMILIES'
+    left = 199
+    top = 217
+  end
+  object ztUnity: TZTable[6]
+    Connection = MainWindow.zcMainConnection
+    TableName = 'UNIT'
+    left = 254
+    top = 216
+  end
+  object dsFamily: TDataSource[7]
+    DataSet = ztFamily
+    left = 199
+    top = 273
+  end
+  object dsUnity: TDataSource[8]
+    DataSet = ztUnity
+    left = 254
+    top = 273
+  end
+  object zqElemComp: TZQuery[9]
+    Connection = MainWindow.zcMainConnection
+    SQL.Strings = (
+      'SELECT * FROM ELEMENTCOMPOSITION WHERE NORDER = "-1"'
+    )
+    Params = <>
+    left = 144
+    top = 217
+    object zqElemCompNORDER: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'NORDER'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqElemCompCODE: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'CODE'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 80
+    end
+    object zqElemCompELEMENT_CODE: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'ELEMENT_CODE'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 80
+    end
+    object zqElemCompELEMENT_AMOUNT: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ELEMENT_AMOUNT'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object zqElemCompCREATEDAT: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CREATEDAT'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqElemCompCREATEDBY: TStringField
+      DisplayWidth = 400
+      FieldKind = fkData
+      FieldName = 'CREATEDBY'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 400
+    end
+  end
+  object dsElemComp: TDataSource[10]
+    DataSet = zqElemComp
+    OnStateChange = dsElementStateChange
+    left = 144
+    top = 273
+  end
+  object pmComposition: TPopupMenu[11]
+    Images = MainWindow.General_16
+    left = 256
+    top = 160
+    object miDeleteLine: TMenuItem
+      Caption = '&Borrar'
+      Bitmap.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000000000000000
+        0000E1694116E16941C7E16941FFE16941FFE16941FFE16941FFE16941FFE169
+        41FFE16941FFE16941FFE16941C7E16941160000000000000000000000000000
+        0000E169417AE16941D7E169413EE169413AE169413AE169413AE169413AE169
+        413AE169413AE169413EE16941D7E169417A0000000000000000000000000000
+        0000E1694189E16941B1E169410AE1694189E1694116E1694154E1694154E169
+        4116E1694189E169410AE16941B1E16941890000000000000000000000000000
+        0000E1694189E16941B1E1694114E16941FFE1694128E169419DE169419DE169
+        4128E16941FFE1694114E16941B1E16941890000000000000000000000000000
+        0000E1694189E16941B1E1694114E16941FFE1694128E169419DE169419DE169
+        4128E16941FFE1694114E16941B1E16941890000000000000000000000000000
+        0000E1694189E16941B1E1694114E16941FFE1694128E169419DE169419DE169
+        4128E16941FFE1694114E16941B1E16941890000000000000000000000000000
+        0000E1694189E16941B1E1694114E16941FFE1694128E169419DE169419DE169
+        4128E16941FFE1694114E16941B1E16941890000000000000000000000000000
+        0000E1694189E16941B1E1694114E16941FFE1694128E169419DE169419DE169
+        4128E16941FFE1694114E16941B1E16941890000000000000000000000000000
+        0000E1694189E16941B1E1694114E16941FFE1694128E169419DE169419DE169
+        4128E16941FFE1694114E16941B1E16941890000000000000000000000000000
+        0000E1694189E16941B1E1694110E16941D7E1694122E1694185E1694185E169
+        4122E16941D7E1694110E16941B1E16941890000000000000000000000000000
+        0000E1694189E16941B100000000000000000000000000000000000000000000
+        00000000000000000000E16941B1E1694189000000000000000000000000E169
+        41B5E16941F5E16941F9E16941EBE16941EBE16941EDE16941F1E16941F1E169
+        41EDE16941EBE16941EBE16941F9E16941F5E16941B50000000000000000E169
+        4158E16941FFE16941FFE16941FFE16941FFE16941FFE16941FFE16941FFE169
+        41FFE16941FFE16941FFE16941FFE16941FFE16941580000000000000000E169
+        4108E1694181E1694189E1694195E16941FFE169419FE1694189E1694189E169
+        419FE16941FFE1694195E1694189E1694181E169410800000000000000000000
+        00000000000000000000E1694106E16941F1E1694193E1694142E1694142E169
+        4193E16941F1E169410600000000000000000000000000000000000000000000
+        0000000000000000000000000000E1694152E16941E9E16941FFE16941FFE169
+        41E9E16941520000000000000000000000000000000000000000
+      }
+      ImageIndex = 2
+      ShortCut = 16452
+      OnClick = miDeleteLineClick
+    end
+    object miAddLine: TMenuItem
+      Caption = '&Añadir'
+      Bitmap.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        20000000000000040000640000006400000000000000000000004D4D4D004D4D
+        4D004D4D4D004D4D4D004D4D4D004D4D4D004D4D4D004D4D4D004D4D4D004D4D
+        4D004D4D4D004D4D4D004D4D4D004D4D4D0000000000000000004D4D4D0043B0
+        62FF3DAC62FF36A763FF30A363FF2A9E64FF249A64FF1E9564FF179165FF118C
+        65FF0B8865FF058366FF008066FF4D4D4D0000000000000000004D4D4D0043B0
+        62FF3DAC62FF36A763FF30A363FF2A9E64FF249A64FF1E9564FF179165FF118C
+        65FF0B8865FF058366FF008066FF4D4D4D0000000000000000004D4D4D0043B0
+        62FF3DAC62FF36A763FF30A363FF2A9E64FF249A64FF1E9564FF179165FF118C
+        65FF0B8865FF058366FF008066FF4D4D4D0000000000000000004D4D4D004D4D
+        4D004D4D4D004D4D4D004D4D4D004D4D4D004D4D4D004D4D4D004D4D4D004D4D
+        4D004D4D4D004D4D4D004D4D4D004D4D4D004D4D4D004D4D4D00000000000000
+        000000000000000000004D4D4D00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000
+        000000000000000000004D4D4D00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000
+        000000000000000000004D4D4D00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000
+        000000000000000000004D4D4D004D4D4D004D4D4D004D4D4D004D4D4D004D4D
+        4D004D4D4D004D4D4D004D4D4D004D4D4D004D4D4D004D4D4D00000000000000
+        000000000000000000004D4D4D00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000
+        000000000000000000004D4D4D00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000
+        000000000000000000004D4D4D00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000
+        000000000000000000004D4D4D004D4D4D004D4D4D004D4D4D004D4D4D004D4D
+        4D004D4D4D004D4D4D004D4D4D004D4D4D004D4D4D004D4D4D00000000000000
+        000000000000000000004D4D4D00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000
+        000000000000000000004D4D4D00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000
+        000000000000000000004D4D4D00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      }
+      ImageIndex = 20
+      ShortCut = 16449
+      OnClick = miAddLineClick
+    end
+    object miInsertLine: TMenuItem
+      Caption = 'Insertar'
+      Bitmap.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000000000000000
+        000000000000000000004D4D4DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000
+        000000000000000000004D4D4DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000
+        000000000000000000004D4D4DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000
+        000000000000000000004D4D4DFF4D4D4DFF4D4D4DFF4D4D4DFF4D4D4DFF4D4D
+        4DFF4D4D4DFF4D4D4DFF4D4D4DFF4D4D4DFF4D4D4DFF4D4D4DFF000000000000
+        000000000000000000004D4D4DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000
+        000000000000000000004D4D4DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000
+        000000000000000000004D4D4DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF4D4D4DFF4D4D
+        4DFF4D4D4DFF4D4D4DFF4D4D4DFF4D4D4DFF4D4D4DFF4D4D4DFF4D4D4DFF4D4D
+        4DFF4D4D4DFF4D4D4DFF4D4D4DFF4D4D4DFF4D4D4DFF4D4D4DFF4D4D4DFF43B0
+        62FF3DAC62FF36A763FF30A363FF2A9E64FF249A64FF1E9564FF179165FF118C
+        65FF0B8865FF058366FF008066FF4D4D4DFF00000000000000004D4D4DFF43B0
+        62FF3DAC62FF36A763FF30A363FF2A9E64FF249A64FF1E9564FF179165FF118C
+        65FF0B8865FF058366FF008066FF4D4D4DFF00000000000000004D4D4DFF43B0
+        62FF3DAC62FF36A763FF30A363FF2A9E64FF249A64FF1E9564FF179165FF118C
+        65FF0B8865FF058366FF008066FF4D4D4DFF00000000000000004D4D4DFF4D4D
+        4DFF4D4D4DFF4D4D4DFF4D4D4DFF4D4D4DFF4D4D4DFF4D4D4DFF4D4D4DFF4D4D
+        4DFF4D4D4DFF4D4D4DFF4D4D4DFF4D4D4DFF4D4D4DFF4D4D4DFF000000000000
+        000000000000000000004D4D4DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000
+        000000000000000000004D4D4DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000
+        000000000000000000004D4D4DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000
+        000000000000000000004D4D4DFF4D4D4DFF4D4D4DFF4D4D4DFF4D4D4DFF4D4D
+        4DFF4D4D4DFF4D4D4DFF4D4D4DFF4D4D4DFF4D4D4DFF4D4D4DFF
+      }
+      ImageIndex = 21
+      ShortCut = 16457
+      OnClick = miInsertLineClick
+    end
+  end
+end

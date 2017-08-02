@@ -1,0 +1,62 @@
+object SplashScreen: TSplashScreen
+  Left = 549
+  Height = 180
+  Top = 334
+  Width = 400
+  Caption = 'SplashScreen'
+  ClientHeight = 180
+  ClientWidth = 400
+  Color = 10114858
+  FormStyle = fsStayOnTop
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poDesktopCenter
+  LCLVersion = '1.6.4.0'
+  object Label1: TLabel
+    Left = 24
+    Height = 88
+    Top = 16
+    Width = 360
+    AutoSize = False
+    Color = 10114858
+    Font.Color = clWhite
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+  end
+  object Panel2: TPanel
+    Left = 16
+    Height = 50
+    Top = 112
+    Width = 170
+    BorderSpacing.Around = 1
+    BevelOuter = bvNone
+    Caption = 'Panel2'
+    ClientHeight = 50
+    ClientWidth = 170
+    Color = 10123367
+    ParentColor = False
+    TabOrder = 0
+    Visible = False
+    object Panel1: TPanel
+      Left = 3
+      Height = 44
+      Top = 3
+      Width = 164
+      Align = alClient
+      BorderSpacing.Around = 3
+      BevelOuter = bvNone
+      Caption = 'Panel1'
+      Color = 8544333
+      ParentColor = False
+      TabOrder = 0
+    end
+  end
+  object Timer1: TTimer
+    Enabled = False
+    OnTimer = Timer1Timer
+    left = 10
+    top = 10
+  end
+end

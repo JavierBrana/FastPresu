@@ -1,0 +1,95 @@
+object DebugForm: TDebugForm
+  Left = 1179
+  Height = 197
+  Top = 770
+  Width = 719
+  BorderStyle = bsToolWindow
+  Caption = 'DebugForm'
+  ClientHeight = 197
+  ClientWidth = 719
+  DragKind = dkDock
+  DragMode = dmAutomatic
+  FormStyle = fsStayOnTop
+  OnCreate = FormCreate
+  LCLVersion = '1.6.2.0'
+  Visible = True
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 197
+    Top = 0
+    Width = 719
+    ActivePage = TabSheet2
+    Align = alClient
+    TabIndex = 0
+    TabOrder = 0
+    object TabSheet2: TTabSheet
+      Caption = 'TabSheet2'
+      ClientHeight = 164
+      ClientWidth = 711
+      object Memo1: TMemo
+        Left = 0
+        Height = 164
+        Top = 0
+        Width = 711
+        Align = alClient
+        ScrollBars = ssVertical
+        TabOrder = 0
+      end
+    end
+    object TabSheet1: TTabSheet
+      Caption = 'TabSheet1'
+      ClientHeight = 164
+      ClientWidth = 711
+      object ListBox1: TListBox
+        Left = 0
+        Height = 179
+        Top = 0
+        Width = 216
+        Anchors = [akTop, akLeft, akBottom]
+        Items.Strings = (
+          'tableEmpresaInfo'
+          'tClient'
+          'tForma'
+          'tFamCli'
+          'tFamProv'
+          'tElement'
+          'tElemComp'
+          'tProveedor'
+          'tFamEle'
+          'tUnidad'
+          'tDocVenta'
+          'tDataDocVenta'
+          'tDocCompra'
+          'tDataDocCompra'
+          'tProyecto'
+          'tProjectControl'
+          'tTrabajador'
+          'tContact'
+          'tLazReport'
+          'tCalendar'
+          'tTask'
+          'tTaskConnections'
+          'tTaskResources'
+        )
+        ItemHeight = 20
+        OnClick = ListBox1Click
+        TabOrder = 0
+      end
+      object Button1: TButton
+        Left = 248
+        Height = 33
+        Top = 8
+        Width = 155
+        Caption = 'Button1'
+        OnClick = Button1Click
+        TabOrder = 1
+      end
+    end
+  end
+  object ZQuery1: TZQuery
+    Connection = MainWindow.zcMainConnection
+    Params = <>
+    left = 640
+    top = 16
+  end
+end

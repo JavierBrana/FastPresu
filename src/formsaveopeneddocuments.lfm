@@ -1,0 +1,61 @@
+object SaveOpenedDocuments: TSaveOpenedDocuments
+  Left = 804
+  Height = 369
+  Top = 281
+  Width = 432
+  BorderIcons = []
+  BorderStyle = bsSizeToolWin
+  Caption = 'Salvar Documentos Modificados'
+  ClientHeight = 369
+  ClientWidth = 432
+  FormStyle = fsStayOnTop
+  OnShow = FormShow
+  Position = poMainFormCenter
+  LCLVersion = '1.6.2.0'
+  object clbDocumentList: TCheckListBox
+    Left = 6
+    Height = 307
+    Top = 6
+    Width = 420
+    Align = alClient
+    BorderSpacing.Around = 6
+    ItemHeight = 0
+    TabOrder = 0
+  end
+  object pButtonPanel: TPanel
+    Left = 0
+    Height = 50
+    Top = 319
+    Width = 432
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 50
+    ClientWidth = 432
+    TabOrder = 1
+    object bSave: TBitBtn
+      AnchorSideRight.Control = pButtonPanel
+      AnchorSideRight.Side = asrCenter
+      Left = 0
+      Height = 50
+      Top = 0
+      Width = 216
+      Align = alLeft
+      Caption = '&Aceptar'
+      Default = True
+      ModalResult = 1
+      OnClick = bSaveClick
+      TabOrder = 0
+    end
+    object bCancel: TBitBtn
+      Left = 216
+      Height = 50
+      Top = 0
+      Width = 216
+      Align = alClient
+      Cancel = True
+      Caption = '&Cancelar'
+      ModalResult = 2
+      TabOrder = 1
+    end
+  end
+end

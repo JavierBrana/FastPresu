@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="10"/>
+    <PathDelim Value="\"/>
+    <General>
+      <SessionStorage Value="InProjectDir"/>
+      <MainUnit Value="0"/>
+      <Title Value="FastPres"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <Icon Value="0"/>
+    </General>
+    <i18n>
+      <EnableI18N Value="True"/>
+      <OutDir Value="Languages"/>
+    </i18n>
+    <VersionInfo>
+      <UseVersionInfo Value="True"/>
+      <AutoIncrementBuild Value="True"/>
+      <MinorVersionNr Value="1"/>
+      <RevisionNr Value="1"/>
+      <BuildNr Value="15"/>
+      <Language Value="040A"/>
+      <CharSet Value="04B0"/>
+      <StringTable ProductVersion=""/>
+    </VersionInfo>
+    <BuildModes Count="3">
+      <Item1 Name="Default" Default="True"/>
+      <Item2 Name="Debug">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <PathDelim Value="\"/>
+          <Target>
+            <Filename Value="FastPres"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value="..\FastPres"/>
+            <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <Linking>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <Verbosity>
+              <ShowCompProc Value="True"/>
+            </Verbosity>
+            <CustomOptions Value="-dDEBUG"/>
+          </Other>
+        </CompilerOptions>
+      </Item2>
+      <Item3 Name="Release">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <PathDelim Value="\"/>
+          <Target>
+            <Filename Value="FastPres"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value="..\FastPres"/>
+            <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+            <Optimizations>
+              <OptimizationLevel Value="3"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <Verbosity>
+              <ShowCompProc Value="True"/>
+            </Verbosity>
+          </Other>
+        </CompilerOptions>
+      </Item3>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+      </local>
+    </RunParams>
+    <RequiredPackages Count="19">
+      <Item1>
+        <PackageName Value="TAChartLazarusPkg"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="SynEdit"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="EasyDockMgr"/>
+      </Item3>
+      <Item4>
+        <PackageName Value="IDEIntf"/>
+      </Item4>
+      <Item5>
+        <PackageName Value="jujiboutils"/>
+      </Item5>
+      <Item6>
+        <PackageName Value="FCL"/>
+      </Item6>
+      <Item7>
+        <PackageName Value="ZVDateTimeCtrls"/>
+      </Item7>
+      <Item8>
+        <PackageName Value="spkvcl"/>
+      </Item8>
+      <Item9>
+        <PackageName Value="lr_add_function"/>
+      </Item9>
+      <Item10>
+        <PackageName Value="lr_extexp"/>
+      </Item10>
+      <Item11>
+        <PackageName Value="lr_DialogDesign"/>
+      </Item11>
+      <Item12>
+        <PackageName Value="lazreportpdfexport"/>
+      </Item12>
+      <Item13>
+        <PackageName Value="Printer4Lazarus"/>
+      </Item13>
+      <Item14>
+        <PackageName Value="lazreport"/>
+      </Item14>
+      <Item15>
+        <PackageName Value="LazControls"/>
+      </Item15>
+      <Item16>
+        <PackageName Value="NiceGridLazarus"/>
+      </Item16>
+      <Item17>
+        <PackageName Value="zcomponent"/>
+      </Item17>
+      <Item18>
+        <PackageName Value="bgracontrols"/>
+      </Item18>
+      <Item19>
+        <PackageName Value="LCL"/>
+      </Item19>
+    </RequiredPackages>
+    <Units Count="42">
+      <Unit0>
+        <Filename Value="FastPres.lpr"/>
+        <IsPartOfProject Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="formmainwindow.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="MainWindow"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormMainWindow"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="frameprint.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="PrintFrame"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+        <UnitName Value="framePrint"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="controldragobject.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ControlDragObject"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="databasedefine.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="DatabaseDefine"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="fiebdc.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="FIEBDC"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="formimportdbwizard.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="fImportDBWizard"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="formImportDBWizard"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="utiles.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Utiles"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="formclient.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Client"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="formClient"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="formclientlist.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ClientList"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="formClientList"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="framecompanyedit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="EditCompany"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="formsupplier.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Supplier"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="formSupplier"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="formsupplierstlist.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="SupplierstList"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="formSupplierstList"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="formcreatecompanywizard.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="CreateCompanyWizard"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="formCreateCompanyWizard"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="formconfigwindow.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ConfigWindow"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="formConfigWindow"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="formopencompany.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="OpenCompanyWindow"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="formOpenCompany"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="formbudgets.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Budgets"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="formBudgets"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="formsaledocumentslist.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="SaleDocumentsList"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="formSaleDocumentsList"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="formelement.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Element"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="formElement"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="formelementslist.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ElementsList"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="formElementsList"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="formbuydocuments.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="BuyDocuments"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="formBuyDocuments"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="formbuydocumentslist.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="BuyDocumentsList"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="formBuyDocumentsList"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="formcontact.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Contact"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="formContact"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="formcontactlist.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ContactList"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="formContactList"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="formprojects.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Projects"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="formProjects"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="formprojectslist.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ProjectsList"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="formProjectsList"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="formlistform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ListForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="formListForm"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="formworkform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="WorkForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="formWorkForm"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="formcalendareditor.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="CalendarEditor"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="formCalendarEditor"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="framedatabaseconfig.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frDataBaseConfig"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+        <UnitName Value="frameDataBaseConfig"/>
+      </Unit29>
+      <Unit30>
+        <Filename Value="formdebug.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DebugForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormDebug"/>
+      </Unit30>
+      <Unit31>
+        <Filename Value="formsaledocuments.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="SaleDocuments"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="formSaleDocuments"/>
+      </Unit31>
+      <Unit32>
+        <Filename Value="u_variables.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit32>
+      <Unit33>
+        <Filename Value="formsaveopeneddocuments.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="SaveOpenedDocuments"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormSaveOpenedDocuments"/>
+      </Unit33>
+      <Unit34>
+        <Filename Value="databasedefine_mysql.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="databasedefine_MySql"/>
+      </Unit34>
+      <Unit35>
+        <Filename Value="formform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="AllForms"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="formForm"/>
+      </Unit35>
+      <Unit36>
+        <Filename Value="u_items_tree.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit36>
+      <Unit37>
+        <Filename Value="u_units.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit37>
+      <Unit38>
+        <Filename Value="u_config.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="u_Config"/>
+      </Unit38>
+      <Unit39>
+        <Filename Value="u_project_items_tree.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit39>
+      <Unit40>
+        <Filename Value="u_defines.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit40>
+      <Unit41>
+        <Filename Value="formsplash.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="SplashScreen"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="formSplash"/>
+      </Unit41>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="FastPres"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <OtherUnitFiles Value="..\FastPres"/>
+      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <Parsing>
+      <SyntaxOptions>
+        <IncludeAssertionCode Value="True"/>
+      </SyntaxOptions>
+    </Parsing>
+    <CodeGeneration>
+      <Checks>
+        <IOChecks Value="True"/>
+        <RangeChecks Value="True"/>
+        <OverflowChecks Value="True"/>
+        <StackChecks Value="True"/>
+      </Checks>
+    </CodeGeneration>
+    <Linking>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+    <Other>
+      <Verbosity>
+        <ShowCompProc Value="True"/>
+      </Verbosity>
+      <CustomOptions Value="-dDEBUG"/>
+      <OtherDefines Count="2">
+        <Define0 Value="DEBUG"/>
+        <Define1 Value="LITTLE_VERSION"/>
+      </OtherDefines>
+    </Other>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="7">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+      <Item4>
+        <Name Value="EReadError"/>
+      </Item4>
+      <Item5>
+        <Name Value="EZSQLException"/>
+      </Item5>
+      <Item6>
+        <Name Value="EControlC"/>
+      </Item6>
+      <Item7>
+        <Name Value="Exception"/>
+      </Item7>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

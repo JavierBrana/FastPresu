@@ -1,0 +1,107 @@
+object CalendarEditor: TCalendarEditor
+  Left = 620
+  Height = 433
+  Top = 238
+  Width = 545
+  BorderStyle = bsToolWindow
+  Caption = 'Calendar Editor'
+  ClientHeight = 433
+  ClientWidth = 545
+  FormStyle = fsSystemStayOnTop
+  Position = poMainFormCenter
+  LCLVersion = '1.2.6.0'
+  object DBListBox1: TDBListBox
+    Left = 8
+    Height = 369
+    Top = 8
+    Width = 208
+    ItemHeight = 0
+    TabOrder = 0
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 50
+    Top = 383
+    Width = 545
+    Align = alBottom
+    ClientHeight = 50
+    ClientWidth = 545
+    TabOrder = 1
+    object BitBtn1: TBitBtn
+      Left = 1
+      Height = 48
+      Top = 1
+      Width = 271
+      Align = alLeft
+      Caption = 'BitBtn1'
+      TabOrder = 0
+    end
+    object BitBtn2: TBitBtn
+      AnchorSideLeft.Control = Panel1
+      AnchorSideLeft.Side = asrCenter
+      AnchorSideRight.Control = Panel1
+      AnchorSideRight.Side = asrCenter
+      Left = 272
+      Height = 48
+      Top = 1
+      Width = 272
+      Align = alRight
+      Anchors = [akTop, akBottom]
+      Caption = 'BitBtn2'
+      TabOrder = 1
+    end
+  end
+  object NiceCalendar: TNiceCalendar
+    Left = 225
+    Height = 224
+    Top = 8
+    Width = 312
+    BorderStyle = bsSingle
+    Color = clWhite
+    ShowWeekNumbers = False
+    OnDateChange = NiceCalendarDateChange
+    OnMonthChange = NiceCalendarMonthChange
+  end
+  object SelectTypeDay: TRadioGroup
+    Left = 224
+    Height = 81
+    Top = 240
+    Width = 313
+    AutoFill = True
+    Caption = 'Típo de día: '
+    ChildSizing.LeftRightSpacing = 25
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 59
+    ClientWidth = 309
+    ItemIndex = 0
+    Items.Strings = (
+      'Día laboral'
+      'Día no laboral'
+    )
+    OnSelectionChanged = SelectTypeDaySelectionChanged
+    TabOrder = 3
+  end
+  object cbSaturdays: TCheckBox
+    Left = 240
+    Height = 24
+    Top = 328
+    Width = 176
+    Caption = 'Sábados no laborables'
+    OnChange = cbSaturdaysChange
+    TabOrder = 4
+  end
+  object cbSundays: TCheckBox
+    Left = 240
+    Height = 24
+    Top = 353
+    Width = 188
+    Caption = 'Domingos no laborables'
+    OnChange = cbSundaysChange
+    TabOrder = 5
+  end
+end

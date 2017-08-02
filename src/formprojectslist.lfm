@@ -1,0 +1,659 @@
+inherited ProjectsList: TProjectsList
+  Left = 915
+  Height = 518
+  Top = 202
+  Width = 443
+  Caption = 'Proyectos'
+  ClientHeight = 518
+  ClientWidth = 443
+  OnCreate = FormCreate
+  OnPaint = FormPaint
+  OnResize = FormResize
+  Visible = True
+  object Panel1: TPanel[0]
+    Left = 0
+    Height = 32
+    Top = 4
+    Width = 443
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 32
+    ClientWidth = 443
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 8
+      Height = 20
+      Top = 10
+      Width = 73
+      Caption = 'Buscar por:'
+      ParentColor = False
+    end
+    object edFilterSelector: TComboBox
+      Left = 88
+      Height = 21
+      Top = 8
+      Width = 108
+      ItemHeight = 15
+      ItemIndex = 0
+      Items.Strings = (
+        'ID'
+        'Nombre'
+        'Proveedor'
+      )
+      ReadOnly = True
+      Style = csOwnerDrawFixed
+      TabOrder = 0
+      Text = 'ID'
+    end
+    object edFilter: TEdit
+      Left = 206
+      Height = 21
+      Top = 8
+      Width = 230
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      TabOrder = 1
+    end
+  end
+  object pMoreOptions: TSpkRollPanel[1]
+    Left = 0
+    Height = 66
+    Top = 36
+    Width = 443
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'Más Opciones:'
+    ClientHeight = 66
+    ClientWidth = 443
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 1
+    Margin = 2
+    MarginColor = clWhite
+    CaptionHeight = 16
+    BorderColor = clBtnFace
+    AllowResize = True
+    Animate = True
+    HideChildren = False
+    RollMode = rmUnroll
+    CaptionGradientMode = gmNone
+    CaptionColorFrom = clDefault
+    CaptionColorTo = clDefault
+    CaptionGradientType = gtVertical
+    PanelGradientMode = gmNone
+    PanelColorFrom = clWhite
+    PanelColorTo = clBtnFace
+    PanelGradientType = gtVertical
+    CanMove = False
+    object cbDate: TCheckBox
+      Left = 8
+      Height = 23
+      Top = 24
+      Width = 24
+      TabOrder = 0
+    end
+    object edFilterDate: TComboBox
+      Left = 40
+      Height = 21
+      Top = 24
+      Width = 108
+      ItemHeight = 15
+      ItemIndex = 0
+      Items.Strings = (
+        'Fecha Mayor'
+        'Fecha Menor'
+        'Periodo'
+      )
+      ReadOnly = True
+      Style = csOwnerDrawFixed
+      TabOrder = 1
+      Text = 'Fecha Mayor'
+    end
+    object Label5: TLabel
+      Left = 162
+      Height = 20
+      Top = 28
+      Width = 42
+      Caption = 'Inicio:'
+      ParentColor = False
+    end
+    object dtBegin: TZVDateTimePicker
+      Left = 202
+      Height = 23
+      Top = 24
+      Width = 88
+      CenturyFrom = 1941
+      MaxDate = 2958465
+      MinDate = -53780
+      AutoSize = False
+      TabOrder = 2
+      TrailingSeparator = False
+      TextForNullDate = 'NULL'
+      LeadingZeros = True
+      Kind = dtkDate
+      TimeFormat = tf24
+      TimeDisplay = tdHMS
+      DateMode = dmComboBox
+      Date = 41815
+      Time = 0.878506840279442
+      UseDefaultSeparators = True
+      HideDateTimeParts = []
+      MonthNames = 'Long'
+    end
+    object Label6: TLabel
+      Left = 298
+      Height = 20
+      Top = 28
+      Width = 25
+      Caption = 'Fin:'
+      ParentColor = False
+    end
+    object dtEnd: TZVDateTimePicker
+      Left = 330
+      Height = 23
+      Top = 24
+      Width = 88
+      CenturyFrom = 1941
+      MaxDate = 2958465
+      MinDate = -53780
+      AutoSize = False
+      TabOrder = 3
+      Enabled = False
+      TrailingSeparator = False
+      TextForNullDate = 'NULL'
+      LeadingZeros = True
+      Kind = dtkDate
+      TimeFormat = tf24
+      TimeDisplay = tdHMS
+      DateMode = dmComboBox
+      Date = 41815
+      Time = 0.878506840279442
+      UseDefaultSeparators = True
+      HideDateTimeParts = []
+      MonthNames = 'Long'
+    end
+  end
+  object PageControl1: TPageControl[2]
+    Left = 0
+    Height = 374
+    Top = 102
+    Width = 443
+    ActivePage = tsList
+    Align = alClient
+    TabIndex = 0
+    TabOrder = 2
+    object tsList: TTabSheet
+      Caption = 'List'
+      ClientHeight = 341
+      ClientWidth = 435
+      object Grid: TDBGrid
+        Left = 2
+        Height = 337
+        Top = 2
+        Width = 431
+        Align = alClient
+        AutoAdvance = aaDown
+        AutoEdit = False
+        BorderSpacing.Around = 2
+        Color = clWindow
+        Columns = <>
+        DataSource = dsProyectsList
+        DefaultRowHeight = 18
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgMultiselect, dgHeaderHotTracking, dgHeaderPushedLook, dgDisableInsert, dgCellEllipsis, dgThumbTracking]
+        ReadOnly = True
+        TabOrder = 0
+        TitleStyle = tsNative
+        UseXORFeatures = True
+        OnDblClick = GridDblClick
+      end
+    end
+    object tsGantt: TTabSheet
+      Caption = 'Cronograma'
+      ClientHeight = 278
+      ClientWidth = 594
+      object gsGantt: TgsGantt
+        Left = 0
+        Height = 278
+        Top = 0
+        Width = 594
+        CalendarColor = clWhite
+        MajorColor = clBtnFace
+        MinorColor = clBtnFace
+        MajorScale = tsMonth
+        MinorScale = tsWeek
+        PixelsPerLine = 20
+        StartDate = 42086.5309700579
+        TreeIndent = 10
+        TreeBranchFont.Style = [fsBold]
+        Align = alClient
+      end
+    end
+  end
+  object pFooter: TPanel[3]
+    Left = 0
+    Height = 38
+    Top = 476
+    Width = 443
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 38
+    ClientWidth = 443
+    TabOrder = 3
+    object bNew: TSpeedButton
+      Left = 0
+      Height = 36
+      Top = 1
+      Width = 90
+      Align = alLeft
+      Anchors = []
+      BorderSpacing.Top = 1
+      BorderSpacing.Bottom = 1
+      Caption = '&Nuevo'
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000FFFFFF00BB6A
+        346BBA6530BCBB6631EDBA6630F7BA6630F7BA6630F7BA6530F7BA652FF7B965
+        2EF7B9652EF7B9642EF7B9642EEFB7622CBDB7622E63FFFFFF00FFFFFF00BC69
+        33DEF8F1EAF2F7ECDFFDF6EBDEFFF6EADEFFF6EADCFFF6EADCFFFAF3EBFFFAF3
+        EBFFFAF2EAFFFCF7F3FFFCF8F4FDFEFEFDF0B7602AD5FFFFFF00FFFFFF00BF71
+        38F5F5EBDFFEFDBF68FFFCBD67FFFBBE65FFFCBE64FFFCBE64FFFCBD62FFFBBD
+        63FFFBBC61FFFCBE60FFFCBC62FFFDFBF8FDB9642DF3FFFFFF00FFFFFF00C178
+        3CF7F7EDE3FFFDC26EFFFFD8A0FFFFD79EFFFFD69BFFFFD798FFFFD696FFFFD6
+        95FFFFD594FFFFD493FFFBBE65FFFBF7F4FFBB6731F7FFFFFF00FFFFFF00C47C
+        40F7F7F0E6FFF8B455FFF7B456FFF7B554FFF8B453FFF8B253FFF7B352FFF7B3
+        52FFF7B251FFF7B24FFFF7B24FFFFCF9F5FFBF6F36F7FFFFFF00FFFFFF00C580
+        42F7F8F1E8FFFEE5D5FFFDE5D3FFFDE5D3FFFCE5D3FFFCE5D3FFFCE4D1FFFCE2
+        CEFFFCE2CCFFFBE0C9FFFBE1C8FFFDFAF7FFC1763BF7FFFFFF00FFFFFF00C582
+        45F7F8F2EBFFFEE7D6FFFDE7D6FFFDE7D6FFFDE7D6FFFDE6D5FFFDE5D3FFFCE4
+        D1FFFCE2CDFFFBE1CBFFFBE1C9FFFBF7F2FFC57C3FF7FFFFFF00FFFFFF00C684
+        47F7F9F3ECFFFEE8D6FFFEE8D7FFFDE7D6FFFDE7D6FFFDE7D5FFFDE5D3FFFBE4
+        D0FFFBE3CCFFFADFC7FFFADFC6FFFAF2EAFFC68042F7FFFFFF00FFFFFF00C688
+        49F7F9F4EDFFFEE8D8FFFEE8D8FFFEE8D7FFFEE7D6FFFDE5D3FFFCE4D1FFFBE1
+        CCFFFAE0C7FFF9DDC3FFF8DCC2FFFAF4EDFFC68245F7FFFFFF00FFFFFF00C688
+        4AF7F9F4EFFFFEE7D7FFFDE7D6FFFDE7D5FFFDE6D4FFFCE6D2FFFBE1CCFFFADF
+        C7FFF8DCC2FFF6DABDFFF6D8BBFFFAF4EFFFC68346F7FFFFFF00FFFFFF00C689
+        4BF7F9F4F0FFFCE6D3FFFCE6D4FFFDE7D3FFFCE4D1FFFBE3CDFFFAE0C8FFF8DC
+        C2FFF5D6BBFFF3D4B5FFF1D2B3FFF8F4F0FFC48246F7FFFFFF00FFFFFF00C689
+        4BF7F9F5F1FFFCE3CFFFFBE4D0FFFCE4CFFFFCE3CDFFFAE1CAFFF9DDC4FFF6D9
+        BCFFF4E9DFFFF7F2ECFFFBF7F3FFF5EFE9FFC27E45FBFFFFFF00FFFFFF00C689
+        4CF6F9F5F1FFFCE3CDFFFBE3CEFFFBE3CDFFFBE2CBFFF9E0C8FFF8DCC2FFF5D6
+        BAFFFDFBF8FFFCE6CDFFFAE5C9FFE2B684FFBF7942A6FFFFFF00FFFFFF00C588
+        4BEAFAF6F2FCFAE0C7FFFBE1C9FFFBE2C9FFFBE0C8FFF9DFC5FFF8DBC1FFF4D6
+        B8FFFFFBF8FFF6D8B4FFE1B07DFFDB9264F6B46B3E07FFFFFF00FFFFFF00C485
+        49C3F7F2ECECF8F4EEFCF8F4EDFFF8F3EDFFF8F3EDFFF8F3EDFFF8F2ECFFF7F2
+        ECFFF2E6D7FFE2B27DFFDB9465F5B3683B07FFFFFF00FFFFFF00FFFFFF00C17D
+        4460C88B4DBBC88C4FEEC88C4FF6C88C4FF7C88C4FF7C88D4FF7C98C4FF7C78B
+        4FF7C5894BD4C4763B91B3683C06FFFFFF00FFFFFF00FFFFFF00
+      }
+      OnClick = bNewClick
+    end
+    object bEdit: TSpeedButton
+      AnchorSideLeft.Control = bNew
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = bNew
+      AnchorSideBottom.Control = bNew
+      AnchorSideBottom.Side = asrBottom
+      Left = 90
+      Height = 36
+      Top = 1
+      Width = 90
+      Align = alCustom
+      Anchors = [akTop, akLeft, akBottom]
+      Caption = '&Editar'
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF001340
+        58FF15425EFF25699CFF2C76B4FF3B8BBAADFFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF001242
+        59FF5D9CD4FFA6CFF5FFA9CFECFF488BC1FF2C76B4FFFFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF001E6D
+        93FFCBE3F9FF61AAECFF4098E8FF1567C2FF1660AAFF2C76B4FFFFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF001E6D
+        93FFC8E1F2FFD1E7FAFF347DB5FF3199C3FF6DC4DCFF4A9CCFFF3483C7FFFFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF002063
+        98202689B9FFB0CBE1FF67A9C8FF60DCF5FF44D6F4FF8EEEFAFF5DB4E6FF3B8F
+        D9FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF002689B9FFBEE6F2FFB3F4FCFF60DCF5FF44D6F4FF8EEEFAFF5DB4
+        E6FF3B8FD9FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF002790BFFFC3EDF8FFB3F4FCFF60DCF5FF44D6F4FF8EEE
+        FAFF5DB4E6FF3B8FD9FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF002FBAE4FFC3EDF8FFB3F4FCFF60DCF5FF44D6
+        F4FF8EEEFAFF5DB4E6FF3B8FD9FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF002FBAE4FFC3EDF8FFB3F4FCFF60DC
+        F5FF44D6F4FF8EEEFAFF5DB4E6FF3B8FD9FFFFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF002FBAE4FFC3EDF8FFB3F4
+        FCFF68D9F5FF6FCFF3FF599DD0FF73ABDDFF4F91C9FFFFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF002FBAE4FFC3ED
+        F8FFA8E2F8FF6CAEDDFFA5CFF4FFA5CFF4FFBDDBF7FF5393CBF7FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF002FBA
+        E4FFA7D4F4FFC5E1F8FFCCE3F9FFCCE3F9FFBDDBF7FF4F90C9FDFFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF0050A8D9FF6AA5D8FFC9E1F7FFCBE3F8FF4295CAFF3182C2AEFFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF002FBAE4094FAADBEA5093CAFD4E90C8FF2F9DD2DF35A4DE19FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+      }
+      OnClick = bEditClick
+    end
+    object bPrint: TSpeedButton
+      AnchorSideLeft.Control = bEdit
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = bNew
+      AnchorSideBottom.Control = bNew
+      AnchorSideBottom.Side = asrBottom
+      Left = 180
+      Height = 36
+      Top = 1
+      Width = 162
+      Align = alCustom
+      Anchors = [akTop, akLeft, akBottom]
+      Caption = '&Impripir'
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000FFFFFF00FFFF
+        FF00FFFFFF00C89662FDCA9865FFCA9765FFCA9765FFCA9765FFCA9764FFC997
+        64FFC99764FFCA9865FFC89562FDFFFFFF00FFFFFF00FFFFFF00A1A1A1C27A7A
+        7ADA585858FFC79561FFF9F7F6FFF9F1ECFFF9F1EBFFF8F0E9FFF7EDE6FFF4EA
+        E1FFF2E8DEFFFAF8F6FFC79461FF242424FF4B4B4BD9969696BF6B6B6BFDA7A7
+        A7FFB5B5B5FF818181FFAFACAAFFC5C0BDFFC5C0BDFFC5C0BDFFC5C0BDFFC5C0
+        BDFFC5C0BDFFADAAA8FF2C2C2CFFB5B5B5FF9B9B9BFF232323FF707070FFB5B5
+        B5FFB5B5B5FF959595FF818181FF818181FF797979FF6E6E6EFF616161FF5252
+        52FF434343FF424242FF6E6E6EFFB5B5B5FFB5B5B5FF252525FF757575FFBBBB
+        BBFFBBBBBBFF8D8D8DFFD4D4D4FFB9B9B9FFB9B9B9FFB9B9B9FFB9B9B9FFB9B9
+        B9FFB9B9B9FFD3D3D3FF838383FFBBBBBBFFBBBBBBFF2A2A2AFF7A7A7AFFD7D7
+        D7FFD7D7D7FF979797FFD8D8D8FFBFBFBFFFBFBFBFFFBFBFBFFFBFBFBFFFBFBF
+        BFFFBFBFBFFFD7D7D7FF8E8E8EFFD7D7D7FFD7D7D7FF3F3F3FFF7E7E7EFFF9F9
+        F9FFF9F9F9FFABABABFFDFDFDFFFCBCBCBFFCBCBCBFFCBCBCBFFCBCBCBFFCBCB
+        CBFFCBCBCBFFDFDFDFFFA3A3A3FFF9F9F9FFF9F9F9FF616161FF848484F9FCFC
+        FCFFFCFCFCFFCBCBCBFFF2F2F2FFF2F2F2FFF2F2F2FFF2F2F2FFF2F2F2FFF2F2
+        F2FFF2F2F2FFF2F2F2FFC6C6C6FFFCFCFCFFFCFCFCFF717171FE979797DAD2D2
+        D2FFE8E8E8FF7D7D7DFF7D7D7DFF7D7D7DFF7D7D7DFF7D7D7DFF7D7D7DFF7D7D
+        7DFF7D7D7DFF7D7D7DFF7D7D7DFFE8E8E8FFC4C4C4FF6D6D6DE1DDDDDDCD9A9A
+        9AFFCCCCCCFFC78B4EFFF9F4EDFFFEE8D8FFFEE8D7FFFDE5D3FFFCE4D1FFFAE0
+        C7FFF9DDC3FFFAF4EDFFC7854AFFC3C3C3FF747474FFCDCDCDCDFFFFFF00CECE
+        CEC2878787F4C5894CFFF9F4EFFFFEE7D7FFFDE7D5FFFCE6D2FFFBE1CCFFF8DC
+        C2FFF6DABDFFFAF4EFFFC48348FF616161F4BCBCBCC2FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00C68C4FF9F9F4F0FFFCE6D3FFFDE7D3FFFBE3CDFFFAE0C8FFF5D6
+        BBFFF3D4B5FFF8F4F0FFC4854AF9FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00C88D51F7F9F5F1FFFCE3CFFFFCE4CFFFFAE1CAFFF9DDC4FFF4E9
+        DFFFF7F2ECFFF5EFE9FFC38048FBFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00C88D52F6F9F5F1FFFCE3CDFFFBE3CDFFF9E0C8FFF8DCC2FFFDFB
+        F8FFFCE6CDFFE2B684FFD5A884C5FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00C5884DFAF7F2ECFFF8F4EEFFF8F3EDFFF8F3EDFFF8F2ECFFF2E6
+        D7FFE2B27DFFDB9569F6FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00E8CEB9C3D7AA7CCDC88C50FEC88C4FFFCA9155F7CB9055F7C589
+        4DFEDDAF8DC1FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+      }
+    end
+    object bDelete: TSpeedButton
+      AnchorSideLeft.Control = bPrint
+      AnchorSideLeft.Side = asrBottom
+      Left = 342
+      Height = 36
+      Top = 1
+      Width = 98
+      Align = alRight
+      Anchors = [akLeft]
+      BorderSpacing.Top = 1
+      BorderSpacing.Right = 3
+      BorderSpacing.Bottom = 1
+      Caption = '&Borrar'
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000000000000000
+        0000E1694116E16941C7E16941FFE16941FFE16941FFE16941FFE16941FFE169
+        41FFE16941FFE16941FFE16941C7E16941160000000000000000000000000000
+        0000E169417AE16941D7E169413EE169413AE169413AE169413AE169413AE169
+        413AE169413AE169413EE16941D7E169417A0000000000000000000000000000
+        0000E1694189E16941B1E169410AE1694189E1694116E1694154E1694154E169
+        4116E1694189E169410AE16941B1E16941890000000000000000000000000000
+        0000E1694189E16941B1E1694114E16941FFE1694128E169419DE169419DE169
+        4128E16941FFE1694114E16941B1E16941890000000000000000000000000000
+        0000E1694189E16941B1E1694114E16941FFE1694128E169419DE169419DE169
+        4128E16941FFE1694114E16941B1E16941890000000000000000000000000000
+        0000E1694189E16941B1E1694114E16941FFE1694128E169419DE169419DE169
+        4128E16941FFE1694114E16941B1E16941890000000000000000000000000000
+        0000E1694189E16941B1E1694114E16941FFE1694128E169419DE169419DE169
+        4128E16941FFE1694114E16941B1E16941890000000000000000000000000000
+        0000E1694189E16941B1E1694114E16941FFE1694128E169419DE169419DE169
+        4128E16941FFE1694114E16941B1E16941890000000000000000000000000000
+        0000E1694189E16941B1E1694114E16941FFE1694128E169419DE169419DE169
+        4128E16941FFE1694114E16941B1E16941890000000000000000000000000000
+        0000E1694189E16941B1E1694110E16941D7E1694122E1694185E1694185E169
+        4122E16941D7E1694110E16941B1E16941890000000000000000000000000000
+        0000E1694189E16941B100000000000000000000000000000000000000000000
+        00000000000000000000E16941B1E1694189000000000000000000000000E169
+        41B5E16941F5E16941F9E16941EBE16941EBE16941EDE16941F1E16941F1E169
+        41EDE16941EBE16941EBE16941F9E16941F5E16941B50000000000000000E169
+        4158E16941FFE16941FFE16941FFE16941FFE16941FFE16941FFE16941FFE169
+        41FFE16941FFE16941FFE16941FFE16941FFE16941580000000000000000E169
+        4108E1694181E1694189E1694195E16941FFE169419FE1694189E1694189E169
+        419FE16941FFE1694195E1694189E1694181E169410800000000000000000000
+        00000000000000000000E1694106E16941F1E1694193E1694142E1694142E169
+        4193E16941F1E169410600000000000000000000000000000000000000000000
+        0000000000000000000000000000E1694152E16941E9E16941FFE16941FFE169
+        41E9E16941520000000000000000000000000000000000000000
+      }
+      OnClick = bDeleteClick
+    end
+  end
+  object ztProyectsList: TZTable[4]
+    Connection = MainWindow.zcMainConnection
+    TableName = 'PROJECT'
+    left = 76
+    top = 172
+    object ztProyectsListID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object ztProyectsListCODE: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'CODE'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 80
+    end
+    object ztProyectsListTITLE: TStringField
+      DisplayWidth = 400
+      FieldKind = fkData
+      FieldName = 'TITLE'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 400
+    end
+    object ztProyectsListCUSTOMER_CODE: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'CUSTOMER_CODE'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 40
+    end
+    object ztProyectsListCUSTOMER_NAME: TStringField
+      DisplayWidth = 240
+      FieldKind = fkData
+      FieldName = 'CUSTOMER_NAME'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 240
+    end
+    object ztProyectsListSTART_DATE: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'START_DATE'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ztProyectsListDURATION: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'DURATION'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ztProyectsListSTATE: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'STATE'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object ztProyectsListCONTACT: TStringField
+      DisplayWidth = 240
+      FieldKind = fkData
+      FieldName = 'CONTACT'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 240
+    end
+    object ztProyectsListADDRESS1: TStringField
+      DisplayWidth = 160
+      FieldKind = fkData
+      FieldName = 'ADDRESS1'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object ztProyectsListADDRESS2: TStringField
+      DisplayWidth = 160
+      FieldKind = fkData
+      FieldName = 'ADDRESS2'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object ztProyectsListPOSTCODE: TStringField
+      DisplayWidth = 36
+      FieldKind = fkData
+      FieldName = 'POSTCODE'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 36
+    end
+    object ztProyectsListCITY: TStringField
+      DisplayWidth = 320
+      FieldKind = fkData
+      FieldName = 'CITY'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 320
+    end
+    object ztProyectsListPHONE: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'PHONE'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object ztProyectsListMOBILE: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'MOBILE'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object ztProyectsListEMAIL: TStringField
+      DisplayWidth = 240
+      FieldKind = fkData
+      FieldName = 'EMAIL'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 240
+    end
+    object ztProyectsListpyGantt: TBlobField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'pyGantt'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+    end
+    object ztProyectsListCREATEDAT: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CREATEDAT'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ztProyectsListCREATEDBY: TStringField
+      DisplayWidth = 400
+      FieldKind = fkData
+      FieldName = 'CREATEDBY'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 400
+    end
+  end
+  object dsProyectsList: TDataSource[5]
+    DataSet = ztProyectsList
+    left = 148
+    top = 172
+  end
+end

@@ -1,0 +1,15 @@
+object ListForm: TListForm
+  Left = 1344
+  Height = 400
+  Top = 140
+  Width = 350
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSizeToolWin
+  Caption = 'ListForm'
+  ChildSizing.TopBottomSpacing = 4
+  ChildSizing.HorizontalSpacing = 4
+  DragKind = dkDock
+  DragMode = dmAutomatic
+  FormStyle = fsStayOnTop
+  LCLVersion = '1.6.2.0'
+end
