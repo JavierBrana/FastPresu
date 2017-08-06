@@ -1,0 +1,1148 @@
+unit NiceLookUpComboBox;
+{$MODE Delphi}
+interface
+
+uses
+  LCLIntf, LCLType, LMessages, Classes, Controls, StdCtrls, Buttons,
+  Forms, Graphics, SysUtils, Contnrs, ExtCtrls, Clipbrd,
+  ComCtrls, ImgList, DB, Menus, Grids, DBGrids, DbCtrls;
+
+
+type
+
+  TLookupErrorEvent = procedure(Sender: TObject; LookupValue: string) of object;
+
+  TLookupSuccessEvent = procedure(Sender: TObject; LookupValue,LookupResult: string) of object;
+
+  //TDropDownType = (ddUser,ddAuto,ddOnError);
+  //TSortType = (stAscendent,stDescendent);
+
+  TDBColumnItem = class(TCollectionItem)
+  private
+    FWidth              : Integer;
+    FAlignment          : TAlignment;
+    FFont               : TFont;
+    FColor              : TColor;
+    FListField          : string;
+    FTitle, FName       : string;
+    FStrings            : TStringList;
+    FAutoSize           : boolean;
+    FFixedColor         : TColor;
+    FFontChanged        : Boolean;
+    FTitleFontChanged   : Boolean;
+
+    procedure SetWidth(const value:integer);
+    procedure SetAlignment(const value:tAlignment);
+    procedure SetFont(const value:TFont);
+    procedure SetColor(const value:TColor);
+    function  GetListField: string;
+    procedure SetListField(const Value: string);
+
+    function  GetName: string;
+    procedure SetName(const Value: string);
+    procedure OnFontChanged(Sender: TObject);
+    procedure OnTitleFontChanged(Sender: TObject);
+
+  protected
+    function  GetDisplayName: string; override;
+
+  public
+    constructor Create(Collections : TCollection); override;
+    destructor  Destroy; override;
+    procedure   Assign(Source: TPersistent); override;
+
+  published
+    property AutoSize   : boolean     read FAutoSize    write FAutoSize     default false;
+    property Color      : TColor      read fColor       write SetColor      default clWindow;
+    property FixedColor : TColor      read FFixedColor  write FFixedColor;
+    property Width      : integer     read fWidth       write SetWidth      default 100;
+    property Alignment  : TAlignment  read fAlignment   write SetAlignment  default taLeftJustify;
+    property Font       : TFont       read FFont        write SetFont;
+    property ListField  : string      read GetListField write SetListField;
+    property Name       : string      read GetName      write SetName;
+    property Title      : string      read FTitle       write FTitle;
+    property Strings    : TStringList read FStrings     write FStrings;
+  end;
+
+  TDBColumnCollection = class(TCollection)
+  private
+
+    function  GetItem(Index: Integer): TDBColumnItem;
+    procedure SetItem(Index: Integer; const Value: TDBColumnItem);
+  protected
+    procedure Update(Item: TCollectionItem); override;
+  public
+    constructor Create(AOwner : TCollectionItem);
+    function Add:TDBColumnItem;
+    function Insert(index:integer): TDBColumnItem;
+    property Items[Index: Integer]: TDBColumnItem read GetItem write SetItem; default;
+    function GetOwner: TPersistent; override;
+  end;
+
+  {TInplaceStringGrid}
+  TInplaceStringGrid = class(TStringGrid)
+  private
+    FParentEdit:  TCustomEdit;
+    procedure WMKeyDown(var Msg: TLMKeydown); message LM_KEYDOWN;
+    procedure WMGetDlgCode(var Message: TLMessage); message LM_GETDLGCODE;
+  protected
+    procedure DoExit; override;
+  property
+    ParentEdit : TCustomEdit read FParentEdit write FParentEdit;
+  end;
+
+  {TComboBoxOptions}
+  TComboBoxOptions = class
+  private
+    FColumns      : TDBColumnCollection;
+    FShowTitles   : Boolean;
+    FAutoWidth    : Boolean;
+    FKeyField     : String;
+    FListField    : String;
+    FLookupColumn : Integer;
+    FListSource   : TDataSource;
+    FSizeable     : Boolean;
+
+  protected
+    procedure SetColumns (Value: TDBColumnCollection);
+    procedure SetShowTitles (Value: boolean);
+    procedure SetAutoWidth (Value: boolean);
+    procedure SetKeyField (Value: String);
+    procedure SetListField (Value: String);
+    procedure SetLookupColumn (Value: Integer);
+    procedure SetListSource (Value: TDataSource);
+    procedure SetSizeable (Value : boolean);
+
+  public
+    //constructor Create;
+    constructor Create(AOwner : TCollectionItem);
+    destructor Destroy;
+
+  published
+    property Columns : TDBColumnCollection read FColumns write SetColumns;
+    property ShowTitles : Boolean read FShowTitles write SetShowTitles;
+    property AutoWidht  : Boolean read FAutoWidth write SetAutoWidth;
+    property KeyField: String read FKeyField write SetKeyField;
+    property ListField: String read FListField write SetListField;
+    property LookupColumn: Integer read FLookupColumn write SetLookupColumn;
+    property ListSource: TDataSource read FListSource write SetListSource;
+    property Sizeable: boolean read FSizeable write SetSizeable;
+  end;
+
+  {TDropForm}
+  TDropForm = class(TForm)
+  private
+    FComboOptions : TComboBoxOptions;
+    FSizeable     : Boolean;
+    FDroppedDown  : Boolean;
+    FHideTimer    : TTimer;
+    FGrid         : TInplaceStringGrid;
+    FDataLink     : TComponentDataLink;
+    FStatusBar    : TStatusBar;
+    //SizeDrag: TSynBaseCompletionFormSizeDrag;
+
+    //procedure WMClose(var Msg:TMessage); message WM_CLOSE;
+    procedure WMSize(var Message: TLMSize); message LM_SIZE;
+    procedure WMNCHitTest(var Message: TLMNCHitTest); message LM_NCHITTEST;
+    procedure WMActivate(var Message: TLMActivate); message LM_ACTIVATE;
+    procedure OnHideTimer(Sender: TObject);
+		procedure FormMouseDown(Sender: TObject; Button: TMouseButton;
+					Shift: TShiftState; X, Y: Integer);
+    procedure FormMouseMove(Sender: TObject; Shift: TShiftState; X, Y: Integer);
+    		procedure FormMouseUp(Sender: TObject; Button: TMouseButton;
+					Shift: TShiftState; X, Y: Integer);
+  protected
+    { Protected declarations }
+    MouseIsDown: boolean;
+    PX, PY: integer;
+
+    procedure CreateParams(var Params: TCreateParams); override;
+    procedure CreateGrid;
+    procedure GridKeyPress(Sender: TObject; var Key: Char);
+  public
+    procedure SetBounds(ALeft, ATop, AWidth, AHeight: Integer); override;
+    //constructor Create(AOwner: TComponent); override;
+    constructor CreateNew(AOwner: TComponent; Dummy: Integer = 0); override;
+    destructor Destroy; override;
+    property Grid: TInplaceStringGrid read FGrid write FGrid;
+  published
+    property Sizeable : Boolean read FSizeable write FSizeable;
+  end;
+
+
+
+  TLookupCloseEvent = procedure(Sender: TObject; LookupResult: TStringList) of object;
+
+  TCustomNiceLookUpComboBox =  class(TDBEdit)//(TCustomEdit)
+  private
+    FDropDownButton: TCustomSpeedButton;
+    FDropForm: TDropForm;
+
+    FLookupClose: TLookupCloseEvent;
+    FDropDown: TNotifyEvent;
+    FAfterDropDown: TNotifyEvent;
+
+
+    //FDataLink: TFieldDataLink;
+    FLookup: TFieldDataLink;
+    FKeyField: String;
+
+    procedure DrawArrowButtonGlyph;
+    procedure DropDownButtonClick(Sender: TObject);
+    procedure CloseDropDownForm(ReturnData: boolean = false);
+
+    //function GetDataField: string;
+    //function GetDataSource: TDataSource;
+    //function GetField: TField;
+    //procedure SetDataField(const AValue: string);
+    //procedure SetDataSource(const AValue: TDataSource);
+
+    //procedure CMGetDataLink(var Message: TLMessage); message CM_GETDATALINK;
+
+    function GetKeyField: string;
+    function GetListSource: TDataSource;
+
+    procedure SetKeyField(const Value: string);
+    procedure SetListSource(const Value: TDataSource);
+
+  protected
+    function ChildClassAllowed(ChildClass: TClass): boolean; override;
+    procedure KeyDown(var Key: Word; Shift: TShiftState); override;
+
+    procedure GridDblClick(Sender: TObject);
+    procedure GridKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    //procedure KeyPress(var Key: char);
+
+    //procedure DataChange(Sender: TObject); virtual; abstract;
+    //procedure Notification(AComponent: TComponent; Operation: TOperation); override;
+    //procedure Change; override;
+    //procedure UpdateData(Sender: TObject); virtual; abstract;
+    //procedure WndProc(var Message: TLMessage); override;
+
+  public
+    constructor Create(AOwner: TComponent); override;
+    destructor Destroy; override;
+
+  published
+    //property DataField: string read GetDataField write SetDataField;
+    //property DataSource: TDataSource read GetDataSource write SetDataSource;
+
+    property KeyField: string read GetKeyField write SetKeyField;
+    property ListSource: TDataSource read GetListSource write SetListSource;
+
+    property OnLookupClose: TLookupCloseEvent read FLookupClose write FLookupClose;
+    property OnDropDown: TNotifyEvent read FDropDown write FDropDown;
+    property OnAfterDropDown: TNotifyEvent read FAfterDropDown write FAfterDropDown;
+
+    //procedure EditingDone; override;
+  end;
+
+  TNiceLookUpComboBox = class (TCustomNiceLookUpComboBox)
+  published
+    property DataField;
+    property DataSource;
+    property KeyField;
+    property ListSource;
+
+    property OnLookupClose;
+
+    //procedure EditingDone;
+  end;
+
+
+implementation
+//const
+  //ALIGNSTYLE : array[TAlignment] of DWORD = (DT_LEFT, DT_RIGHT, DT_CENTER);
+  //WORDWRAPSTYLE : array[Boolean] of DWORD = (DT_SINGLELINE, DT_WORDBREAK);
+  //LAYOUTSTYLE : array[TTextLayout] of DWORD = (0,DT_VCENTER,DT_BOTTOM);
+  //ELLIPSSTYLE : array[TEllipsType] of DWORD = (0,DT_END_ELLIPSIS,DT_PATH_ELLIPSIS);
+  //ACCELSTYLE : array[Boolean] of DWORD = (DT_NOPREFIX,0);
+  //MAX_COLUMNS = 100;
+
+//----------------------------------------------------------------- DrawGradient
+
+procedure DrawGradient(Canvas: TCanvas; FromColor, ToColor: TColor; Steps: Integer; R: TRect; Direction: Boolean);
+var
+  diffr, startr, endr: Integer;
+  diffg, startg, endg: Integer;
+  diffb, startb, endb: Integer;
+  rstepr, rstepg, rstepb, rstepw: Real;
+  i, stepw: Word;
+
+begin
+  if Direction then
+    R.Right := R.Right - 1
+  else
+    R.Bottom := R.Bottom - 1;
+
+  if Steps = 0 then
+    Steps := 1;
+
+  FromColor := ColorToRGB(FromColor);
+  ToColor := ColorToRGB(ToColor);
+
+  startr := (FromColor and $0000FF);
+  startg := (FromColor and $00FF00) shr 8;
+  startb := (FromColor and $FF0000) shr 16;
+  endr := (ToColor and $0000FF);
+  endg := (ToColor and $00FF00) shr 8;
+  endb := (ToColor and $FF0000) shr 16;
+
+  diffr := endr - startr;
+  diffg := endg - startg;
+  diffb := endb - startb;
+
+  rstepr := diffr / steps;
+  rstepg := diffg / steps;
+  rstepb := diffb / steps;
+
+  if Direction then
+    rstepw := (R.Right - R.Left) / Steps
+  else
+    rstepw := (R.Bottom - R.Top) / Steps;
+
+  with Canvas do
+  begin
+    for i := 0 to steps - 1 do
+    begin
+      endr := startr + Round(rstepr * i);
+      endg := startg + Round(rstepg * i);
+      endb := startb + Round(rstepb * i);
+      stepw := Round(i * rstepw);
+      Pen.Color := endr + (endg shl 8) + (endb shl 16);
+      Brush.Color := Pen.Color;
+      if Direction then
+        Rectangle(R.Left + stepw, R.Top, R.Left + stepw + Round(rstepw) + 1, R.Bottom)
+      else
+        Rectangle(R.Left, R.Top + stepw, R.Right, R.Top + stepw + Round(rstepw) + 1);
+    end;
+  end;
+end;
+
+//------------------------------------------------------------------------------
+
+function VarPos(su, s : string; var Respos : Integer) : Integer;
+begin
+  Respos := Pos(su,s);
+  Result := Respos;
+end;
+
+function IsDate(s : string; var dt : TDateTime) : boolean;
+var
+  su: string;
+  da,mo,ye: word;
+  err: Integer;
+  dp,mp,yp,vp: Integer;
+begin
+  Result:=False;
+
+  su := UpperCase(shortdateformat);
+  dp := pos('D',su);
+  mp := pos('M',su);
+  yp := pos('Y',su);
+
+  da := 0;
+  mo := 0;
+  ye := 0;
+
+  if VarPos(Dateseparator,s,vp)>0 then
+  begin
+    su := Copy(s,1,vp - 1);
+
+    if (dp<mp) and
+       (dp<yp) then
+       val(su,da,err)
+    else
+    if (mp<dp) and
+       (mp<yp) then
+       val(su,mo,err)
+    else
+    if (yp<mp) and
+       (yp<dp) then
+       val(su,ye,err);
+
+    if err<>0 then Exit;
+    Delete(s,1,vp);
+
+    if VarPos(DateSeparator,s,vp)>0 then
+    begin
+      su := Copy(s,1,vp - 1);
+
+      if ((dp>mp) and (dp<yp)) or
+         ((dp>yp) and (dp<mp)) then
+         val(su,da,err)
+      else
+      if ((mp>dp) and (mp<yp)) or
+         ((mp>yp) and (mp<dp)) then
+         val(su,mo,err)
+      else
+      if ((yp>mp) and (yp<dp)) or
+         ((yp>dp) and (yp<mp)) then
+         val(su,ye,err);
+
+      if err<>0 then Exit;
+      Delete(s,1,vp);
+
+      if (dp>mp) and
+         (dp>yp) then
+         val(s,da,err)
+      else
+      if (mp>dp) and
+         (mp>yp) then
+         val(s,mo,err)
+      else
+      if (yp>mp) and
+         (yp>dp) then
+         val(s,ye,err);
+
+      if err<>0 then Exit;
+      if (da>31) then Exit;
+      if (mo>12) then Exit;
+
+      Result:=True;
+
+      try
+        dt := EncodeDate(ye,mo,da);
+      except
+        Result := False;
+      end;
+
+     end;
+
+  end;
+end;
+
+{ TInplaceStringGrid }
+
+procedure TInplaceStringGrid.WMKeyDown(var Msg: TLMKeydown);
+begin
+
+  if (msg.CharCode = VK_TAB) then
+  begin
+    if Assigned(ParentEdit) and IsWindowVisible(ParentEdit.Handle) then
+      PostMessage(ParentEdit.Handle, LM_KEYDOWN, VK_TAB, 0);
+    Exit;
+  end;
+
+  if (msg.Charcode = VK_ESCAPE) or (msg.CharCode = VK_F4) or
+     ((msg.CharCode = VK_UP) and (GetKeyState(VK_MENU) and $8000 = $8000)) then
+  begin
+//    if (msg.Charcode = VK_ESCAPE) then
+//      ParentEdit.CancelChanges;
+    //PostMessage((Parent as TForm).Handle,WM_CLOSE,0,0);
+    Parent.Hide;
+  end;
+  inherited;
+end;
+
+procedure TInplaceStringGrid.DoExit;
+begin
+  inherited;
+//  if Visible then
+//    ParentEdit.HideGridList;
+end;
+
+procedure TInplaceStringGrid.WMGetDlgCode(var Message: TLMessage);
+begin
+  Message.Result := DLGC_WANTTAB or DLGC_WANTARROWS;
+end;
+
+
+{ TDropForm }
+
+constructor TDropForm.CreateNew(AOwner: TComponent; Dummy: Integer);
+begin
+  inherited;
+  FHideTimer := TTimer.Create(self);
+  FHideTimer.Interval := 10;
+  FHideTimer.Enabled := false;
+  FHideTimer.OnTimer := OnHideTimer;
+
+  CreateGrid;
+
+  {SizeDrag := TSynBaseCompletionFormSizeDrag.Create(Self);
+  SizeDrag.Parent := Self;
+  SizeDrag.BevelInner := bvNone;
+  SizeDrag.BevelOuter := bvNone;
+  SizeDrag.Caption := '';
+  SizeDrag.AutoSize := False;
+  SizeDrag.BorderStyle := bsNone;
+  SizeDrag.Anchors := [akBottom, akRight, akLeft];
+  SizeDrag.AnchorSideLeft.Side := asrTop;
+  SizeDrag.AnchorSideLeft.Control := Scroll;
+  SizeDrag.AnchorSideRight.Side := asrBottom;
+  SizeDrag.AnchorSideRight.Control := Self;
+  SizeDrag.AnchorSideBottom.Side := asrBottom;
+  SizeDrag.AnchorSideBottom.Control := Self;
+  SizeDrag.Height := Max(7, abs(Font.Height) * 2 div 3);
+  SizeDrag.Cursor := crSizeNWSE;
+  SizeDrag.Visible := False;}
+
+
+  BorderWidth := 1;
+  Color := clBlack;
+  MouseIsDown := false;
+  OnMouseDown:=FormMouseDown;
+  OnMouseMove:=FormMouseMove;
+  OnMouseUp:=FormMouseUp;
+
+
+  Exit;
+  FStatusBar := TStatusBar.Create(self);
+  FStatusBar.Parent := Self;
+  FStatusBar.Top := FGrid.Top + FGrid.Height + 5;
+  FStatusBar.Left := 0;
+  FStatusBar.Width := Width;
+  FStatusBar.AutoSize := false;
+  FStatusBar.Height := 5;
+  FStatusBar.Align := alBottom;
+  FStatusBar.SizeGrip := True;
+end;
+
+procedure TDropForm.CreateParams(var Params: TCreateParams);
+begin
+  BorderStyle := bsNone;
+  inherited CreateParams(Params);
+
+  //Params.Style := Params.Style or WS_SIZEBOX or WS_POPUP;
+  //Params.Style := Params.Style or WS_POPUPWINDOW;
+  //Params.WindowClass.Style := Params.WindowClass.Style or CS_DROPSHADOW;
+
+  Exit;
+  { Create a sizeable window with no caption }
+  if FSizeable then
+    Params.Style := WS_THICKFRAME or WS_POPUP or WS_BORDER or WS_SIZEBOX;
+  Params.ExStyle := Params.ExStyle or WS_EX_STATICEDGE;
+end;
+
+destructor TDropForm.Destroy;
+begin
+  FHideTimer.Free;
+  inherited;
+end;
+
+procedure TDropForm.OnHideTimer(Sender: TObject);
+begin
+  FHideTimer.Enabled := False;
+  Hide;
+end;
+
+procedure TDropForm.SetBounds(ALeft, ATop, AWidth, AHeight: Integer);
+begin
+  inherited;
+end;
+
+procedure TDropForm.WMActivate(var Message: TLMActivate);
+begin
+  //inherited;
+  if Message.Active = integer(False) then
+  begin
+    if Assigned(Owner) and (Owner is TCustomEdit) and not TCustomEdit(Owner).Focused then
+    begin
+      if Visible then
+        FHideTimer.Enabled := true;
+    end;
+  end;
+end;
+
+{procedure TDropForm.WMClose(var Msg: TLMessage);
+begin
+  inherited;
+  self.Free;
+end;}
+
+procedure TDropForm.WMNCHitTest(var Message: TLMNCHitTest);
+begin
+  if Sizeable and Visible and FDroppedDown and ((Message.XPos < Left + 5) or (Message.YPos < Top + 5)) then
+  begin
+    Message.Result := 0;
+    Exit;
+  end;
+
+  inherited;
+end;
+
+procedure TDropForm.WMSize(var Message: TLMSize);
+begin
+  inherited WMSize (Message);
+  //if FComboOptions.FEditorType = etGrid then
+  //  Height := (Height div FGrid.DefaultRowHeight) * FGrid.DefaultRowHeight;
+  Invalidate;
+end;
+
+procedure TDropForm.FormMouseDown(Sender: TObject; Button: TMouseButton;
+			Shift: TShiftState; X, Y: Integer);
+begin
+  //if (X < (Left + 150)) or (Y < (Top + 50)) then Exit;
+
+  if Button = mbLeft then begin
+    if (x > self.Width - 2) or (Y > Height - 2) then MouseIsDown := True;
+    PX := Mouse.CursorPos.X;
+    PY := Mouse.CursorPos.Y;
+  end;
+end;
+
+procedure TDropForm.FormMouseMove(Sender: TObject; Shift: TShiftState; X, Y: Integer);
+begin
+
+  if (X > Width - 2) and (Y < Height - 2) then Cursor := crSizeWE
+  else if (X < Width - 2) and (Y > Height - 2) then Cursor := crSizeNS
+  else if (X > Width - 2) and (Y > Height - 2) then Cursor := crSizeNWSE
+  else Cursor:= crDefault;
+
+  if MouseIsDown then begin
+    case Cursor of
+      crSizeWE: SetBounds(Left, Top, Width + (X - PX), Height);
+      crSizeNS: SetBounds(Left, Top, Width, Height + (Y - PY));
+      crSizeNWSE: SetBounds(Left, Top, Width + (X - PX), Height + (Y - PY));
+		end;
+	end;
+end;
+
+procedure TDropForm.FormMouseUp(Sender: TObject; Button: TMouseButton;
+			Shift: TShiftState; X, Y: Integer);
+begin
+  MouseIsDown:=False;
+end;
+
+procedure TDropForm.CreateGrid;
+begin
+  FGrid := TInplaceStringGrid.Create(self);
+  FGrid.Parent := self;
+  FGrid.Align := alClient;
+//  FGrid.BorderSpacing.Around:=1;
+  FGrid.Left := 0;
+  FGrid.Top := 0;
+  FGrid.Width := Width;
+  FGrid.Height := Height - 5;
+  FGrid.TitleStyle:=tsNative;
+  FGrid.Options:= [goFixedVertLine,
+                   goFixedHorzLine,
+                   goVertLine,
+                   goHorzLine,
+                   goDrawFocusSelected,
+                   goTabs,
+                   goRowSelect,
+                   goColSizing];
+
+  FDataLink := TComponentDataLink.Create;//(Self);
+  {FDataLink.OnRecordChanged:=@OnRecordChanged;
+  FDataLink.OnDatasetChanged:=@OnDataSetChanged;
+  FDataLink.OnDataSetOpen:=@OnDataSetOpen;
+  FDataLink.OnDataSetClose:=@OnDataSetClose;
+  FDataLink.OnNewDataSet:=@OnNewDataSet;
+  FDataLink.OnInvalidDataSet:=@OnInvalidDataset;
+  FDataLink.OnInvalidDataSource:=@OnInvalidDataSource;
+  FDataLink.OnDataSetScrolled:=@OnDataSetScrolled;
+  FDataLink.OnLayoutChanged:=@OnLayoutChanged;
+  FDataLink.OnEditingChanged:=@OnEditingChanged;
+  FDataLink.OnUpdateData:=@OnUpdateData;}
+  FDataLink.VisualControl:= True;
+
+  FGrid.FixedCols := 0;
+  FGrid.RowCount := 10;
+  FGrid.DefaultRowHeight := 18;
+  FGrid.Font.Size := 8;
+
+  //FStringGrid.OnDrawCell := StringGridDrawCell;
+  //FStringGrid.OnMouseDown := Gridmousedown;
+  //FStringGrid.OnMouseMove := GridMouseMove;
+  FGrid.OnKeyPress := GridKeyPress;
+  //FStringGrid.OnSelectCell := StringGridSelectCell;
+end;
+
+procedure TDropForm.GridKeyPress(Sender: TObject; var Key: Char);
+begin
+  inherited;
+
+end;
+
+//----------------------------------------------------
+{ TDBColumnItem }
+
+procedure TDBColumnItem.Assign(Source: TPersistent);
+begin
+  if Source is TDBColumnItem then
+  begin
+    Color := TDBColumnItem(source).Color;
+
+    Width := TDBColumnItem(source).Width;
+    Alignment := TDBColumnItem(source).Alignment;
+    Font.Assign(TDBColumnItem(source).Font);
+    Title := TDBColumnItem(Source).Title;
+
+    ListField := TDBColumnItem(Source).ListField;
+    AutoSize := TDBColumnItem(Source).AutoSize;
+    FixedColor := TDBColumnItem(Source).FixedColor;
+  end;
+end;
+
+constructor TDBColumnItem.Create(Collections: TCollection);
+begin
+  inherited;
+  FFont           := TFont.Create;
+  FFont.Name      := 'Tahoma';
+  FFont.OnChange  := OnFontChanged;
+
+  FWidth := 100;
+  FColor := clWindow;
+  FFixedColor := clBtnFace;
+  FStrings := TStringList.Create;
+end;
+
+destructor TDBColumnItem.Destroy;
+begin
+  FFont.Free;
+  inherited;
+end;
+
+procedure TDBColumnItem.OnFontChanged(Sender: TObject);
+begin
+  FFontChanged := True;
+end;
+
+procedure TDBColumnItem.OnTitleFontChanged(Sender: TObject);
+begin
+  FTitleFontChanged := True;
+end;
+
+function TDBColumnItem.GetListField: string;
+begin
+  Result := FListField;
+end;
+
+function TDBColumnItem.GetDisplayName: string;
+begin
+  Result := Name;
+end;
+
+procedure TDBColumnItem.SetAlignment(const value: tAlignment);
+begin
+  FAlignment := Value;
+end;
+
+procedure TDBColumnItem.SetColor(const value: TColor);
+begin
+  FColor := Value;
+end;
+
+procedure TDBColumnItem.SetListField(const Value: string);
+begin
+  FListField := Value;
+  with (Collection as TDBColumnCollection) do
+  begin
+    with (GetOwner as TCustomEdit) do
+    begin
+//      if (csDesigning in ComponentState) and
+//        not (csLoading in ComponentState) then
+//          LoadFromListsource;
+    end;
+  end;
+end;
+
+procedure TDBColumnItem.SetFont(const Value: TFont);
+begin
+  FFont.Assign(Value);
+end;
+
+procedure TDBColumnItem.SetWidth(const Value: integer);
+begin
+  FWidth := Value;
+end;
+
+function TDBColumnItem.GetName: string;
+begin
+  if FName <> '' then
+    Result := FName
+  else
+    Result := 'Column' + IntToStr(Index);
+end;
+
+procedure TDBColumnItem.SetName(const Value: string);
+begin
+  FName := Value;
+end;
+
+{ TDBColumnCollection }
+
+function TDBColumnCollection.Add: TDBColumnItem;
+begin
+  Result := TDBColumnItem(inherited Add);
+end;
+
+constructor TDBColumnCollection.Create(AOwner: TCollectionItem);
+begin
+  inherited Create(TDBColumnItem);
+  //FOwner := AOwner;
+end;
+
+function TDBColumnCollection.GetItem(Index: Integer): TDBColumnItem;
+begin
+  Result := TDBColumnItem(inherited Items[index]);
+end;
+
+function TDBColumnCollection.GetOwner: tPersistent;
+begin
+  //Result := FOwner;
+end;
+
+function TDBColumnCollection.Insert(index: integer): TDBColumnItem;
+begin
+  {$IFNDEF DELPHI4_LVL}
+  Result := TDBColumnItem(inherited Add);
+  {$ELSE}
+  Result := TDBColumnItem(inherited Insert(index));
+  {$ENDIF}
+end;
+
+procedure TDBColumnCollection.SetItem(Index: Integer;
+  const Value: TDBColumnItem);
+begin
+  inherited SetItem(Index, Value);
+end;
+
+procedure TDBColumnCollection.Update(Item: TCollectionItem);
+begin
+  inherited;
+end;
+
+
+{ TDBColumnCollection }
+
+constructor TComboBoxOptions.Create(AOwner : TCollectionItem);
+begin
+  //FColumns.Create(self);
+  FShowTitles := true;
+  FAutoWidth  := true;
+  FKeyField   := '';
+  FListField  := '';
+  FLookupColumn := 0;
+  FListSource := nil;
+  FSizeable := true;
+end;
+
+destructor TComboBoxOptions.Destroy;
+begin
+  FColumns.Free;
+end;
+
+procedure TComboBoxOptions.SetAutoWidth(Value: Boolean);
+begin
+  FAutoWidth := Value;
+end;
+
+procedure TComboBoxOptions.SetColumns(Value: TDBColumnCollection);
+begin
+  FColumns := Value;
+end;
+
+procedure TComboBoxOptions.SetKeyField(Value: string);
+begin
+  KeyField := Value;
+end;
+
+procedure TComboBoxOptions.SetListField(Value: string);
+begin
+  ListField := Value;
+end;
+
+procedure TComboBoxOptions.SetShowTitles(Value: Boolean);
+begin
+  ShowTitles := Value;
+end;
+
+procedure TComboBoxOptions.SetLookupColumn(Value: Integer);
+begin
+  FLookupColumn := Value;
+end;
+
+procedure TComboBoxOptions.SetListSource(Value: TDataSource);
+begin
+  FListSource := Value;
+end;
+
+procedure TComboBoxOptions.SetSizeable(Value: Boolean);
+begin
+  FSizeable := value;
+end;
+
+
+constructor TCustomNiceLookUpComboBox.Create(AOwner: TComponent);
+begin
+  inherited Create(AOwner);
+  FDropDownButton := TSpeedButton.Create(self);
+  FDropDownButton.Parent := self;
+  FDropDownButton.Align := alRight;
+  FDropDownButton.ShowCaption := false;
+  FDropDownButton.Caption := '';
+  FDropDownButton.Width := 22;
+  FDropDownButton.Cursor := crArrow;
+  FDropDownButton.OnClick := DropDownButtonClick;
+  FDropDownButton.BringToFront;
+  //FDropDownButton.OnPaint := ;
+  DrawArrowButtonGlyph;
+
+  //FDataLink:=TFieldDataLink.Create;
+  //FDataLink.Control:=Self;
+  //FDataLink.OnDataChange:=DataChange;
+  //FDataLink.OnUpdateData:=UpdateData;
+
+  FLookup := TFieldDataLink.Create;
+
+end;
+
+destructor TCustomNiceLookUpComboBox.Destroy;
+begin
+  //FDataLink.Destroy;
+  FLookup.Destroy;
+  inherited Destroy;
+end;
+
+function TCustomNiceLookUpComboBox.ChildClassAllowed(ChildClass: TClass): boolean;
+begin
+  // no children
+  Result := true;
+  //if Widgetset.GetLCLCapability(lcAllowChildControlsInNativeControls) = LCL_CAPABILITY_YES then Result := True;
+end;
+
+procedure TCustomNiceLookUpComboBox.KeyDown(var Key: Word; Shift: TShiftState);
+begin
+  inherited KeyDown(Key, Shift);
+  case Key of
+    VK_DOWN: DropDownButtonClick(self);
+  end;
+end;
+
+procedure TCustomNiceLookUpComboBox.DrawArrowButtonGlyph;
+const
+  ArrowColor = TColor($8D665A);
+begin
+// First I ment to put arrow images in a lrs file. In my opinion, however, that
+// wouldn't be an elegant option for so simple shapes.
+
+  if Assigned(FDropDownButton) then begin
+    FDropDownButton.Glyph.SetSize(9, 6);
+    FDropDownButton.Glyph.Canvas.Brush.Style := bsSolid;
+    FDropDownButton.Glyph.Canvas.Brush.Color := clSkyBlue;
+    FDropDownButton.Glyph.Canvas.FillRect(0, 0, 9, 6);
+    FDropDownButton.Glyph.Canvas.Pen.Color := ArrowColor;
+    FDropDownButton.Glyph.Canvas.Brush.Color := FDropDownButton.Glyph.Canvas.Pen.Color;
+
+    { modern -- smaller variant:    }
+    FDropDownButton.Glyph.Canvas.Polygon([Point(1, 2), Point(2, 1),
+                      Point(4, 3), Point(6, 1), Point(7, 2), Point(4, 5)]);
+
+    FDropDownButton.Glyph.Mask(clSkyBlue);
+  end;
+end;
+
+procedure TCustomNiceLookUpComboBox.DropDownButtonClick(Sender: TObject);
+var
+  p: TPoint;
+  i: integer;
+begin
+
+  if not assigned(DataSource) or not assigned(ListSource) then Exit;
+
+  if Assigned(FAfterDropDown) then FAfterDropDown(self);
+
+  //if not Assigned(FDropForm) then
+  begin
+    P := Point(-1, -1);
+    P := ClientToScreen(P);
+
+    FDropForm := TDropForm.CreateNew(self, 0);
+    FDropForm.FGrid.RowCount := 1;
+    FDropForm.FGrid.ColCount := 0;
+
+    try
+      if FLookup.DataSet.State = dsInactive then
+        FLookup.DataSet.Open
+      else FLookup.DataSet.Refresh;
+      for i:=0 to FLookup.DataSet.FieldCount - 1 do
+      begin
+        if not FLookup.DataSet.Fields[i].Visible then continue;
+        FDropForm.FGrid.Columns.Add;
+        FDropForm.FGrid.Columns.Items[i].Title.Caption := FLookup.DataSet.Fields[i].DisplayLabel;
+        FDropForm.FGrid.Columns.Items[i].Width := FLookup.DataSet.Fields[i].DisplayWidth;
+        FDropForm.FGrid.Columns.Items[i].Visible := FLookup.DataSet.Fields[i].Visible;
+      end;
+
+      FLookup.DataSet.First;
+      while not FLookup.DataSet.EOF do
+      begin
+        if not FLookup.DataSet.Fields[i].Visible then continue;
+        FDropForm.FGrid.RowCount := FDropForm.FGrid.RowCount + 1;
+        for i:=0 to FLookup.DataSet.FieldCount - 1 do
+        begin
+          FDropForm.FGrid.Cells[i, FDropForm.FGrid.RowCount - 1] :=
+            FLookup.DataSet.Fields.FieldByNumber(i + 1).Text;
+        end;
+        FLookup.DataSet.Next;
+      end;
+      FLookup.DataSet.First;
+      FDropForm.FGrid.Row := 1;
+
+    finally
+    end;
+
+    FDropForm.FGrid.OnDblClick := GridDblClick;
+    FDropForm.FGrid.OnKeyDown := GridKeyDown;
+
+    FDropForm.Width := 440;
+    FDropForm.Visible := False;
+    FDropForm.Show;
+    FDropForm.Top := P.y + Height;
+    FDropForm.Left := P.X;
+    FDropForm.Visible := True;
+    if Assigned(FDropDown) then FDropDown(self);
+  end;
+end;
+
+procedure TCustomNiceLookUpComboBox.CloseDropDownForm(ReturnData: boolean);
+var
+  List: TStringList;
+  i: integer;
+begin
+
+  if ReturnData then
+  begin
+    List := TStringList.Create;
+    for i:=0 to FDropForm.FGrid.ColCount - 1 do
+    begin
+      List.Add(FDropForm.FGrid.Cells[i, FDropForm.FGrid.Row]);
+    end;
+
+
+    // Seleccionar el Record adecuado:
+    FLookup.DataSet.First;
+    for i := 0 to FDropForm.FGrid.Row - 2 do
+    begin
+      FLookup.DataSet.Next;
+    end;
+
+    DataSource.Edit;
+    if KeyField <> '' then
+      DataSource.DataSet.FieldByName(DataField).Text := FLookup.DataSet.FieldByName(KeyField).Text
+    else
+      DataSource.DataSet.FieldByName(DataField).Text := FLookup.DataSet.Fields.Fields[1].Text;
+
+
+    if Assigned(FLookupClose) then FLookupClose(self, List);
+  end;
+  FDropForm.Close;
+  FLookup.DataSet.close;
+end;
+
+procedure TCustomNiceLookUpComboBox.GridDblClick(Sender: TObject);
+begin
+  CloseDropDownForm(true);
+end;
+
+procedure TCustomNiceLookUpComboBox.GridKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  inherited KeyDown(Key, Shift);
+
+  case Key of
+    VK_ESCAPE: CloseDropDownForm(false);
+    VK_RETURN: CloseDropDownForm(true);
+  end;
+end;
+
+{function TCustomNiceLookUpComboBox.GetDataField: string;
+begin
+  Result:=FDataLink.FieldName;
+end;
+
+function TCustomNiceLookUpComboBox.GetDataSource: TDataSource;
+begin
+  Result:=FDataLink.DataSource;
+end;
+
+function TCustomNiceLookUpComboBox.GetField: TField;
+begin
+  Result:=FDataLink.Field;
+end;
+
+procedure TCustomNiceLookUpComboBox.Change;
+begin
+  FDataLink.Modified;
+  inherited Change;
+end;
+
+procedure TCustomNiceLookUpComboBox.SetDataField(const AValue: string);
+begin
+  FDataLink.FieldName:=AValue;
+end;
+
+procedure TCustomNiceLookUpComboBox.SetDataSource(const AValue: TDataSource);
+begin
+  if not (FDataLink.DataSourceFixed and (csLoading in ComponentState)) then
+    ChangeDataSource(Self,FDataLink,AValue);
+end;
+
+procedure TCustomNiceLookUpComboBox.CMGetDataLink(var Message: TLMessage);
+begin
+  Message.Result := PtrUInt(FDataLink);
+end;
+
+procedure TCustomNiceLookUpComboBox.Notification(AComponent: TComponent; Operation: TOperation);
+begin
+  inherited Notification(AComponent, Operation);
+  if (Operation=opRemove) then begin
+    if (FDataLink<>nil) and (AComponent=DataSource) then
+      DataSource:=nil;
+  end;
+end;
+
+procedure TCustomNiceLookUpComboBox.EditingDone;
+begin
+  FDataLink.UpdateRecord;
+  inherited EditingDone;
+end;
+
+procedure TCustomNiceLookUpComboBox.WndProc(var Message: TLMessage);
+begin
+  case Message.Msg of
+    LM_CLEAR,
+    LM_CUT,
+    LM_PASTE:
+      begin
+        if FDataLink.CanModify then
+        begin
+          FDataLink.OnDataChange := nil;
+          FDatalink.Edit;
+          FDataLink.Modified;
+          FDataLink.OnDataChange := DataChange;
+          inherited WndProc(Message);
+        end;
+      end;
+    else
+      inherited WndProc(Message);
+  end;
+end;}
+
+function TCustomNiceLookUpComboBox.GetKeyField: string;
+begin
+  Result := FKeyField;
+end;
+
+function TCustomNiceLookUpComboBox.GetListSource: TDataSource;
+begin
+  Result := FLookup.DataSource;
+end;
+
+procedure TCustomNiceLookUpComboBox.SetKeyField(const Value: string);
+begin
+  FKeyField := Value;
+end;
+
+procedure TCustomNiceLookUpComboBox.SetListSource(const Value: TDataSource);
+begin
+  FLookup.DataSource := Value;
+end;
+
+end.
+
+

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="4">
+    <PathDelim Value="\"/>
+    <Name Value="NiceGridLazarus"/>
+    <Type Value="RunAndDesignTime"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <OtherUnitFiles Value=".."/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+    </CompilerOptions>
+    <Files Count="14">
+      <Item1>
+        <Filename Value="..\NiceCursors.res"/>
+        <Type Value="Binary"/>
+      </Item1>
+      <Item2>
+        <Filename Value="..\NiceEditors.pas"/>
+        <UnitName Value="NiceEditors"/>
+      </Item2>
+      <Item3>
+        <Filename Value="..\NiceGrid.pas"/>
+        <UnitName Value="NiceGrid"/>
+      </Item3>
+      <Item4>
+        <Filename Value="..\NiceGridReg.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="NiceGridReg"/>
+      </Item4>
+      <Item5>
+        <Filename Value="..\NiceLookUpComboBox.pas"/>
+        <UnitName Value="NiceLookUpComboBox"/>
+      </Item5>
+      <Item6>
+        <Filename Value="nicedividerbevel.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="NiceDividerBevel"/>
+      </Item6>
+      <Item7>
+        <Filename Value="customnicelistbox.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="CustomNiceListBox"/>
+      </Item7>
+      <Item8>
+        <Filename Value="nicepagecontrol.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="NicePageControl"/>
+      </Item8>
+      <Item9>
+        <Filename Value="nicecustompanel.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="NiceCustomPanel"/>
+      </Item9>
+      <Item10>
+        <Filename Value="nicedbedit.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="NiceDBEdit"/>
+      </Item10>
+      <Item11>
+        <Filename Value="gsgantt.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="gsGantt"/>
+      </Item11>
+      <Item12>
+        <Filename Value="nicecalendar.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="NiceCalendar"/>
+      </Item12>
+      <Item13>
+        <Filename Value="nicetabcontrol.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="NiceTabControl"/>
+      </Item13>
+      <Item14>
+        <Filename Value="nicecustompanellist.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="NiceCustomPanelList"/>
+      </Item14>
+    </Files>
+    <RequiredPkgs Count="4">
+      <Item1>
+        <PackageName Value="LazControls"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="LCL"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="LCLBase"/>
+      </Item3>
+      <Item4>
+        <PackageName Value="FCL"/>
+      </Item4>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+    <CustomOptions Items="ExternHelp" Version="2">
+      <_ExternHelp Items="Count"/>
+    </CustomOptions>
+  </Package>
+</CONFIG>
